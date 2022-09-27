@@ -1,0 +1,71 @@
+.root {
+  position: relative;
+  z-index: 10;
+  @include breakpoints-down(sm) {
+    text-align: center;
+  }
+  .nav > *{
+    @include breakpoints-down(sm) {
+      display: flex;
+      overflow: auto
+    }
+  }
+}
+
+.deco {
+  position: absolute;
+  width: 470px;
+  height: 410px;
+  bottom: 0;
+  @include right(0);
+  opacity: 0.3;
+  img {
+    width: 100%;
+  }
+}
+
+.side-filter {
+  .nav {
+    background: none;
+    & > * {
+      @include breakpoints-down(xs) {
+        padding: spacing(0, 3)
+      }
+    }
+  }
+  .filter {
+    border-radius: 40px;
+    text-transform: capitalize;
+    margin-bottom: $spacing1;
+    padding: spacing(0.5, 2);
+    width: 90%;
+    min-height: 36px;
+    &:before {
+      border-radius: 40px;
+      opacity: 0;
+    }
+    @include breakpoints-down(sm) {
+      > div {
+        text-align: center
+      }
+    }
+    @include breakpoints-up(sm) {
+      overflow: hidden;
+    }
+    @include breakpoints-down(sm) {
+      > div {
+        text-align: center
+      }
+    }
+  }
+  ::v-deep .v-list-item--active {
+    background: $palette-primary-light;
+    color: $palette-primary-dark;
+  }
+}
+
+.massonry {
+  button {
+    width: 100%
+  }
+}

@@ -1,0 +1,97 @@
+.root {
+  width: 100%;
+  position: relative;
+  padding-bottom: $spacing5;
+  @include breakpoints-down(sm) {
+    text-align: center;
+  }
+}
+
+.carousel {
+  position: relative;
+  z-index: 6;
+  margin-top: $spacing5;
+  ::v-deep .slick-list {
+    overflow: visible;
+  }
+  ::v-deep .slick-dots {
+    bottom: $spacing10 * -1;
+    @include breakpoints-up(sm) {
+      @include margin-left(-160px);
+    }
+    li {
+      width: 10px;
+      height: 10px;
+      transition: width 0.3s ease;
+      background: $palette-primary-light;
+      border-radius: 15px;
+      margin: spacing(0, 0.5);
+      &.slick-active {
+        width: 35px
+      }
+      button {
+        opacity: 0
+      }
+    }
+  }
+  @include breakpoints-up(lg) {
+    @include margin-left(-160px);
+    width: calc(100% + 180px);
+  }
+}
+
+.item {
+  padding: spacing(0, 2);
+  &:focus {
+    outline: none
+  }
+}
+
+.floating-artwork {
+  position: absolute;
+  width: 100%;
+  top: $spacing5 * -1;
+  @include left(0);
+  @include breakpoints-up(lg) {
+    @include left($spacing1);
+  }
+  @media (min-width: 1400px) {
+    @include left($spacing10)
+  }
+  .artwork {
+    display: flex;
+    align-items: flex-end;
+    height: 540px;
+    @include breakpoints-up(md) {
+      @include margin-right($spacing5)
+    }
+    @include breakpoints-up(lg) {
+      @include float(right)
+    }
+    @media (min-width: 1400px) {
+      @include margin-right(-40px)
+    }
+  }
+}
+
+.item-props {
+  @include breakpoints-down(xs) {
+    display: none !important
+  }
+  &-first {
+    .v-application--is-rtl & {
+      width: 450px
+    }
+    .v-application--is-ltr & {
+      width: 160px
+    }
+  }
+  &-last {
+    .v-application--is-rtl & {
+      width: 160px
+    }
+    .v-application--is-ltr & {
+      width: 400px
+    }
+  }
+}

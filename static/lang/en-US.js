@@ -101,6 +101,7 @@ export default () => {
         "util_soon_desc": "Will come with performance in design",
         "util_notif": "notify me",
         "en": "English",
+        "th": "Thaiand",
         "de": "Deutsch",
         "zh": "简体中文",
         "pt": "󠁥󠁮󠁧󠁿Português",

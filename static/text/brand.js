@@ -1,6 +1,6 @@
 const brand = {
   medical: {
-    name: 'Medical',
+    name: 'D4U',
     desc: 'Awrora Medical | Vue Landing Page Template',
     prefix: 'awrora',
     footerText: 'Awrora Theme 2022',

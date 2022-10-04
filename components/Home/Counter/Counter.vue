@@ -16,7 +16,7 @@
                   v-countUp:onWindowScroll.once="{
                     watchedElId: 'watched_counter',
                     startValue: 0,
-                    endValue: 456,
+                    endValue: 5000,
                     options: { duration: 1 }
                   }"
                 />

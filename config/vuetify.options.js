@@ -6,22 +6,22 @@ if (typeof Storage !== 'undefined') { // eslint-disable-line
 }
 
 const palette = {
-  fresh: {
-    primary: colors.lightBlue.base, // primary main
-    primarylight: colors.lightBlue.lighten4, // primary light
-    primarydark: colors.lightBlue.darken4, // primary dark
-    secondary: colors.green.base, // secondary main
-    secondarylight: colors.green.lighten4, // secondary light
-    secondarydark: colors.green.darken4, // secondary dark
-    accent: colors.pink.base, // accent main
-    accentlight: colors.pink.lighten4, // accent light
-    accentdark: colors.pink.darken3, // accent dark
-    anchor: colors.blue.base // link
-  },
+vampire: {
+  primary: colors.red.base, // primary main
+  primarylight: colors.red.lighten5, // primary light
+  primarydark: colors.red.darken1, // primary dark
+  secondary: colors.blueGrey.base, // secondary main
+  secondarylight: colors.blueGrey.lighten5, // secondary light
+  secondarydark: colors.blueGrey.darken2, // secondary dark
+  anchor: colors.red.base, // link
+  accent: colors.pink.base, // accent main
+  accentlight: colors.pink.lighten4, // accent light
+  accentdark: colors.pink.darken3, // accent dark
+},
 }
 
 export const theme = {
-  ...palette.fresh
+  ...palette.vampire
 }
 
 

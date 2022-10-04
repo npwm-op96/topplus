@@ -1,7 +1,6 @@
 <template>
   <div class="banner-wrap">
     <div class="carousel" v-if="loaded">
-      <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/>
       <slick
         class="slider-deco"
         ref="sliderDeco"
@@ -158,7 +157,7 @@
                 </v-col>
                 <v-col cols="12">
                   <div class="img h-banner">
-                    <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/>
+                    <!-- <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/> -->
 
                     <img
                       :src="imgAPI.medical[9]"

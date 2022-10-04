@@ -1,13 +1,13 @@
 const brand = {
   medical: {
     name: 'D4U',
-    desc: 'Awrora Medical | Vue Landing Page Template',
-    prefix: 'awrora',
-    footerText: 'Awrora Theme 2022',
+    desc: 'D4U',
+    prefix: 'D4U',
+    footerText: 'D4U 2022',
     logoText: 'Awrora Theme',
-    projectName: 'Medical Theme',
+    projectName: 'D4U',
     url: 'awrora1.indisains.com/medical',
-    img: '/static/images/medical-logo.png'
+    img: '/static/images/D4U/LOGO-logo.png'
   }
 }
 

@@ -6,7 +6,7 @@
           <h4 class="use-text-title">
             {{ $t('medical.services_title') }}
           </h4>
-          <p class="use-text-subtitle2">Nam sollicitudin dignissim nunc, cursus ullamcorper eros vulputate sed.</p>
+          <p class="use-text-subtitle2">กิจกรรม เดือน กันยายน</p>
         </div>
         <v-btn
           :href="link.medical.product"
@@ -38,7 +38,7 @@
                 :title="item.title"
                 :desc="item.desc"
                 :img="item.img"
-                button="see detail"
+                :button="$t('common.btn_seedetail')"
               />
             </div>
           </slick>
@@ -93,13 +93,13 @@
 </template>
 
 <style lang="scss" scoped>
-@import './facilities-style.scss';
+@import './events-style.scss';
 </style>
 
 <script>
 import imgAPI from '~/static/images/imgAPI'
 import link from '~/static/text/link'
-import Card from '../../Cards/FacilityCard'
+import Card from '../../Cards/EventCard'
 import SliderArt from '../SliderArt'
 
 export default {
@@ -139,41 +139,51 @@ export default {
       },
       servicesList: [
         {
-          title: 'Lorem Ipsum',
+          title: 'ค้นหาผู้นำทีม',
           desc:
-            'Proin ac arcu nisl. Duis eu molestie lectus. Nam quis mauris faucibus, aliquet elit eu, rhoncus ipsum.',
-          img: imgAPI.medical[26]
+            'ไปเยือนสมาชิก ภูเก็ต.....',
+          img: imgAPI.events[0]
         },
         {
-          title: 'Etiam rhoncus',
+          title: 'ไปเยือนสมาชิก ภูเก็ต',
           desc:
-            'Proin quis pellentesque dui. Ut sed leo neque. Nullam aliquet iaculis neque a commodo.',
-          img: imgAPI.medical[27]
+            'พูดคุยกับสมาชิก Fin เรื่อง ....',
+          img: imgAPI.events[1]
         },
         {
-          title: 'Duis fermentum',
+          title: 'ค้นหาผู้นำทีม',
           desc:
-            'Quisque consectetur lectus vel orci porttitor gravida ac eu erat. Nullam accumsan nibh tortor.',
-          img: imgAPI.medical[28]
+            'ไปเยือนสมาชิก ภูเก็ต.....',
+          img: imgAPI.events[0]
         },
         {
-          title: 'Lorem Ipsum',
+          title: 'ไปเยือนสมาชิก ภูเก็ต',
           desc:
-            'Proin ac arcu nisl. Duis eu molestie lectus. Nam quis mauris faucibus, aliquet elit eu, rhoncus ipsum.',
-          img: imgAPI.medical[29]
+            'พูดคุยกับสมาชิก Fin เรื่อง ....',
+          img: imgAPI.events[1]
+        },        {
+          title: 'ค้นหาผู้นำทีม',
+          desc:
+            'ไปเยือนสมาชิก ภูเก็ต.....',
+          img: imgAPI.events[0]
         },
         {
-          title: 'Etiam rhoncus',
+          title: 'ไปเยือนสมาชิก ภูเก็ต',
           desc:
-            'Proin quis pellentesque dui. Ut sed leo neque. Nullam aliquet iaculis neque a commodo.',
-          img: imgAPI.medical[30]
+            'พูดคุยกับสมาชิก Fin เรื่อง ....',
+          img: imgAPI.events[1]
+        },        {
+          title: 'ค้นหาผู้นำทีม',
+          desc:
+            'ไปเยือนสมาชิก ภูเก็ต.....',
+          img: imgAPI.events[0]
         },
         {
-          title: 'Duis fermentum',
+          title: 'ไปเยือนสมาชิก ภูเก็ต',
           desc:
-            'Quisque consectetur lectus vel orci porttitor gravida ac eu erat. Nullam accumsan nibh tortor.',
-          img: imgAPI.medical[26]
-        }
+            'พูดคุยกับสมาชิก Fin เรื่อง ....',
+          img: imgAPI.events[1]
+        },
       ]
     }
   },

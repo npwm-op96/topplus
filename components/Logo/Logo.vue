@@ -10,7 +10,7 @@
 </style>
 
 <script>
-import logo from '~/static/images/medical-logo.svg'
+import logo from '~/static/images/D4U/LOGO-logo.png'
 import brand from '~/static/text/brand'
 
 export default {

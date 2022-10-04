@@ -211,6 +211,17 @@ const imgAPI = {
     'https://via.placeholder.com/165x150/ffc999/767676',
     'https://via.placeholder.com/165x150/00BFA5/767676',
   ],
+  events:[
+    '/images/events/01.jpg',
+    '/images/events/02.png'
+  ],
+  members:[
+    '/images/members/01.jpg',
+    '/images/members/02.jpg',
+    '/images/members/03.jpg',
+    '/images/members/04.jpg',
+
+  ],
   medicalInner: [
     ...img3d.inner
   ]

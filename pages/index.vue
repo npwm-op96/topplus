@@ -13,7 +13,7 @@
           id="facility"
           class="space-top-short"
         >
-          <facilities />
+          <events />
         </section>
         <section
           id="our-expertise"
@@ -25,7 +25,8 @@
           id="ask-doctors"
           class="space-top-short"
         >
-          <ask-doctors />
+        <member/>
+          <!-- <ask-doctors /> -->
         </section>
         <section
           id="testimonials"
@@ -60,9 +61,10 @@ import Header from '~/components/Header'
 import Footer from '~/components/Footer'
 import BannerSlider from '~/components/Home/BannerSlider'
 import Counter from '~/components/Home/Counter'
-import Facilities from '~/components/Home/Facilities'
+import Events from '~/components/Home/Events'
 import Speciality from '~/components/Home/Speciality'
-import AskDoctors from '~/components/Home/AskDoctors'
+// import AskDoctors from '~/components/Home/AskDoctors'
+import Member from '../components/Home/Member'
 import Testimonials from '~/components/Home/Testimonials'
 import CallAction from '~/components/CallAction'
 import Clinics from '~/components/Home/Clinics'
@@ -76,10 +78,10 @@ export default {
     'main-header': Header,
     BannerSlider,
     Counter,
-    Facilities,
+    Events,
     Speciality,
     Testimonials,
-    AskDoctors,
+    Member,
     CallAction,
     Clinics,
     Hidden,

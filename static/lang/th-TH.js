@@ -18,7 +18,7 @@ export default () => {
         "form_company": "บริษัท ของคุณคืออะไร?",
         "form_message": "เขียนข้อความของคุณที่นี่",
         "form_terms": "ฉันได้อ่านและยอมรับเงื่อนไขของ",
-        "form_privacy": "Service & Privacy Policy *",
+        "form_privacy": "นโยบายบริการและความเป็นส่วนตัว *",
         "form_send": "ส่งข้อความ",
         "login": "เข้าสู่ระบบ",
         "login_create": "สร้างบัญชีใหม่",
@@ -143,7 +143,8 @@ export default () => {
         "footer_terms": "ข้อกำหนดการใช้งาน",
         "footer_terms": "ข้อกำหนดการใช้งาน",
         "footer_link": "การเชื่อมโยง",
-        "footer_news": "ข่าว"
+        "footer_news": "ข่าว",
+        "btn_seedetail":'ดูรายละเอียด'
       },
       medical: {
         "header_about": "เกี่ยวกับ",
@@ -160,7 +161,7 @@ export default () => {
         "about_clinics": "สมาชิก ตรอ. ในระบบ",
         "about_hours": "เปิดชั่วโมง",
         "about_quote": "ประหยัดเวลาและเงินรับการดูแลที่มีคุณภาพทุกครั้ง",
-        "services_title": "สิ่งอำนวยความสะดวกของเรา",
+        "services_title": "กิจกรรม",
         "services_button": "ดูรายละเอียด",
         "expertise_title": "ความพิเศษของเรา",
         "expertise_subtitle": "แพทย์ที่คลินิกออนไลน์ทั้งหมดลงทะเบียนในสภาการแพทย์ทั่วไป.",

@@ -19,7 +19,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import './facility-card.scss';
+@import './events-card.scss';
 </style>
 
 <script>

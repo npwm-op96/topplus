@@ -20,7 +20,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: brand.medical.desc },
       { name: 'msapplication-TileColor', content: '#FFFFFF' },
-      { name: 'msapplication-TileImage', content: '/favicons/ms-icon-144x144.png' },
+      { name: 'msapplication-TileImage', content: '/D4U/LOGO-logo.png' },
       // PWA primary color
       { name: 'theme-color', content: theme.primary},
       // Facebook
@@ -129,9 +129,9 @@ module.exports = {
   ],
   i18n: {
     locales: languages,
-    defaultLocale: 'en',
+    defaultLocale: 'th',
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: 'th',
     },
     strategy: 'prefix',
     detectBrowserLanguage: {

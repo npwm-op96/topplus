@@ -1,11 +1,7 @@
 <template>
   <div class="banner-wrap">
     <div class="carousel" v-if="loaded">
-      <slick
-        class="slider-deco"
-        ref="sliderDeco"
-        :options="slickOptionsDeco"
-      >
+      <slick class="slider-deco" ref="sliderDeco" :options="slickOptionsDeco">
         <div class="slide" :class="{ cur: currentSlide === 0 }">
           <div class="inner">
             <div class="deco-wrap">
@@ -23,9 +19,7 @@
           </div>
         </div>
         <div class="slide" :class="{ cur: currentSlide === 2 }">
-          <div class="inner">
-            &nbsp;
-          </div>
+          <div class="inner">&nbsp;</div>
         </div>
       </slick>
       <slick
@@ -47,25 +41,32 @@
             </div>
             <v-container>
               <v-row>
-                <v-col md="7" lg="6" cols="12" class="px-sm-12 d-flex align-center">
+                <v-col
+                  md="7"
+                  lg="6"
+                  cols="12"
+                  class="px-sm-12 d-flex align-center"
+                >
                   <div class="text">
-                    <h4 class="use-text-title">{{ $t('medical.banner_title') }}</h4>
-                    <h5 class="use-text-subtitle">{{ $t('medical.banner_subtitle') }}</h5>
+                    <h4 class="use-text-title">
+                      {{ $t("medical.banner_title") }}
+                    </h4>
+                    <h5 class="use-text-subtitle">
+                      {{ $t("medical.banner_subtitle") }}
+                    </h5>
                     <div class="btn-area">
-                      <v-btn
-                        text
-                        href="#"
-                        class="button"
-                      >
-                        {{ $t('common.btn_detail') }}
+                      <v-btn text href="#" class="button">
+                        <!-- {{ $t('common.btn_detail') }} -->
+                        ดาวโหลด
                       </v-btn>
                       <v-btn
-                        :href="link.medical.register"
+                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
                         color="primary"
                         large
                         class="button"
                       >
-                        {{ $t('common.btn_get') }}
+                        <!-- {{ $t('common.btn_get') }} -->
+                        สมัคร
                       </v-btn>
                     </div>
                   </div>
@@ -73,7 +74,7 @@
                 <v-col md="5" lg="6" cols="12">
                   <div class="img">
                     <img
-                      :src="imgAPI.medical[5]"
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
                       :data-2d="imgAPI.medical[4]"
                       :data-3d="imgAPI.medical[5]"
                       class="img-2d3d"
@@ -88,11 +89,14 @@
         <div class="slide" id="slide2">
           <div class="inner">
             <v-container>
-              <v-row justify="end" :class="[isTablet ? 'column-reverse' : 'row']">
+              <v-row
+                justify="end"
+                :class="[isTablet ? 'column-reverse' : 'row']"
+              >
                 <v-col md="5" lg="6" class="px-6" cols="12">
                   <div class="img">
                     <img
-                      :src="imgAPI.medical[7]"
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2019/12/messageImage_1574925451559.jpg'"
                       :data-2d="imgAPI.medical[6]"
                       :data-3d="imgAPI.medical[7]"
                       :class="{ 'float-right mr-sm-15': isDesktop }"
@@ -101,25 +105,34 @@
                     />
                   </div>
                 </v-col>
-                <v-col md="7" lg="6" cols="12" class="px-sm-12 d-flex align-center">
+                <v-col
+                  md="7"
+                  lg="6"
+                  cols="12"
+                  class="px-sm-12 d-flex align-center"
+                >
                   <div class="text">
-                    <h4 class="use-text-title">{{ $t('medical.banner_title') }}</h4>
-                    <h5 class="use-text-subtitle">{{ $t('medical.banner_subtitle') }}</h5>
+                    <h4 class="use-text-title">
+                      <!-- {{ $t('medical.banner_title') }} -->
+                      ซื้อประกันง่ายๆ แค่คลิก
+                    </h4>
+                    <h5 class="use-text-subtitle">
+                      เพียงแค่ ดาวโหลดแอปพลิเคชัน
+                      <!-- {{ $t('medical.banner_subtitle') }} -->
+                    </h5>
                     <div class="btn-area">
-                      <v-btn
-                        text
-                        href="#"
-                        class="button"
-                      >
-                        {{ $t('common.btn_detail') }}
+                      <v-btn text href="#" class="button">
+                        <!-- {{ $t('common.btn_detail') }} -->
+                        ดาวโหลด
                       </v-btn>
                       <v-btn
-                        :href="link.medical.register"
+                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
                         color="primary"
                         large
                         class="button"
                       >
-                        {{ $t('common.btn_get') }}
+                        ซื้อประกัน
+                        <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
                     </div>
                   </div>
@@ -134,23 +147,26 @@
               <v-row justify="end">
                 <v-col cols="12" class="px-sm-12">
                   <div class="text text-center">
-                    <h4 class="use-text-title">{{ $t('medical.banner_title') }}</h4>
-                    <h5 class="use-text-subtitle">{{ $t('medical.banner_subtitle') }}</h5>
+                    <h4 class="use-text-title">
+                      <!-- {{ $t('medical.banner_title') }} -->
+                      ร่วมทีมกับเรา แค่คลิก
+                    </h4>
+                    <h5 class="use-text-subtitle">
+                      {{ $t("medical.banner_subtitle") }}
+                    </h5>
                     <div class="btn-area">
-                      <v-btn
-                        text
-                        href="#"
-                        class="button"
-                      >
-                        {{ $t('common.btn_detail') }}
+                      <v-btn text href="#" class="button">
+                        <!-- {{ $t('common.btn_detail') }} -->
+                        ประโยชน์ที่จะได้รับ และ การสร้างรายได้ให้กับเรา
                       </v-btn>
                       <v-btn
-                        :href="link.medical.register"
+                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
                         color="primary"
                         large
                         class="button"
                       >
-                        {{ $t('common.btn_get') }}
+                        เริ่มต้นสู่การพัฒนาทีม
+                        <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
                     </div>
                   </div>
@@ -159,7 +175,8 @@
                   <div class="img h-banner">
                     <!-- <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/> -->
 
-                    <img
+                    <v-img
+                      contain
                       :src="imgAPI.medical[9]"
                       :data-2d="imgAPI.medical[8]"
                       :data-3d="imgAPI.medical[9]"
@@ -182,8 +199,8 @@
             @click="gotoSlide(0)"
             text
           >
-            <strong>First Slide</strong>
-            Interdum et malesuada fames ac ante
+            <strong>เป็นตัวแทนกับเรา</strong>
+            ได้รับการสนับสนุนจากทีมงาน
           </v-btn>
           <v-divider class="divider" vertical inset />
           <v-btn
@@ -191,8 +208,8 @@
             @click="gotoSlide(1)"
             text
           >
-            <strong>Second Slide</strong>
-            Interdum et malesuada fames ac ante
+            <strong>ซื้อประกันง่ายๆ</strong>
+            มีประกันให้คุณเลือกถึง 25+ แบร์น
           </v-btn>
           <v-divider class="divider" vertical inset />
           <v-btn
@@ -200,8 +217,8 @@
             @click="gotoSlide(2)"
             text
           >
-            <strong>Third Slide</strong>
-            Interdum et malesuada fames ac ante
+            <strong>ร่วมทีมกับเรา</strong>
+            สร้าง Passive Imcome จาก Broker
           </v-btn>
         </nav>
       </v-container>
@@ -210,18 +227,18 @@
 </template>
 
 <style scoped lang="scss">
-@import './banner-styles';
+@import "./banner-styles";
 </style>
 
 <script>
-import Hidden from '../../Hidden'
-import link from '~/static/text/link'
-import imgAPI from '~/static/images/imgAPI'
+import Hidden from "../../Hidden";
+import link from "~/static/text/link";
+import imgAPI from "~/static/images/imgAPI";
 
 export default {
   components: {
     Hidden,
-    Slick: () => import('vue-slick')
+    Slick: () => import("vue-slick"),
   },
   data() {
     return {
@@ -236,17 +253,17 @@ export default {
         slidesToShow: 1,
         infinite: true,
         autoplay: false,
-        cssEase: 'ease-out',
-        asNavFor: '.slider-deco',
+        cssEase: "ease-out",
+        asNavFor: ".slider-deco",
         responsive: [
           {
             breakpoint: 960,
             settings: {
               dots: true,
-              fade: true
-            }
-          }
-        ]
+              fade: true,
+            },
+          },
+        ],
       },
       slickOptionsDeco: {
         dots: false,
@@ -254,31 +271,31 @@ export default {
         slidesToShow: 1,
         infinite: true,
         fade: true,
-        cssEase: 'ease-out',
-        autoplay: false
-      }
-    }
+        cssEase: "ease-out",
+        autoplay: false,
+      },
+    };
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   },
   methods: {
     handleAfterChange(event, slick, currentSlide) {
-      this.currentSlide = currentSlide
+      this.currentSlide = currentSlide;
     },
     gotoSlide(index) {
-      this.$refs.slider.goTo(index)
-    }
+      this.$refs.slider.goTo(index);
+    },
   },
   computed: {
     isDesktop() {
-      const lgUp = this.$store.state.breakpoints.lgUp
-      return lgUp.indexOf(this.$mq) > -1
+      const lgUp = this.$store.state.breakpoints.lgUp;
+      return lgUp.indexOf(this.$mq) > -1;
     },
     isTablet() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const smDown = this.$store.state.breakpoints.smDown;
+      return smDown.indexOf(this.$mq) > -1;
+    },
+  },
+};
 </script>

@@ -112,7 +112,7 @@ export default () => {
         "header_theme": "theme mode",
         "header_dark": "มืด",
         "header_light": "แสงสว่าง",
-        "header_sample_page": "หน้าภายใน",
+        "header_sample_page": "สนับสนุน สมาชิก",
         "header_about": "เกี่ยวกับ",
         "header_team": "ทีมและวัฒนธรรม",
         "header_blog": "บล็อกบ้าน",
@@ -148,10 +148,10 @@ export default () => {
       },
       medical: {
         "header_about": "เกี่ยวกับ",
-        "header_facility": "สิ่งอำนวยความสะดวก",
-        "header_ask-doctors": "ถามแพทย์",
-        "header_clinics": "คลินิก",
-        "header_testimonials": "คำรับรอง",
+        "header_facility": "กิจกรรม",
+        "header_ask-doctors": "สมาชิก",
+        "header_clinics": "ตรอ.",
+        "header_testimonials": "รายชื่อ",
         "banner_title": "ระบบประกันแบบยุคใหม่",
         "banner_subtitle": "พัฒนาแผนจากผู้เชียวชาญที่มีคุณภาพจากระบบดั้งเดิม.",
         "banner_search": "ค้นหา",
@@ -173,6 +173,11 @@ export default () => {
         "cta_btn": "สร้างการนัดหมายตอนนี้!",
         "clinic_title": "คลินิกของเรา",
         "footer_paragraph": "มันไม่ดีเกินไปที่จะเป็นจริงมันเป็นวิธีที่การดูแลสุขภาพควรจะเรียบง่าย."
+      },
+      brands:{
+        'brand_title':'รายชื่อ',
+        'brand_detail':'ติดต่อบริษัทประกัน',
+
       }
     })
   })

@@ -36,7 +36,7 @@
             small
             class="btn"
           >
-            Contact
+            ติดต่อ
           </v-btn>
         </hidden>
       </div>

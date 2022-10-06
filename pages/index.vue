@@ -32,13 +32,14 @@
           id="testimonials"
           class="space-top-short"
         >
-          <testimonials />
+          <!-- <testimonials /> -->
         </section>
         <div class="space-top" id="call-to-action">
-          <call-action />
+          <!-- <call-action /> -->
         </div>
         <div class="space-top-short space-bottom-short" id="clinics">
-          <clinics />
+          <BrandContract/>
+          <!-- <clinics /> -->
         </div>
       </div>
       <main-footer />
@@ -67,7 +68,8 @@ import Speciality from '~/components/Home/Speciality'
 import Member from '../components/Home/Member'
 import Testimonials from '~/components/Home/Testimonials'
 import CallAction from '~/components/CallAction'
-import Clinics from '~/components/Home/Clinics'
+// import Clinics from '~/components/Home/Clinics'
+import BrandContract from '../components/Home/BrandContract'
 import Hidden from '~/components/Hidden'
 import Corner from '~/components/Home/Corner'
 import Notification from '~/components/Notification'
@@ -83,7 +85,7 @@ export default {
     Testimonials,
     Member,
     CallAction,
-    Clinics,
+    BrandContract,
     Hidden,
     Corner,
     Notification,

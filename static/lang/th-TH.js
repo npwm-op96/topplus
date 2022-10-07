@@ -101,7 +101,7 @@ export default () => {
         "util_soon_desc": "จะมาพร้อมกับประสิทธิภาพในการออกแบบ",
         "util_notif": "แจ้งให้ฉันทราบ",
         "en": "English",
-        "th": "Thaiand",
+        "th": "Thailand",
         "de": "Deutsch",
         "zh": "简体中文",
         "pt": "󠁥󠁮󠁧󠁿Português",

@@ -19,7 +19,7 @@
           id="our-expertise"
           class="space-top"
         >
-          <speciality />
+          <!-- <speciality /> -->
         </section>
         <section
           id="ask-doctors"

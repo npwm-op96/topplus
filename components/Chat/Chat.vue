@@ -7,7 +7,7 @@
       <header>
         <h3>
           <span class="indicator online" />
-          Live Chat
+          ผู้เชียวชาญ
         </h3>
         <v-btn
           @click="closeChat()"
@@ -47,7 +47,7 @@
         <v-text-field
           v-model="message"
           @keyup.enter="send()"
-          label="Ask something"
+          label="สอบถาม"
           class="input"
         />
         <v-btn

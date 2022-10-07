@@ -117,7 +117,7 @@
                       ซื้อประกันง่ายๆ แค่คลิก
                     </h4>
                     <h5 class="use-text-subtitle">
-                      เพียงแค่ ดาวโหลดแอปพลิเคชัน
+                      เพียงแค่ ดาวโหลดแอปพลิเคชันที่รวบรวมบริษัทชั้นนำไว้กับมือคุณ
                       <!-- {{ $t('medical.banner_subtitle') }} -->
                     </h5>
                     <div class="btn-area">
@@ -157,7 +157,7 @@
                     <div class="btn-area">
                       <v-btn text href="#" class="button">
                         <!-- {{ $t('common.btn_detail') }} -->
-                        ประโยชน์ที่จะได้รับ และ การสร้างรายได้ให้กับเรา
+                        ประโยชน์ที่จะได้รับ 
                       </v-btn>
                       <v-btn
                         :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"

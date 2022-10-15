@@ -1,6 +1,7 @@
 import imgAPI from '~/static/images/imgAPI'
 import link from '~/static/text/link'
 
+
 const sample = [
   {
     name: 'company',
@@ -47,12 +48,12 @@ const sample = [
     ]
   },
   {
-    name: 'items',
+    name: 'Academy',
     thumb: imgAPI.ui[0],
     child: [
       {
-        name: 'card',
-        link: link.medical.card
+        name: 'course',
+        link: link.academy.course
       },
       {
         name: 'product',
@@ -65,7 +66,7 @@ const sample = [
     ]
   },
   {
-    name: 'utilities',
+    name: 'community',
     thumb: imgAPI.ui[2],
     child: [
       {

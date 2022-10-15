@@ -121,7 +121,7 @@ export default () => {
         "header_register": "ลงทะเบียน",
         "header_contact": "ติดต่อ",
         "header_contact map": "ติดต่อ กับ แผนที่",
-        "header_card": "คอลเลกชันการ์ด",
+        "header_course": "หลักสูตร",
         "header_product": "ผลิตภัณฑ์ที่มีตัวกรอง",
         "header_product detail": "รายละเอียดผลิตภัณฑ์",
         "header_pricing": "ราคาและคำถามที่พบบ่อย",

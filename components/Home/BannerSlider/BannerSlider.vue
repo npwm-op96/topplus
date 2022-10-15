@@ -80,6 +80,13 @@
                       class="img-2d3d"
                       alt="banner 1 3D"
                     />
+                    <!-- <img
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
+                      :data-2d="imgAPI.medical[4]"
+                      :data-3d="imgAPI.medical[5]"
+                      class="img-2d3d"
+                      alt="banner 1 3D"
+                    /> -->
                   </div>
                 </v-col>
               </v-row>

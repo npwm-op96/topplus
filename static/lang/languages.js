@@ -13,13 +13,13 @@ export default [
   //   file: 'de-DE.js',
   //   dir: 'ltr'
   // },
-  {
-    code: 'en',
-    iso: 'en-US',
-    name: 'English',
-    file: 'en-US.js',
-    dir: 'ltr'
-  },
+  // {
+  //   code: 'en',
+  //   iso: 'en-US',
+  //   name: 'English',
+  //   file: 'en-US.js',
+  //   dir: 'ltr'
+  // },
   // {
   //   code: 'id',
   //   iso: 'id-ID',

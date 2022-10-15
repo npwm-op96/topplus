@@ -16,6 +16,9 @@ const link = {
     faq: '/utils/faq',
     maintenance: '/utils/maintenance',
     comingSoon: '/utils/coming-soon'
+  },
+  academy:{
+    course:'/course'
   }
 }
 

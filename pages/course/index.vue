@@ -68,7 +68,7 @@
             </div>
           </v-col>
           <v-col md="4" cols="12">
-            <sidebar />
+            <!-- <sidebar /> -->
           </v-col>
         </v-row>
       </v-container>

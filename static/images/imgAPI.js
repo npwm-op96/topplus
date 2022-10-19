@@ -212,8 +212,10 @@ const imgAPI = {
     'https://via.placeholder.com/165x150/00BFA5/767676',
   ],
   events:[
+    '/images/events/CNX_01.png',
     '/images/events/01.jpg',
-    '/images/events/02.png'
+    '/images/events/02.png',
+
   ],
   members:[
     '/images/members/01.jpg',

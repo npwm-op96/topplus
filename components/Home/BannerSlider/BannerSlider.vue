@@ -31,13 +31,13 @@
         <div class="slide" id="slide1">
           <div class="inner">
             <div class="img background-banner">
-              <img
+              <!-- <img
                 class="img-2d3d"
                 :src="imgAPI.medical[3]"
                 :data-2d="imgAPI.medical[2]"
                 :data-3d="imgAPI.medical[3]"
                 alt="background"
-              />
+              /> -->
             </div>
             <v-container>
               <v-row>
@@ -103,7 +103,7 @@
                 <v-col md="5" lg="6" class="px-6" cols="12">
                   <div class="img">
                     <img
-                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2019/12/messageImage_1574925451559.jpg'"
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
                       :data-2d="imgAPI.medical[6]"
                       :data-3d="imgAPI.medical[7]"
                       :class="{ 'float-right mr-sm-15': isDesktop }"

@@ -4,16 +4,12 @@
       <v-container class="carousel-header">
         <div class="px-3">
           <h4 class="use-text-title">
-            {{ $t('medical.services_title') }}
+            {{ $t("medical.services_title") }}
           </h4>
           <p class="use-text-subtitle2">กิจกรรม เดือน กันยายน</p>
         </div>
-        <v-btn
-          :href="link.medical.product"
-          text
-          class="view-all"
-        >
-          {{ $t('common.btn_seeall') }}
+        <v-btn :href="link.medical.product" text class="view-all">
+          {{ $t("common.btn_seeall") }}
           <v-icon>mdi-arrow-right</v-icon>
         </v-btn>
       </v-container>
@@ -29,11 +25,7 @@
                 <div />
               </div>
             </div>
-            <div
-              v-for="(item, index) in servicesList"
-              :key="index"
-              class="item"
-            >
+            <div v-for="(item, index) in eventsList" :key="index" class="item">
               <card
                 :title="item.title"
                 :desc="item.desc"
@@ -66,22 +58,10 @@
               </u-animate>
             </slider-art>
             <nav class="arrow">
-              <v-btn
-                fab
-                small
-                aria-label="next"
-                class="margin"
-                @click="next()"
-              >
+              <v-btn fab small aria-label="next" class="margin" @click="next()">
                 <v-icon>mdi-arrow-left</v-icon>
               </v-btn>
-              <v-btn
-                fab
-                small
-                aria-label="prev"
-                class="margin"
-                @click="prev()"
-              >
+              <v-btn fab small aria-label="prev" class="margin" @click="prev()">
                 <v-icon>mdi-arrow-right</v-icon>
               </v-btn>
             </nav>
@@ -93,20 +73,23 @@
 </template>
 
 <style lang="scss" scoped>
-@import './events-style.scss';
+@import "./events-style.scss";
 </style>
 
 <script>
-import imgAPI from '~/static/images/imgAPI'
-import link from '~/static/text/link'
-import Card from '../../Cards/EventCard'
-import SliderArt from '../SliderArt'
+import imgAPI from "~/static/images/imgAPI";
+import link from "~/static/text/link";
+import Card from "../../Cards/EventCard";
+import SliderArt from "../SliderArt";
+import events from "~/static/api/events.js";
+import {GET_EVENTS_ALL} from "~/services/api/events.js";
+
 
 export default {
   components: {
     Card,
     SliderArt,
-    Slick: () => import('vue-slick')
+    Slick: () => import("vue-slick"),
   },
   data() {
     return {
@@ -126,84 +109,46 @@ export default {
           {
             breakpoint: 800,
             settings: {
-              slidesToShow: 3
-            }
+              slidesToShow: 3,
+            },
           },
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
+              slidesToShow: 1,
+            },
+          },
+        ],
       },
-      servicesList: [
-        {
-          title: 'ค้นหาผู้นำทีม',
-          desc:
-            'ไปเยือนสมาชิก ภูเก็ต.....',
-          img: imgAPI.events[0]
-        },
-        {
-          title: 'ไปเยือนสมาชิก ภูเก็ต',
-          desc:
-            'พูดคุยกับสมาชิก Fin เรื่อง ....',
-          img: imgAPI.events[1]
-        },
-        {
-          title: 'ค้นหาผู้นำทีม',
-          desc:
-            'ไปเยือนสมาชิก ภูเก็ต.....',
-          img: imgAPI.events[0]
-        },
-        {
-          title: 'ไปเยือนสมาชิก ภูเก็ต',
-          desc:
-            'พูดคุยกับสมาชิก Fin เรื่อง ....',
-          img: imgAPI.events[1]
-        },        {
-          title: 'ค้นหาผู้นำทีม',
-          desc:
-            'ไปเยือนสมาชิก ภูเก็ต.....',
-          img: imgAPI.events[0]
-        },
-        {
-          title: 'ไปเยือนสมาชิก ภูเก็ต',
-          desc:
-            'พูดคุยกับสมาชิก Fin เรื่อง ....',
-          img: imgAPI.events[1]
-        },        {
-          title: 'ค้นหาผู้นำทีม',
-          desc:
-            'ไปเยือนสมาชิก ภูเก็ต.....',
-          img: imgAPI.events[0]
-        },
-        {
-          title: 'ไปเยือนสมาชิก ภูเก็ต',
-          desc:
-            'พูดคุยกับสมาชิก Fin เรื่อง ....',
-          img: imgAPI.events[1]
-        },
-      ]
-    }
+      eventsList: {},
+    };
+  },
+  created(){
+    this.getEvents();
+
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   },
   methods: {
-    next: function() {
-      this.$refs.slick.next()
+    next: function () {
+      this.$refs.slick.next();
     },
-    prev: function() {
-      this.$refs.slick.prev()
+    prev: function () {
+      this.$refs.slick.prev();
     },
     handleAfterChange(event, slick, currentSlide) {
       if (currentSlide > 0) {
-        this.fade = true
+        this.fade = true;
       } else {
-        this.fade = false
+        this.fade = false;
       }
-    }
-  }
-}
+    },
+    async getEvents() {
+      const Req = {}
+      this.eventsList =  await GET_EVENTS_ALL(Req);
+      // console.log("getEvents", events);
+    },
+  },
+};
 </script>

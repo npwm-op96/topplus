@@ -93,6 +93,7 @@ if (typeof Storage !== 'undefined') { // eslint-disable-line
 }
 
 export default {
+  name:'settings',
   props: {
     invert: {
       type: Boolean,

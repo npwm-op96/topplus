@@ -28,6 +28,13 @@
                   <v-list class="nav">
                     <v-list-item-group v-model="item" color="primary">
                       <v-list-item
+                        class="filter"
+                      >
+                        <v-list-item-title>
+                          {{ 'ดูทั้งหมด' }}
+                        </v-list-item-title>
+                      </v-list-item>
+                      <v-list-item
                         v-for="(item, index) in categories"
                         :key="index"
                         class="filter"
@@ -36,6 +43,7 @@
                           {{ item }}
                         </v-list-item-title>
                       </v-list-item>
+                      
                     </v-list-item-group>
                   </v-list>
                 </div>

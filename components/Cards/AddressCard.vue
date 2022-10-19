@@ -40,7 +40,7 @@
           </v-btn>
         </hidden>
       </div>
-      <a :href="link" v-ripple class="mobile-link" />
+      <a :href="link" v-ripple class="mobile-link"/>
     </div>
   </v-card>
 </template>

@@ -117,7 +117,7 @@
                       <v-col sm="6" cols="12" class="pa-0">
                         <p>
                           <v-icon class="icon">mdi-phone</v-icon>
-                          +98 765 432 10
+                          <!-- +98 765 432 10 -->
                         </p>
                       </v-col>
                       <v-col sm="6" cols="12" class="pa-0">

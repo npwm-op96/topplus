@@ -10,7 +10,7 @@
         </v-row>
         <v-row>
           <v-col cols="12">
-            <headline />
+            <!-- <headline /> -->
           </v-col>
         </v-row>
         <v-row class="mt-8">
@@ -88,7 +88,7 @@ import brand from "~/static/text/brand";
 import BlogHeader from "~/components/Header/BlogHeader";
 import Headline from "~/components/Course/Headline";
 import PostCard from "~/components/Cards/PostCard";
-import Sidebar from "~/components/Blog/Sidebar";
+import Sidebar from "~/components/course/Sidebar";
 import Footer from "~/components/Footer";
 import imgAPI from "~/static/images/imgAPI";
 import link from "~/static/text/link";

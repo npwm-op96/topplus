@@ -46,7 +46,7 @@
               v-if="isDesktop"
               class="vertical-divider"
             />
-            <setting-menu />
+            <!-- <setting-menu /> -->
           </nav>
         </div>
         <hidden point="smUp">

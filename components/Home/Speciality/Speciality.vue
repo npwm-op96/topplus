@@ -12,7 +12,8 @@
               {{ $t('medical.expertise_title') }}
             </h4>
             <p class="desc use-text-subtitle2">
-              {{ $t('medical.expertise_subtitle') }}
+              <!-- {{ $t('medical.expertise_subtitle') }} -->
+              แผนการและเทคนิคของทีมงานที่พัฒนาให้คุณร่วมกับเรา
             </p>
             <div class="running-tag" v-if="loaded">
               <slick :options="slickOptions">
@@ -99,15 +100,15 @@ export default {
         vertical: true
       },
       expertiseList: [
-        ['Dentist', 'Padriatic', 'Cardiology'],
-        ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
-        ['Reumatologi', 'Andrologi', 'Ortodonsia'],
-        ['Dentist', 'Padriatic', 'Cardiology'],
-        ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
-        ['Reumatologi', 'Andrologi', 'Ortodonsia'],
-        ['Dentist', 'Padriatic', 'Cardiology'],
-        ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
-        ['Reumatologi', 'Andrologi', 'Ortodonsia']
+        ['ดูแลสมาชิก', 'สอนการคีย์งาน', 'กิจกรรม'],
+        ['การสอบ', 'การอบรมณ์', 'การเป็นผู้นำ'],
+        ['เป็นกันเอง', 'ช่วยเหลือ', 'ปรึกษา'],
+        ['แผนการ', 'แพทฟอร์ม', 'ไลน์ OA'],
+        ['การขาย', 'การพูด', 'เทคโนโลยี'],
+         ['การสร้างทีม', 'การดูแลสมาชิก', 'การสร้างราได้'],
+        // ['Dentist', 'Padriatic', 'Cardiology'],
+        // ['Othopaedi', 'Traumatologi', 'Anestesiologi'],
+        // ['Reumatologi', 'Andrologi', 'Ortodonsia']
       ]
     }
   },

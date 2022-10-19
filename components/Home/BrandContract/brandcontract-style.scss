@@ -5,3 +5,19 @@
     text-align: center
   }
 }
+.view-all {
+  @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+  @include breakpoints-up(lg) {
+    @include margin-right($spacing10);
+  }
+  @include breakpoints-up(sm) {
+    font-size: 24px;
+  }
+  .v-icon {
+    @include margin-left($spacing1);
+    @include rtl-flip;
+    @include breakpoints-up(sm) {
+      font-size: 36px;
+    }
+  }
+}

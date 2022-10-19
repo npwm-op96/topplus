@@ -27,7 +27,9 @@
 
           <v-list-item-content>
             <v-list-item-title>{{ $t('common.blog_phone') }}</v-list-item-title>
-            <v-list-item-subtitle>(+62)8765432190</v-list-item-subtitle>
+            <!-- <v-list-item-subtitle>(+62)8765432190</v-list-item-subtitle> -->
+            <v-list-item-subtitle>#</v-list-item-subtitle>
+
           </v-list-item-content>
         </v-list-item>
         <v-list-item three-line>

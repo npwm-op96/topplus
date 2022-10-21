@@ -89,12 +89,13 @@ module.exports = {
   plugins: [
     '~/plugins/vue-fragment-config',
     '~/plugins/vue-wow-config',
+    // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
     { src: '~plugins/i18n-config.js' },
     { src: '~/plugins/vue-youtube-config', ssr: false },
     { src: '~/plugins/vue-lightbox-config', ssr: false },
     { src: '~/plugins/caroussel-config', ssr: false },
     { src: '~/plugins/countup-config', ssr: false },
-    { src: '~/plugins/vue-scroll-nav', ssr: false }
+    { src: '~/plugins/vue-scroll-nav', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules

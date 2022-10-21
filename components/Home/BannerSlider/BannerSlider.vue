@@ -73,13 +73,14 @@
                 </v-col>
                 <v-col md="5" lg="6" cols="12">
                   <div class="img">
-                    <img
+                    <video-main :videofile="'5S23YcMPIJk'">ddd</video-main>
+                    <!-- <img
                       :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
                       :data-2d="imgAPI.medical[4]"
                       :data-3d="imgAPI.medical[5]"
                       class="img-2d3d"
                       alt="banner 1 3D"
-                    />
+                    /> -->
                     <!-- <img
                       :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
                       :data-2d="imgAPI.medical[4]"
@@ -102,14 +103,16 @@
               >
                 <v-col md="5" lg="6" class="px-6" cols="12">
                   <div class="img">
-                    <img
+                    <!-- <img
                       :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
                       :data-2d="imgAPI.medical[6]"
                       :data-3d="imgAPI.medical[7]"
                       :class="{ 'float-right mr-sm-15': isDesktop }"
                       class="img-2d3d"
                       alt="banner 1 3D"
-                    />
+                    /> -->
+                    <video-main :videofile="'_Dp_PlvShvc'">ddd</video-main>
+
                   </div>
                 </v-col>
                 <v-col
@@ -180,8 +183,9 @@
                 </v-col>
                 <v-col cols="12">
                   <div class="img h-banner">
+                    
                     <!-- <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/> -->
-
+<!-- 
                     <v-img
                       contain
                       :src="imgAPI.medical[9]"
@@ -189,7 +193,7 @@
                       :data-3d="imgAPI.medical[9]"
                       class="img-2d3d"
                       alt="banner 1 3D"
-                    />
+                    /> -->
                   </div>
                 </v-col>
               </v-row>
@@ -241,10 +245,12 @@
 import Hidden from "../../Hidden";
 import link from "~/static/text/link";
 import imgAPI from "~/static/images/imgAPI";
+import Video from '~/components/Video'
 
 export default {
   components: {
     Hidden,
+    'video-main': Video,
     Slick: () => import("vue-slick"),
   },
   data() {

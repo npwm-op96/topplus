@@ -11,3 +11,12 @@ export async function GET_EVENTS_ALL(Req){
     return await events
     // return await AXIOS_SERVICE()
 }
+export async function GET_EVENT_BY_ID(Req){
+    return await Req
+}
+export async function UPDATE_EVENT_BY_ID(Req){
+    return await Req
+}
+export async function DELETE_EVENT_BY_ID(Req){
+    return await Req
+}

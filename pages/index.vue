@@ -9,12 +9,10 @@
         <section class="space-top">
           <counter />
         </section>
-        <section
-          id="facility"
-          class="space-top-short"
-        >
-          <events />
+        <section class="space-top">
+          <level-member/>
         </section>
+
         <section
           id="our-expertise"
           class="space-top"
@@ -43,9 +41,9 @@
         </div>
       </div>
       <main-footer />
-      <hidden point="smDown">
+      <!-- <hidden point="smDown"> -->
         <corner />
-      </hidden>
+      <!-- </hidden> -->
       <hidden point="mdDown">
         <notification />
       </hidden>
@@ -74,10 +72,11 @@ import Hidden from '~/components/Hidden'
 import Corner from '~/components/Home/Corner'
 import Notification from '~/components/Notification'
 import brand from '~/static/text/brand'
+import levelmember from '~/components/Home/LevelMember'
 
 export default {
   components: {
-    'main-header': Header,
+    "main-header": Header,
     BannerSlider,
     Counter,
     Events,
@@ -89,8 +88,9 @@ export default {
     Hidden,
     Corner,
     Notification,
-    'main-footer': Footer
-  },
+    "main-footer": Footer,
+    "level-member":levelmember
+},
   head() {
     return {
       title: brand.medical.desc

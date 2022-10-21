@@ -434,3 +434,19 @@
     box-shadow: 0px 11px 15px -7px rgba(128,128,128, 0.2),0px 24px 38px 3px rgba(128,128,128, 0.14),0px 9px 46px 8px rgba(128,128,128, 0.12)
   }
 }
+/* Pie Shape */
+@mixin pie1 {
+  border-radius: 100% 0 0 0;
+}
+
+@mixin pie2 {
+  border-radius: 0 100% 0 0;
+}
+
+@mixin pie3 {
+  border-radius: 0 0 100% 0;
+}
+
+@mixin pie4 {
+  border-radius: 0 0 0 100%;
+}

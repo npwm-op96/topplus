@@ -11,6 +11,7 @@
     <template #activator="{ on }">
       <div class="setting">
         <v-btn
+          name="setting"
           fab
           text
           small

@@ -178,6 +178,13 @@ export default () => {
         'brand_title':'รายชื่อ',
         'brand_detail':'ติดต่อบริษัทประกัน',
 
+      },
+      nav:{
+        "header_event": "กิจกรรม",
+        "header_insurance": "ซื้อประกัน",
+        "header_skill": "จุดแข็ง",
+        "header_members": "สมาชิก",
+        "header_brands": "ประกัน",
       }
     })
   })

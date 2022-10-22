@@ -15,13 +15,13 @@
         </ul>
       </nav>
       <div class="socmed">
-        <v-btn icon class="icon">
+        <v-btn icon name="twitter" class="icon">
           <i class="ion-logo-twitter" />
         </v-btn>
-        <v-btn icon class="icon">
+        <v-btn icon name="facebook" class="icon">
           <i class="ion-logo-facebook" />
         </v-btn>
-        <v-btn icon class="icon">
+        <v-btn icon  name="instagram" class="icon">
           <i class="ion-logo-instagram" />
         </v-btn>
       </div>

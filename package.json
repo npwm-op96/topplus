@@ -31,6 +31,7 @@
 		"@nuxtjs/eslint-config": "^5.0.0",
 		"@nuxtjs/html-minifier": "^0.1.2",
 		"@nuxtjs/i18n": "^7.0.2",
+		"@nuxtjs/pwa": "^3.3.5",
 		"@nuxtjs/style-resources": "^1.0.0",
 		"animate.css": "^3.7.2",
 		"babel-plugin-transform-imports": "^2.0.0",

@@ -1,3 +1,3 @@
-const single = ['facility', 'ask-doctors', 'testimonials', 'clinics']
+const single = ['event', 'skill', 'members', 'brands']
 
 export default single

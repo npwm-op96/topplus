@@ -46,7 +46,7 @@
               v-if="isDesktop"
               class="vertical-divider"
             />
-            <!-- <setting-menu /> -->
+            <setting-menu />
           </nav>
         </div>
         <hidden point="smUp">
@@ -68,7 +68,8 @@ import SearchField from './TopNav/SearchField'
 import MultiLevel from './TopNav/MultiLevel'
 import MultiMobile from './SideNav/MultiMobile'
 import Hidden from '../Hidden'
-import blogMenu from './data/blog'
+import Settings from './TopNav/Settings.vue'
+
 
 export default {
   components: {
@@ -76,7 +77,14 @@ export default {
     Hidden,
     'mobile-menu': MultiMobile,
     'header-menu': MultiLevel,
+    'setting-menu': Settings,
     SearchField
+  },
+  props:{
+    dataMenu:{
+      type:Array,
+      require:true
+    }
   },
   data() {
     return {
@@ -84,7 +92,7 @@ export default {
       fixed: false,
       loaded: false,
       openNavMobile: null,
-      dataMenu: blogMenu
+      // dataMenu: listmenu
     }
   },
   mounted() {

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- {{type}} -->
     <mixed v-if="type === 'mixed'" :home="home" />
     <basic v-if="type === 'basic'" />
     <drop-list v-if="type === 'droplist'" />

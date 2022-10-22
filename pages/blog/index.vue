@@ -80,7 +80,7 @@
 
 <script>
 import brand from '~/static/text/brand'
-import BlogHeader from '~/components/Header/BlogHeader'
+import MenuHeader from '~/components/Header/MenuHeader'
 import Headline from '~/components/Blog/Headline'
 import PostCard from '~/components/Cards/PostCard'
 import Sidebar from '~/components/Blog/Sidebar'
@@ -90,7 +90,7 @@ import link from '~/static/text/link'
 
 export default {
   components: {
-    'main-header': BlogHeader,
+    'main-header': MenuHeader,
     'main-footer': Footer,
     Headline,
     Sidebar,

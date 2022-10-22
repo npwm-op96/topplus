@@ -1,0 +1,25 @@
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li.slick-active button:before {
+    width: 48px;
+    height: 48px;
+    top: -5px;
+    left: -5px;
+    background: var(--v-primary-base) !important;
+}

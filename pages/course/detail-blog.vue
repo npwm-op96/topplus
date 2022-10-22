@@ -25,14 +25,14 @@
 
 <script>
 import brand from '~/static/text/brand'
-import BlogHeader from '~/components/Header/BlogHeader'
+import MenuHeader from '~/components/Header/MenuHeader'
 import Article from '~/components/Blog/Article'
 import Sidebar from '~/components/Blog/Sidebar'
 import Footer from '~/components/Footer'
 
 export default {
   components: {
-    'main-header': BlogHeader,
+    'main-header': MenuHeader,
     'main-footer': Footer,
     Sidebar,
     'article-blog': Article

@@ -1,11 +1,12 @@
 <template>
   <div class="main-wrap">
-    <main-header />
+    <main-header :dataMenu="dataMenu" />
     <div class="container-general container-front">
       <v-container>
         <v-row>
           <v-col cols="12">
-            <calendar></calendar>
+            <event-course></event-course>
+            <!-- <calendar></calendar> -->
           </v-col>
         </v-row>
         <v-row>
@@ -13,7 +14,7 @@
             <!-- <headline /> -->
           </v-col>
         </v-row>
-        <v-row class="mt-8">
+        <!-- <v-row class="mt-8">
           <v-col md="6" cols="12" class="px-3">
             <post-card
               :href="link.medical.blogDetail"
@@ -36,8 +37,8 @@
               type="full"
             />
           </v-col>
-        </v-row>
-        <v-row class="mt-6">
+        </v-row> -->
+        <!-- <v-row class="mt-6">
           <v-col md="8">
             <div
               v-for="index in 6"
@@ -70,7 +71,7 @@
           <v-col md="4" cols="12">
             <sidebar />
           </v-col>
-        </v-row>
+        </v-row> -->
       </v-container>
     </div>
     <div id="footer">
@@ -85,7 +86,7 @@
 
 <script>
 import brand from "~/static/text/brand";
-import BlogHeader from "~/components/Header/BlogHeader";
+import MenuHeader from "~/components/Header/MenuHeader";
 import Headline from "~/components/Course/Headline";
 import PostCard from "~/components/Cards/PostCard";
 import Sidebar from "~/components/Blog/Sidebar";
@@ -93,19 +94,24 @@ import Footer from "~/components/Footer";
 import imgAPI from "~/static/images/imgAPI";
 import link from "~/static/text/link";
 import Calendar from "~/components/Calendar"
+import Events from "~/components/Course/Events"
+import menu from '~/components/Header/data/course'
+
 
 
 export default {
   components: {
-    "main-header": BlogHeader,
+    "main-header": MenuHeader,
     "main-footer": Footer,
     Headline,
     Sidebar,
     PostCard,
-    Calendar
+    Calendar,
+    'event-course':Events
   },
   data() {
     return {
+      dataMenu:menu,
       imgAPI: imgAPI,
       link: link,
     };

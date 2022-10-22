@@ -10,39 +10,29 @@
           <counter />
         </section>
         <section class="space-top">
-          <level-member/>
+          <div id="timeline">
+            <level-member />
+          </div>
+        </section>
+        <section id="event" class="space-top">
+          <Events />
         </section>
 
-        <section
-          id="our-expertise"
-          class="space-top"
-        >
+        <section id="skill" class="space-top">
           <speciality />
         </section>
-        <section
-          id="ask-doctors"
-          class="space-top-short"
-        >
-        <member/>
+        <section id="members" class="space-top-short">
+          <member />
           <!-- <ask-doctors /> -->
         </section>
-        <section
-          id="testimonials"
-          class="space-top-short"
-        >
-          <!-- <testimonials /> -->
-        </section>
-        <div class="space-top" id="call-to-action">
-          <!-- <call-action /> -->
-        </div>
-        <div class="space-top-short space-bottom-short" id="clinics">
-          <BrandContract/>
+        <div class="space-top-short space-bottom-short" id="brands">
+          <BrandContract />
           <!-- <clinics /> -->
         </div>
       </div>
       <main-footer />
       <!-- <hidden point="smDown"> -->
-        <corner />
+      <corner />
       <!-- </hidden> -->
       <hidden point="mdDown">
         <notification />
@@ -89,8 +79,8 @@ export default {
     Corner,
     Notification,
     "main-footer": Footer,
-    "level-member":levelmember
-},
+    "level-member": levelmember
+  },
   head() {
     return {
       title: brand.medical.desc

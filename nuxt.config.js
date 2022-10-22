@@ -23,7 +23,7 @@ module.exports = {
       { name: 'msapplication-TileColor', content: '#FFFFFF' },
       { name: 'msapplication-TileImage', content: '/D4U/LOGO-logo.png' },
       // PWA primary color
-      { name: 'theme-color', content: theme.primary},
+      { name: 'theme-color', content: theme.primary },
       // Facebook
       { property: 'author', content: 'awrora' },
       { property: 'og:site_name', content: 'awrora.ux-maestro.com' },
@@ -107,6 +107,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/pwa', { icon: true }],
     ['@nuxtjs/html-minifier', { log: 'once', logHtml: true }],
     [
       'nuxt-mq',
@@ -182,7 +183,7 @@ module.exports = {
       vus: { cacheBusting: true },
       scss: { sourceMap: false }
     },
-    extend (config, ctx) {
+    extend(config, ctx) {
       config.plugins.push(
         new FilterWarningsPlugin({
           exclude: /Critical dependency: the request of a dependency is an expression/
@@ -205,7 +206,7 @@ module.exports = {
   layoutTransition: {
     name: 'layout',
     mode: 'out-in',
-    beforeEnter (el) {
+    beforeEnter(el) {
       console.log('Before enter...');
     },
     afterLeave(el) {

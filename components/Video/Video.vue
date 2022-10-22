@@ -37,7 +37,7 @@
                 <figure>
                   <img :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'" alt="cover" />
                 </figure>
-                <v-btn icon class="play-btn" @click="handleVideoOpen">
+                <v-btn icon name="play" class="play-btn" @click="handleVideoOpen">
                   <span class="ion-ios-play-outline" />
                 </v-btn>
               </div>

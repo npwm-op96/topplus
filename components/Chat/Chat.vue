@@ -36,7 +36,7 @@
         </v-btn>
       </div>
     </div>
-    <v-btn @click="toggleChat()" fab class="chat-button">
+    <v-btn @click="toggleChat()" name='chat' fab class="chat-button">
       <span class="indicator online" />
       <i class="ion-md-text" />
     </v-btn>

@@ -350,6 +350,13 @@ $flag: '/images/flag-logo.png';
   margin: spacing(0, 1, 2)
 }
 
+.thumb-menu-insur{
+  width: 200px;
+  height: 100px;
+  border-radius: $rounded-small;
+  margin: spacing(0, 1, 2)
+}
+
 .button-item {
   &:after {
     content: "";

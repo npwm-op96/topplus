@@ -22,85 +22,11 @@
           <div class="inner">&nbsp;</div>
         </div>
       </slick>
-      <slick
-        class="slider"
-        ref="slider"
-        :options="slickOptions"
-        @afterChange="handleAfterChange"
-      >
+      <slick class="slider" ref="slider" :options="slickOptions" @afterChange="handleAfterChange">
         <div class="slide" id="slide1">
           <div class="inner">
-            <div class="img background-banner">
-              <!-- <img
-                class="img-2d3d"
-                :src="imgAPI.medical[3]"
-                :data-2d="imgAPI.medical[2]"
-                :data-3d="imgAPI.medical[3]"
-                alt="background"
-              /> -->
-            </div>
             <v-container>
-              <v-row>
-                <v-col
-                  md="7"
-                  lg="6"
-                  cols="12"
-                  class="px-sm-12 d-flex align-center"
-                >
-                  <div class="text">
-                    <h4 class="use-text-title">
-                      {{ $t("medical.banner_title") }}
-                    </h4>
-                    <h5 class="use-text-subtitle">
-                      {{ $t("medical.banner_subtitle") }}
-                    </h5>
-                    <div class="btn-area">
-                      <v-btn text href="#" class="button">
-                        <!-- {{ $t('common.btn_detail') }} -->
-                        ดาวโหลด
-                      </v-btn>
-                      <v-btn
-                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
-                        color="primary"
-                        large
-                        class="button"
-                      >
-                        <!-- {{ $t('common.btn_get') }} -->
-                        สมัคร
-                      </v-btn>
-                    </div>
-                  </div>
-                </v-col>
-                <v-col md="5" lg="6" cols="12">
-                  <div class="img">
-                    <video-main :videofile="'5S23YcMPIJk'">ddd</video-main>
-                    <!-- <img
-                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
-                      :data-2d="imgAPI.medical[4]"
-                      :data-3d="imgAPI.medical[5]"
-                      class="img-2d3d"
-                      alt="banner 1 3D"
-                    /> -->
-                    <!-- <img
-                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
-                      :data-2d="imgAPI.medical[4]"
-                      :data-3d="imgAPI.medical[5]"
-                      class="img-2d3d"
-                      alt="banner 1 3D"
-                    /> -->
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
-        </div>
-        <div class="slide" id="slide2">
-          <div class="inner">
-            <v-container>
-              <v-row
-                justify="end"
-                :class="[isTablet ? 'column-reverse' : 'row']"
-              >
+              <v-row justify="end" :class="[isTablet ? 'column-reverse' : 'row']">
                 <v-col md="5" lg="6" class="px-6" cols="12">
                   <div class="img">
                     <!-- <img
@@ -115,12 +41,7 @@
 
                   </div>
                 </v-col>
-                <v-col
-                  md="7"
-                  lg="6"
-                  cols="12"
-                  class="px-sm-12 d-flex align-center"
-                >
+                <v-col md="7" lg="6" cols="12" class="px-sm-12 d-flex align-center">
                   <div class="text">
                     <h4 class="use-text-title">
                       <!-- {{ $t('medical.banner_title') }} -->
@@ -135,12 +56,8 @@
                         <!-- {{ $t('common.btn_detail') }} -->
                         ดาวโหลด
                       </v-btn>
-                      <v-btn
-                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
-                        color="primary"
-                        large
-                        class="button"
-                      >
+                      <v-btn @click="registerFin()" color="primary" large
+                        class="button">
                         ซื้อประกัน
                         <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
@@ -151,6 +68,64 @@
             </v-container>
           </div>
         </div>
+        <div class="slide" id="slide2">
+          <div class="inner">
+            <div class="img background-banner">
+              <!-- <img
+                class="img-2d3d"
+                :src="imgAPI.medical[3]"
+                :data-2d="imgAPI.medical[2]"
+                :data-3d="imgAPI.medical[3]"
+                alt="background"
+              /> -->
+            </div>
+            <v-container>
+              <v-row>
+                <v-col md="7" lg="6" cols="12" class="px-sm-12 d-flex align-center">
+                  <div class="text">
+                    <h4 class="use-text-title">
+                      {{ $t("medical.banner_title") }}
+                    </h4>
+                    <h5 class="use-text-subtitle">
+                      {{ $t("medical.banner_subtitle") }}
+                    </h5>
+                    <div class="btn-area">
+                      <v-btn text href="#" class="button">
+                        <!-- {{ $t('common.btn_detail') }} -->
+                        ดาวโหลด
+                      </v-btn>
+                      <v-btn @click="registerFin()" color="primary" large
+                        class="button">
+                        <!-- {{ $t('common.btn_get') }} -->
+                        สมัคร
+                      </v-btn>
+                    </div>
+                  </div>
+                </v-col>
+                <v-col md="5" lg="6" cols="12">
+                  <div class="img">
+                    <video-main :videofile="'5S23YcMPIJk'"></video-main>
+                    <!-- <img
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
+                      :data-2d="imgAPI.medical[4]"
+                      :data-3d="imgAPI.medical[5]"
+                      class="img-2d3d"
+                      alt="banner 1 3D"
+                    /> -->
+                    <!-- <img
+                      :src="'https://www.fininsurance.co.th/wp-content/uploads/2017/01/logo-redcrop.png'"
+                      :data-2d="imgAPI.medical[4]"
+                      :data-3d="imgAPI.medical[5]"
+                      class="img-2d3d"
+                      alt="banner 1 3D"
+                    /> -->
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </div>
+        </div>
+
         <div class="slide center-content" id="slide3">
           <div class="inner">
             <v-container class="max-md">
@@ -167,14 +142,10 @@
                     <div class="btn-area">
                       <v-btn text href="#" class="button">
                         <!-- {{ $t('common.btn_detail') }} -->
-                        ประโยชน์ที่จะได้รับ 
+                        ประโยชน์ที่จะได้รับ
                       </v-btn>
-                      <v-btn
-                        :href="'https://www.fininsurance.co.th/register?uid=FNG21-17089#'"
-                        color="primary"
-                        large
-                        class="button"
-                      >
+                      <v-btn @click="registerFin()" color="primary" large
+                        class="button">
                         เริ่มต้นสู่การพัฒนาทีม
                         <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
@@ -183,9 +154,9 @@
                 </v-col>
                 <v-col cols="12">
                   <div class="img h-banner">
-                    
+
                     <!-- <img src="https://qr-official.line.me/sid/M/319atzqw.png?shortenUrl=true"/> -->
-<!-- 
+                    <!-- 
                     <v-img
                       contain
                       :src="imgAPI.medical[9]"
@@ -205,29 +176,17 @@
     <hidden point="smDown">
       <v-container>
         <nav class="slide-nav">
-          <v-btn
-            :class="{ active: currentSlide === 0 }"
-            @click="gotoSlide(0)"
-            text
-          >
-            <strong>เป็นตัวแทนกับเรา</strong>
-            ได้รับการสนับสนุนจากทีมงาน
-          </v-btn>
-          <v-divider class="divider" vertical inset />
-          <v-btn
-            :class="{ active: currentSlide === 1 }"
-            @click="gotoSlide(1)"
-            text
-          >
+          <v-btn :class="{ active: currentSlide === 0 }" @click="gotoSlide(0)" text>
             <strong>ซื้อประกันง่ายๆ</strong>
             มีประกันให้คุณเลือกถึง 25+ แบร์น
           </v-btn>
           <v-divider class="divider" vertical inset />
-          <v-btn
-            :class="{ active: currentSlide === 2 }"
-            @click="gotoSlide(2)"
-            text
-          >
+          <v-btn :class="{ active: currentSlide === 1 }" @click="gotoSlide(1)" text>
+            <strong>เป็นตัวแทนกับเรา</strong>
+            ได้รับการสนับสนุนจากทีมงาน
+          </v-btn>
+          <v-divider class="divider" vertical inset />
+          <v-btn :class="{ active: currentSlide === 2 }" @click="gotoSlide(2)" text>
             <strong>ร่วมทีมกับเรา</strong>
             สร้าง Passive Imcome จาก Broker
           </v-btn>
@@ -243,6 +202,7 @@
 
 <script>
 import Hidden from "../../Hidden";
+import {REGISTER_FIN} from '~/lib/fin-services.js'
 import link from "~/static/text/link";
 import imgAPI from "~/static/images/imgAPI";
 import Video from '~/components/Video'
@@ -299,6 +259,9 @@ export default {
     gotoSlide(index) {
       this.$refs.slider.goTo(index);
     },
+    registerFin(){
+      REGISTER_FIN()
+    }
   },
   computed: {
     isDesktop() {

@@ -1,7 +1,8 @@
 <template>
   <span :class="type" class="logo">
     <img :src="logo" alt="logo" />
-    {{ type !== 'only' ? brand.medical.name : '' }}
+    {{ title!='default' ? title : brand.medical.name}}
+    <!-- {{ type !== 'only' ? brand.medical.name : '' }} -->
   </span>
 </template>
 
@@ -24,6 +25,11 @@ export default {
     type: {
       type: String,
       default: 'only'
+    },
+    title:{
+      type:String,
+      default: 'default'
+
     }
   }
 }

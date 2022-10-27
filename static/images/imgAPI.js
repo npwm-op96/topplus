@@ -211,13 +211,16 @@ const imgAPI = {
     'https://via.placeholder.com/165x150/ffc999/767676',
     'https://via.placeholder.com/165x150/00BFA5/767676',
   ],
-  events:[
+  events: [
     '/images/events/CNX_01.png',
     '/images/events/01.jpg',
     '/images/events/02.png',
 
+  ], 
+  course: [
+    '/images/course/logo-tii-01.png',
   ],
-  members:[
+  members: [
     '/images/members/01.jpg',
     '/images/members/02.jpg',
     '/images/members/03.jpg',

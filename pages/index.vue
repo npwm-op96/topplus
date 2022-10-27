@@ -34,9 +34,9 @@
       <!-- <hidden point="smDown"> -->
       <corner />
       <!-- </hidden> -->
-      <hidden point="mdDown">
+      <!-- <hidden point="mdDown"> -->
         <notification />
-      </hidden>
+      <!-- </hidden> -->
     </div>
   </div>
 </template>
@@ -83,8 +83,8 @@ export default {
   },
   head() {
     return {
-      title: brand.medical.desc
-    }
-  }
+      title: "Home | " + brand.medical.desc,
+    };
+  },
 }
 </script>

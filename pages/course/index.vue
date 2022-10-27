@@ -1,14 +1,60 @@
 <template>
   <div class="main-wrap">
-    <main-header :dataMenu="dataMenu" />
+    <main-header :header="'Academy'" :dataMenu="dataMenu" />
     <div class="container-general container-front">
       <v-container>
         <v-row>
           <v-col cols="12">
-            <event-course></event-course>
+            <!-- <template> -->
+            <!-- <v-card> -->
+            <!-- <v-card-title class="py-6"> -->
+            <h3>
+              <!-- {{ $t("medical.services_title") }} -->
+              หลักสูตรอบรม
+            </h3>
+            <!-- </v-card-title> -->
+
+            <v-tabs  class="localfix"  v-model="tab" background-color="transparent" color="success">
+              <v-tab  v-for="item in items" :key="item">
+                {{ item }}
+              </v-tab>
+            </v-tabs>
+
+            <v-tabs-items background-color="transparent" v-model="tab">
+              <v-tab-item v-for="item in items" :key="item">
+                <v-card flat>
+                  <v-card-text>
+                    <event-course></event-course>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs-items>
+            <!-- </v-card> -->
+            <!-- </template> -->
             <!-- <calendar></calendar> -->
           </v-col>
         </v-row>
+        <!-- <v-row>
+          <v-col cols="12">
+            <v-tabs>
+              <v-tab>นายหน้าขอรับ / ขอต่อ 1 - 3</v-tab>
+              <v-tab>นายหน้าขอต่อปีที่ 4 เป็นต้นไป</v-tab>
+            </v-tabs>
+            <v-tabs-items v-model="tab">
+              <v-tab-item v-for="item in items" :key="item">
+                ดกดกด
+                <event-course></event-course>
+
+                <v-card color="basil" flat>
+                  <v-card-text>
+
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs-items>
+            <calendar></calendar>
+          </v-col>
+        </v-row> -->
         <v-row>
           <v-col cols="12">
             <!-- <headline /> -->
@@ -80,8 +126,10 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~/assets/pages";
+@import './course-styles.scss';
+
 </style>
 
 <script>
@@ -107,18 +155,23 @@ export default {
     Sidebar,
     PostCard,
     Calendar,
-    'event-course':Events
+    'event-course': Events
   },
   data() {
     return {
-      dataMenu:menu,
+      dataMenu: menu,
       imgAPI: imgAPI,
       link: link,
+      tab: null,
+      items: [
+        'นายหน้าขอรับ / ขอต่อ 1 - 3', 'นายหน้าขอต่อปีที่ 4 เป็นต้นไป',
+      ],
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     };
   },
   head() {
     return {
-      title: "Course Home | " + brand.medical.desc,
+      title: "Course | " + brand.medical.desc,
     };
   },
 };

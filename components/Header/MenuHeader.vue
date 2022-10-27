@@ -31,11 +31,11 @@
             </v-btn>
             <div class="logo">
               <a :href="link.medical.home">
-                <logo type="landscape" />
+                <logo :title="header" type="landscape" />
               </a>
             </div>
             <div class="main-menu" v-if="loaded">
-              <header-menu :data-menu="dataMenu" v-if="isDesktop"/>
+              <header-menu  :data-menu="dataMenu" v-if="isDesktop"/>
             </div>
           </nav>
           <nav>
@@ -84,6 +84,9 @@ export default {
     dataMenu:{
       type:Array,
       require:true
+    },
+    header:{
+      stype:String
     }
   },
   data() {

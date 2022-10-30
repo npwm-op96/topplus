@@ -216,10 +216,13 @@ const imgAPI = {
     '/images/events/01.jpg',
     '/images/events/02.png',
 
-  ], 
+  ],
   course: [
+
     '/images/course/logo-tii-01.png',
   ],
+  roadmap: [
+    '/images/course/Cert Roadmap.png',],
   members: [
     '/images/members/01.jpg',
     '/images/members/02.jpg',

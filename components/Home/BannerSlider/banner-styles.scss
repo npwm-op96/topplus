@@ -201,6 +201,9 @@
 .slide-nav {
   display: flex;
   justify-content: center;
+  @include breakpoints-down(xs) {
+    display:block !important;
+  }
   .v-btn {
     text-transform: none;
     height: auto;
@@ -216,7 +219,11 @@
       font-size: 28px;
       display: block;
       font-weight: $font-bold;
+      @include breakpoints-down(xs) {
+        font-size: 16px;
+      }
       @include margin-left(-2px)
+ 
     }
     &:after {
       content: '';
@@ -254,3 +261,4 @@
 .divider {
   margin: spacing(0, 2)
 }
+

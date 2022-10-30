@@ -173,7 +173,7 @@
         </div>
       </slick>
     </div>
-    <hidden point="smDown">
+    <!-- <hidden point="smDown"> -->
       <v-container>
         <nav class="slide-nav">
           <v-btn :class="{ active: currentSlide === 0 }" @click="gotoSlide(0)" text>
@@ -192,7 +192,7 @@
           </v-btn>
         </nav>
       </v-container>
-    </hidden>
+    <!-- </hidden> -->
   </div>
 </template>
 

@@ -3,6 +3,7 @@
     <main-header :header="'Academy'" :dataMenu="dataMenu" />
     <div class="container-general container-front">
       <v-container>
+
         <v-row>
           <v-col cols="12">
             <!-- <template> -->
@@ -12,14 +13,14 @@
               <!-- {{ $t("medical.services_title") }} -->
               หลักสูตรอบรม
             </h3>
+
             <!-- </v-card-title> -->
 
-            <v-tabs  class="localfix"  v-model="tab" background-color="transparent" color="success">
-              <v-tab  v-for="item in items" :key="item">
+            <v-tabs class="localfix" v-model="tab" background-color="transparent" color="success">
+              <v-tab v-for="item in items" :key="item">
                 {{ item }}
               </v-tab>
             </v-tabs>
-
             <v-tabs-items background-color="transparent" v-model="tab">
               <v-tab-item v-for="item in items" :key="item">
                 <v-card flat>
@@ -119,6 +120,13 @@
           </v-col>
         </v-row> -->
       </v-container>
+      <section id="roadmap">
+        <v-row>
+          <v-col cols="12">
+            <v-img contain :src="imgAPI.roadmap[0]"></v-img>
+          </v-col>
+        </v-row>
+      </section>
     </div>
     <div id="footer">
       <main-footer />
@@ -129,7 +137,6 @@
 <style lang="scss">
 @import "~/assets/pages";
 @import './course-styles.scss';
-
 </style>
 
 <script>

@@ -1,5 +1,9 @@
 <template>
   <div class="banner-wrap">
+    <div class="img background-banner">
+      <img class="img-2d3d" :src="imgAPI.background[0]" :data-2d="imgAPI.medical[2]" :data-3d="imgAPI.medical[3]"
+        alt="background" />
+    </div>
     <div class="carousel" v-if="loaded">
       <slick class="slider-deco" ref="sliderDeco" :options="slickOptionsDeco">
         <div class="slide" :class="{ cur: currentSlide === 0 }">
@@ -56,8 +60,7 @@
                         <!-- {{ $t('common.btn_detail') }} -->
                         ดาวโหลด
                       </v-btn>
-                      <v-btn @click="registerFin()" color="primary" large
-                        class="button">
+                      <v-btn @click="registerFin()" color="primary" large class="button">
                         ซื้อประกัน
                         <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
@@ -70,15 +73,7 @@
         </div>
         <div class="slide" id="slide2">
           <div class="inner">
-            <div class="img background-banner">
-              <!-- <img
-                class="img-2d3d"
-                :src="imgAPI.medical[3]"
-                :data-2d="imgAPI.medical[2]"
-                :data-3d="imgAPI.medical[3]"
-                alt="background"
-              /> -->
-            </div>
+
             <v-container>
               <v-row>
                 <v-col md="7" lg="6" cols="12" class="px-sm-12 d-flex align-center">
@@ -94,8 +89,7 @@
                         <!-- {{ $t('common.btn_detail') }} -->
                         ดาวโหลด
                       </v-btn>
-                      <v-btn @click="registerFin()" color="primary" large
-                        class="button">
+                      <v-btn @click="registerFin()" color="primary" large class="button">
                         <!-- {{ $t('common.btn_get') }} -->
                         สมัคร
                       </v-btn>
@@ -144,8 +138,7 @@
                         <!-- {{ $t('common.btn_detail') }} -->
                         ประโยชน์ที่จะได้รับ
                       </v-btn>
-                      <v-btn @click="registerFin()" color="primary" large
-                        class="button">
+                      <v-btn @click="registerFin()" color="primary" large class="button">
                         เริ่มต้นสู่การพัฒนาทีม
                         <!-- {{ $t('common.btn_get') }} -->
                       </v-btn>
@@ -174,24 +167,24 @@
       </slick>
     </div>
     <!-- <hidden point="smDown"> -->
-      <v-container>
-        <nav class="slide-nav">
-          <v-btn :class="{ active: currentSlide === 0 }" @click="gotoSlide(0)" text>
-            <strong>ซื้อประกันง่ายๆ</strong>
-            มีประกันให้คุณเลือกถึง 25+ แบร์น
-          </v-btn>
-          <v-divider class="divider" vertical inset />
-          <v-btn :class="{ active: currentSlide === 1 }" @click="gotoSlide(1)" text>
-            <strong>เป็นตัวแทนกับเรา</strong>
-            ได้รับการสนับสนุนจากทีมงาน
-          </v-btn>
-          <v-divider class="divider" vertical inset />
-          <v-btn :class="{ active: currentSlide === 2 }" @click="gotoSlide(2)" text>
-            <strong>ร่วมทีมกับเรา</strong>
-            สร้าง Passive Imcome จาก Broker
-          </v-btn>
-        </nav>
-      </v-container>
+    <v-container>
+      <nav class="slide-nav">
+        <v-btn :class="{ active: currentSlide === 0 }" @click="gotoSlide(0)" text>
+          <strong>ซื้อประกันง่ายๆ</strong>
+          มีประกันให้คุณเลือกถึง 25+ แบร์น
+        </v-btn>
+        <v-divider class="divider" vertical inset />
+        <v-btn :class="{ active: currentSlide === 1 }" @click="gotoSlide(1)" text>
+          <strong>เป็นตัวแทนกับเรา</strong>
+          ได้รับการสนับสนุนจากทีมงาน
+        </v-btn>
+        <v-divider class="divider" vertical inset />
+        <v-btn :class="{ active: currentSlide === 2 }" @click="gotoSlide(2)" text>
+          <strong>ร่วมทีมกับเรา</strong>
+          สร้าง Passive Imcome จาก Broker
+        </v-btn>
+      </nav>
+    </v-container>
     <!-- </hidden> -->
   </div>
 </template>
@@ -202,7 +195,7 @@
 
 <script>
 import Hidden from "../../Hidden";
-import {REGISTER_FIN} from '~/lib/fin-services.js'
+import { REGISTER_FIN } from '~/lib/fin-services.js'
 import link from "~/static/text/link";
 import imgAPI from "~/static/images/imgAPI";
 import Video from '~/components/Video'
@@ -259,7 +252,7 @@ export default {
     gotoSlide(index) {
       this.$refs.slider.goTo(index);
     },
-    registerFin(){
+    registerFin() {
       REGISTER_FIN()
     }
   },

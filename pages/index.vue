@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main-wrap">
+    <div class="main-wrap curve">
       <main-header home />
       <div class="container-wrap">
         <div id="home">
@@ -88,3 +88,5 @@ export default {
   },
 }
 </script>
+<style type="css">
+</style>

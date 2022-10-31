@@ -7,7 +7,9 @@
       {{ $t('common.accept') }}
     </v-btn>
     <v-btn outlined color="primary" class="button">
-      {{ $t('รายละเอียด') }}
+      <!-- {{ $t('รายละเอียด') }} -->
+      รายละเอียด
+
     </v-btn>
   </v-snackbar>
 </template>

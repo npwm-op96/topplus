@@ -39,10 +39,10 @@
         </div>
       </v-menu>
       <v-btn v-if="singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="item.link"
-        class="anchor-link scrollactive-item" text @click="setOffset(item.offset)">
+        class="anchor-link scrollactive-item "  text @click="setOffset(item.offset)">
         {{ $t('nav.header_'+item.name) }}
       </v-btn>
-      <v-btn v-if="!singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="'/' + item.link" text>
+      <v-btn  v-if="!singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="'/' + item.link" text>
         {{ $t('nav.header_'+item.name) }}
       </v-btn>
       <v-menu :open-on-hover="hover" :position-x="0" max-height="480" offset-y content-class="mega-menu-root"

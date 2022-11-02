@@ -1,5 +1,6 @@
 <template>
   <div class="root">
+    
     <u-animate-container>
 
       <div class="carousel-handle">
@@ -12,6 +13,7 @@
             </div> -->
             <div v-for="(item, index) in courseList" :key="index" class="item">
               <card :data="item" />
+              
             </div>
           </slick>
         </div>

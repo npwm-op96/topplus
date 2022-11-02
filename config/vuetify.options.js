@@ -7,7 +7,7 @@ if (typeof Storage !== 'undefined') { // eslint-disable-line
 
 const palette = {
 vampire: {
-  primary: colors.red.base, // primary main
+  primary: '#E5212E', // primary main
   primarylight: colors.red.lighten5, // primary light
   primarydark: colors.red.darken1, // primary dark
   secondary: colors.blueGrey.base, // secondary main

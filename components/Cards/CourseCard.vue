@@ -1,24 +1,23 @@
 <template>
-  <v-card class="course-card">
+
+  <v-card @click="regisCourse(data)" class="course-card">
     <figure>
       <img contain :src="data.img" alt="img">
     </figure>
     <v-card-title class="logo-pre">
       <v-avatar color="">
-        <v-img contain
-          :src="data.sponser"
-          alt="alt" />
+        <v-img contain :src="data.sponser" alt="alt" />
       </v-avatar>
     </v-card-title>
     <v-card-title class="time_course">
       <v-chip class="ma-2" color="light">
-        <label >เวลาเข้าอบรม {{data.time}} {{data.unit}}</label> 
+        <label>เวลาเข้าอบรม {{ data.time }} {{ data.unit }}</label>
       </v-chip>
     </v-card-title>
     <v-card-subtitle class="date_couse">
-      {{data.startdate}}-{{data.enddate}}
+      {{ data.startdate }}-{{ data.enddate }}
       <!-- 1,000 miles of wonder -->
-    </v-card-subtitle >
+    </v-card-subtitle>
     <div class="text">
       <h6>{{ data.title }}</h6>
       <p>{{ data.desc }}</p>
@@ -33,6 +32,7 @@
   </v-card>
 </template>
 
+
 <style lang="scss" scoped>
 @import './course-card.scss';
 </style>
@@ -44,6 +44,16 @@ export default {
       type: Object,
       required: true
     },
-  }
+  },
+  data:()=>{
+    return{
+
+    }
+
+  },methods: {
+    regisCourse(data){
+      this.$router.push({ name: 'course-register', params: { data: data } })
+    }
+  },
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrap">
-    <main-header :header="'Academy'" :dataMenu="dataMenu"  />
+    <main-header :header="'Academy'" :dataMenu="dataMenu" />
     <div class="container-general container-front">
       <v-container>
         <v-row>
@@ -25,35 +25,38 @@
 </style>
 
 <script>
-
-
-import menu from '~/components/Header/data/course'
-import brand from '~/static/text/brand'
-import MenuHeader from '~/components/Header/MenuHeader'
-import Article from '~/components/Blog/Article'
+import menu from "~/components/Header/data/course";
+import brand from "~/static/text/brand";
+import MenuHeader from "~/components/Header/MenuHeader";
+import Article from "~/components/Blog/Article";
 // import Sidebar from '~/components/Blog/Sidebar'
-import Footer from '~/components/Footer'
-import GalleryVue from '~/components/Gallery'
+import Footer from "~/components/Footer";
+import GalleryVue from "~/components/Gallery";
 
 export default {
-  
   components: {
-    'main-header': MenuHeader,
-    'main-footer': Footer,
+    "main-header": MenuHeader,
+    "main-footer": Footer,
     // Sidebar,
-    'article-blog': Article,
-    'gallery' : GalleryVue
-  
+    "article-blog": Article,
+    gallery: GalleryVue,
   },
-  data(){
-    return{
+  data() {
+    return {
       dataMenu: menu,
-    }
+    };
   },
   head() {
     return {
-      title: 'Blog Detail | ' + brand.medical.desc
-    }
-  }
-}
+      title: "Blog Detail | " + brand.medical.desc,
+    };
+  },
+  created() {
+    const data = this.$route.params.data;
+    console.log("get params", data);
+    // if (!data) {
+    //   this.$router.push({ name: 'error', })
+    // }
+  },
+};
 </script>

@@ -1,46 +1,48 @@
 <template>
-  <v-card class="facility-card">
+  <v-card class="facility-card" @click="onPage(data)">
     <figure>
-      <img
-        :src="img"
-        alt="img"
-      >
+      <img :src="data.img" alt="img" />
     </figure>
     <div class="text">
-      <h6>{{ title }}</h6>
-      <p>{{ desc }}</p>
+      <h6>{{ data.title }}</h6>
+      <p>{{ data.desc }}</p>
     </div>
-    <v-btn
-      color="secondary"
-      class="button">
-      {{ button }}
-    </v-btn>
+    <v-btn color="secondary" class="button"> ดูเพิ่มเติม </v-btn>
   </v-card>
 </template>
 
 <style lang="scss" scoped>
-@import './events-card.scss';
+@import "./events-card.scss";
 </style>
 
 <script>
 export default {
   props: {
-    img: {
-      type: String,
-      required: true
+    // img: {
+    //   type: String,
+    //   required: true
+    // },
+    // title: {
+    //   type: String,
+    //   required: true
+    // },
+    // desc: {
+    //   type: String,
+    //   required: true
+    // },
+    // button: {
+    //   type: String,
+    //   required: true
+    // },
+    data: {
+      type: Object,
+      require: true,
     },
-    title: {
-      type: String,
-      required: true
+  },
+  methods: {
+    onPage(data) {
+      this.$router.push({ name: "events-detail-event", params:{data:data }});
     },
-    desc: {
-      type: String,
-      required: true
-    },
-    button: {
-      type: String,
-      required: true
-    }
-  }
-}
+  },
+};
 </script>

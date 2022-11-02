@@ -8,7 +8,7 @@
           </h4>
           <p class="use-text-subtitle2">กิจกรรม เดือน กันยายน</p>
         </div>
-        <v-btn :href="link.medical.product" text class="view-all">
+        <v-btn @click="onGopage()" text class="view-all">
           {{ $t("common.btn_seeall") }}
           <v-icon>mdi-arrow-right</v-icon>
         </v-btn>
@@ -26,12 +26,7 @@
               </div>
             </div>
             <div v-for="(item, index) in eventsList" :key="index" class="item">
-              <card
-                :title="item.title"
-                :desc="item.desc"
-                :img="item.img"
-                :button="$t('common.btn_seedetail')"
-              />
+              <card :data="item"/>
             </div>
           </slick>
         </div>
@@ -131,6 +126,9 @@ export default {
     this.loaded = true;
   },
   methods: {
+    onGopage(){
+      this.$router.push({ name: 'events'})
+    },
     next: function () {
       this.$refs.slick.next();
     },

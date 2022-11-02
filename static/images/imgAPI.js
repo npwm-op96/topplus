@@ -218,6 +218,9 @@ const imgAPI = {
     '/images/events/CNX_01.png',
     '/images/events/01.jpg',
     '/images/events/02.png',
+    '/images/events/01.jpg',
+    '/images/events/02.png',
+    '/images/events/01.jpg',
     '/images/events/02.png',
   ],
   course: [

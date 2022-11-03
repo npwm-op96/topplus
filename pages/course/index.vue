@@ -1,41 +1,46 @@
 <template>
   <div class="main-wrap">
     <main-header :header="'Academy'" :dataMenu="dataMenu" />
-    <div class="container-general container-front">
-      <v-container>
+    <div class="title-bar">
+      <hidden point="xsDown">
+        <!-- {{data}} -->
+        <sub-header :data="{ 'title': `หลักสูตร `, 'desc': '' }"></sub-header>
+      </hidden>
+      <div class="container-general container-front">
+        <v-container>
 
-        <v-row>
-          <v-col cols="12">
-            <!-- <template> -->
-            <!-- <v-card> -->
-            <!-- <v-card-title class="py-6"> -->
-            <h3>
-              <!-- {{ $t("medical.services_title") }} -->
-              หลักสูตรอบรม
-            </h3>
+          <v-row>
+            <v-col cols="12">
+              <!-- <template> -->
+              <!-- <v-card> -->
+              <!-- <v-card-title class="py-6"> -->
+              <h3>
+                <!-- {{ $t("medical.services_title") }} -->
+                หลักสูตรอบรม
+              </h3>
 
-            <!-- </v-card-title> -->
+              <!-- </v-card-title> -->
 
-            <v-tabs class="localfix" v-model="tab" background-color="transparent" color="success">
-              <v-tab v-for="item in items" :key="item">
-                {{ item }}
-              </v-tab>
-            </v-tabs>
-            <v-tabs-items background-color="transparent" v-model="tab">
-              <v-tab-item v-for="item in items" :key="item">
-                <v-card flat>
-                  <v-card-text>
-                    <event-course></event-course>
-                  </v-card-text>
-                </v-card>
-              </v-tab-item>
-            </v-tabs-items>
-            <!-- </v-card> -->
-            <!-- </template> -->
-            <!-- <calendar></calendar> -->
-          </v-col>
-        </v-row>
-        <!-- <v-row>
+              <v-tabs class="localfix" v-model="tab" background-color="transparent" color="success">
+                <v-tab @change="onchageTab(index)" v-for="(item, index) in items" :key="index">
+                  {{ item }}
+                </v-tab>
+              </v-tabs>
+              <v-tabs-items background-color="transparent" v-model="tab">
+                <v-tab-item v-for="item in items" :key="item">
+                  <v-card flat>
+                    <v-card-text>
+                      <event-course></event-course>
+                    </v-card-text>
+                  </v-card>
+                </v-tab-item>
+              </v-tabs-items>
+              <!-- </v-card> -->
+              <!-- </template> -->
+              <!-- <calendar></calendar> -->
+            </v-col>
+          </v-row>
+          <!-- <v-row>
           <v-col cols="12">
             <v-tabs>
               <v-tab>นายหน้าขอรับ / ขอต่อ 1 - 3</v-tab>
@@ -56,12 +61,12 @@
             <calendar></calendar>
           </v-col>
         </v-row> -->
-        <v-row>
-          <v-col cols="12">
-            <!-- <headline /> -->
-          </v-col>
-        </v-row>
-        <!-- <v-row class="mt-8">
+          <v-row>
+            <v-col cols="12">
+              <!-- <headline /> -->
+            </v-col>
+          </v-row>
+          <!-- <v-row class="mt-8">
           <v-col md="6" cols="12" class="px-3">
             <post-card
               :href="link.medical.blogDetail"
@@ -85,7 +90,7 @@
             />
           </v-col>
         </v-row> -->
-        <!-- <v-row class="mt-6">
+          <!-- <v-row class="mt-6">
           <v-col md="8">
             <div
               v-for="index in 6"
@@ -119,14 +124,15 @@
             <sidebar />
           </v-col>
         </v-row> -->
-      </v-container>
-      <section id="roadmap">
-        <v-row>
-          <v-col cols="12">
-            <v-img contain :src="imgAPI.roadmap[0]"></v-img>
-          </v-col>
-        </v-row>
-      </section>
+        </v-container>
+        <section id="roadmap">
+          <v-row>
+            <v-col cols="12">
+              <v-img contain :src="imgAPI.roadmap[0]"></v-img>
+            </v-col>
+          </v-row>
+        </section>
+      </div>
     </div>
     <div id="footer">
       <main-footer />
@@ -151,6 +157,10 @@ import link from "~/static/text/link";
 import Calendar from "~/components/Calendar"
 import Events from "~/components/Course/Events"
 import menu from '~/components/Header/data/course'
+import SubHeader from '~/components/SubHeader'
+import Hidden from '~/components/Hidden'
+
+
 
 
 
@@ -162,7 +172,9 @@ export default {
     Sidebar,
     PostCard,
     Calendar,
-    'event-course': Events
+    'event-course': Events,
+    'sub-header': SubHeader, 
+    Hidden
   },
   data() {
     return {
@@ -175,6 +187,11 @@ export default {
       ],
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     };
+  },
+  methods: {
+    onchageTab(index) {
+
+    }
   },
   head() {
     return {

@@ -9,15 +9,14 @@
         <section class="space-top">
           <counter />
         </section>
+        <section id="event" class="space-top">
+          <Events />
+        </section>
         <section class="space-top">
           <div id="timeline">
             <level-member />
           </div>
         </section>
-        <section id="event" class="space-top">
-          <Events />
-        </section>
-
         <section id="skill" class="space-top">
           <speciality />
         </section>
@@ -35,7 +34,7 @@
       <corner />
       <!-- </hidden> -->
       <!-- <hidden point="mdDown"> -->
-        <notification />
+      <notification />
       <!-- </hidden> -->
     </div>
   </div>
@@ -89,4 +88,5 @@ export default {
 }
 </script>
 <style type="css">
+
 </style>

@@ -7,7 +7,7 @@
                         <v-timeline-item v-for='(item,index) in memberData' :key="index" large>
                             <template v-slot:icon>
                                 <v-avatar>
-                                    <img :alt="item.name" :src="'https://cdn-icons-png.flaticon.com/512/482/482636.png?w=1380&t=st=1666418334~exp=1666418934~hmac=ab6f94c238dca1eec5c1e62ceab6ab352e66f03f34d627a7b92d5e556924ea1f'">
+                                    <img :alt="item.name" :src="item.avatar">
                                 </v-avatar>
                             </template>
                             <template v-slot:opposite>
@@ -21,11 +21,11 @@
                                 </span>
                             </template>
                             <u-animate :delay="0.2 * index + 's'" duration="0.4s" name="fadeInUpShort">
-                                <v-card class="elevation-2">
-                                    <v-card-title class="text-h5">
+                                <v-card color="primary" class="elevation-2 white--text">
+                                    <v-card-title  class="text-h5 white--text">
                                         {{item.name}}
                                     </v-card-title>
-                                    <v-card-text>
+                                    <v-card-text class="white--text">
                                         {{item.position}}
                                     </v-card-text>
                                 </v-card>

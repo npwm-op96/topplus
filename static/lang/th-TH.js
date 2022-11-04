@@ -122,6 +122,8 @@ export default () => {
         "header_contact": "ติดต่อ",
         "header_contact map": "ติดต่อ กับ แผนที่",
         "header_course": "หลักสูตร",
+        "header_knowlage":'ความรู้',
+        "header_knowhow":'วิธีการ',
         "header_product": "ผลิตภัณฑ์ที่มีตัวกรอง",
         "header_product detail": "รายละเอียดผลิตภัณฑ์",
         "header_pricing": "ราคาและคำถามที่พบบ่อย",
@@ -175,7 +177,7 @@ export default () => {
         "footer_paragraph": "มันไม่ดีเกินไปที่จะเป็นจริงมันเป็นวิธีที่การดูแลสุขภาพควรจะเรียบง่าย."
       },
       brands:{
-        'brand_title':'รายชื่อ',
+        'brand_title':'บริษัทประกันภัย',
         'brand_detail':'ติดต่อบริษัทประกัน',
 
       },

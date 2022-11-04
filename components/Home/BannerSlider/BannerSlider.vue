@@ -136,7 +136,14 @@
                     <div class="btn-area">
                       <v-btn text href="#" class="button">
                         <!-- {{ $t('common.btn_detail') }} -->
-                        ประโยชน์ที่จะได้รับ
+                        <Dialog  :options="options">
+                          <template  v-slot:content >
+                            <!-- <iframe id="ifrm" src="https://www.fininsurance.co.th/faqs" width="100%" height="1080px"></iframe>
+
+                                To slot -->
+                          </template>
+                        </Dialog>
+
                       </v-btn>
                       <v-btn @click="registerFin()" color="primary" large class="button">
                         เริ่มต้นสู่การพัฒนาทีม
@@ -199,15 +206,19 @@ import { REGISTER_FIN } from '~/lib/fin-services.js'
 import link from "~/static/text/link";
 import imgAPI from "~/static/images/imgAPI";
 import Video from '~/components/Video'
+import Dialog from '~/components/Dialog'
+
 
 export default {
   components: {
     Hidden,
+    Dialog,
     'video-main': Video,
     Slick: () => import("vue-slick"),
   },
   data() {
     return {
+      options: { title: 'ประโยชน์ที่จะได้รับ', button: 'ประโยชน์ที่จะได้รับ' },
       loaded: false,
       currentSlide: 0,
       link: link,

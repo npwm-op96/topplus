@@ -65,32 +65,21 @@ const sample = [
       // }
     ]
   },
-  // {
-  //   name: 'community',
-  //   thumb: imgAPI.ui[2],
-  //   child: [
-  //     {
-  //       name: 'pricing',
-  //       link: link.medical.pricing
-  //     },
-  //     {
-  //       name: 'faq',
-  //       link: link.medical.faq
-  //     },
-  //     {
-  //       name: 'maintenance',
-  //       link: link.medical.maintenance
-  //     },
-  //     {
-  //       name: 'coming soon',
-  //       link: link.medical.comingSoon
-  //     },
-  //     {
-  //       name: 'error',
-  //       link: '/error'
-  //     }
-  //   ]
-  // }
+  {
+    name: 'knowleage & know how',
+    thumb: imgAPI.ui[2],
+    child: [
+      {
+        name: 'knowlage',
+        link: link.community.knowlage
+      },
+      {
+        name: 'knowhow',
+        link: link.community.knowhow
+      },
+
+    ]
+  }
 ]
 
 export default sample

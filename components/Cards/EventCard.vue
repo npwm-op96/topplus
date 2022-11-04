@@ -1,5 +1,5 @@
 <template>
-  <v-card class="facility-card" @click="onPage(data)">
+  <v-card class="event-card" @click="onPage(data)">
     <figure>
       <img :src="data.img" alt="img" />
     </figure>

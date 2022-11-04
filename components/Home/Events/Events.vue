@@ -42,13 +42,13 @@
                 duration="0.5s"
               >
                 <div>
-                  <img
+                  <!-- <img
                     :src="imgAPI.medical[13]"
                     :data-2d="imgAPI.medical[12]"
                     :data-3d="imgAPI.medical[13]"
                     class="img-2d3d"
                     alt="facilities"
-                  />
+                  /> -->
                 </div>
               </u-animate>
             </slider-art>

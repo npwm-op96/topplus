@@ -19,6 +19,10 @@ const link = {
   },
   academy:{
     course:'/course'
+  },
+  community:{
+    knowlege:'/knowlege',
+    knowhow:'/knowhow'
   }
 }
 

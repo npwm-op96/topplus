@@ -89,8 +89,12 @@ const img2d = {
 }
 
 const imgAPI = {
-  background:[
+  background: [
     '/images/D4U/BG.jpg'
+
+  ],
+  sub_header: [
+    '/images/D4U/BG.jpg',
   ],
   avatar: [
     '/images/avatars/pp_girl.svg',

@@ -138,9 +138,7 @@
                         <!-- {{ $t('common.btn_detail') }} -->
                         <Dialog  :options="options">
                           <template  v-slot:content >
-                            <!-- <iframe id="ifrm" src="https://www.fininsurance.co.th/faqs" width="100%" height="1080px"></iframe>
-
-                                To slot -->
+                            <iframe src="https://www.fininsurance.co.th/register?uid=FNG21-17089#" width="100%" height="1080px" frameborder="0"></iframe>
                           </template>
                         </Dialog>
 

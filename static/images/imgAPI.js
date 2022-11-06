@@ -242,6 +242,9 @@ const imgAPI = {
   ],
   medicalInner: [
     ...img3d.inner
+  ],
+  logo:[
+    '/images/D4U/LOGO-logo.png'
   ]
 }
 

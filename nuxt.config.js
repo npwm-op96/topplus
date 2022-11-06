@@ -89,6 +89,7 @@ module.exports = {
   plugins: [
     '~/plugins/vue-fragment-config',
     '~/plugins/vue-wow-config',
+    '~/plugins/lodash-config.js',
     // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
     { src: '~plugins/i18n-config.js' },
     { src: '~/plugins/vue-youtube-config', ssr: false },
@@ -109,6 +110,8 @@ module.exports = {
   */
   modules: [
     ['@nuxtjs/pwa', { icon: true }],
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
     ['@nuxtjs/html-minifier', { log: 'once', logHtml: true }],
     [
       'nuxt-mq',
@@ -131,6 +134,25 @@ module.exports = {
     ['nuxt-gmaps', { key: '' }],
     '@nuxtjs/i18n',
   ],
+  axios: {
+    baseURL: 'http://127.0.0.1:8888/api',
+    credentials: true
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'me', method: 'get', propertyName: 'data' },
+          logout: false
+        }
+      }
+    },
+    redirect: {
+      login: '/login'
+    }
+  },
   i18n: {
     locales: languages,
     defaultLocale: 'th',

@@ -30,9 +30,7 @@
                   />
                   <img
                     v-else
-                    :src="imgAPI.medicalInner[5]"
-                    :data-2d="imgAPI.medicalInner[4]"
-                    :data-3d="imgAPI.medicalInner[5]"
+                    :src="imgAPI.logo[0]"
                     class="img-2d3d"
                     alt="register"
                   />

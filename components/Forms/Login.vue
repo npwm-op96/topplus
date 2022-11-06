@@ -104,7 +104,7 @@ export default {
   methods: {
     handleSubmit() {
       if (this.$refs.form.validate()) {
-        console.log('data submited')
+        console.log('data submited',)
       }
     }
   },

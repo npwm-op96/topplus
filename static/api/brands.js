@@ -1,5 +1,7 @@
-import imgAPI from '../images/imgAPI'
-console.log('brands.js')
+// import imgAPI from '~/static/images/imgAPI'
+// import brands from '~/static/api/brands.js'
+
+// console.log('brands.js')
 
 const brands = [
   {

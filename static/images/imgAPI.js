@@ -232,7 +232,10 @@ const imgAPI = {
     '/images/course/logo-tii-01.png',
   ],
   roadmap: [
-    '/images/course/Cert Roadmap.png',],
+    '/images/course/Cert Roadmap.png',
+    '/images/course/CertPro.jpg',
+
+  ],
   members: [
     '/images/members/01.jpg',
     '/images/members/02.jpg',

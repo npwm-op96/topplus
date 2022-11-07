@@ -10,36 +10,46 @@
     </v-snackbar>
     <v-container class="inner-wrap max-md">
       <div class="full-form-wrap">
-        <div class="text-center">
-          <h3 class="use-text-title use-text-primary pb-3 text-center">
-            <!-- {{ $t('common.contact_title2') }} -->
-          </h3>
-          <p class="desc use-text-subtitle2 ">
-            <!-- {{ $t('common.contact_subtitle') }} -->
-          </p>
-          <ul>
-            <li :class="{ disabled: selectmessage == 1 && !checkselect(item.shortCom) }" @change="onselectItem()"
-              v-for="(item, index) in $_.orderBy(brands, ['shortCom'], ['asc'])" :key="item.shortCom">
-              <!-- {{index+1}} -->
-              <input v-model="form.item" :value="item.shortCom" type="checkbox" :id="`item${index + 1}`" />
-              <label :for="`item${index + 1}`">
-                <img :src="item.img" /></label>
-            </li>
-          </ul>
-          <div>
-            <ul>
-              <li v-for="(item, index) in form.item" :key="index">
+        <v-tabs class="localfix" v-model="tab" background-color="transparent" color="primary">
+          <v-tab @change="onchageTab(item.code)" v-for="(item, indexT) in typeProduct" :key="indexT">
+            {{ item.text }}
+          </v-tab>
+        </v-tabs>
+        <v-tabs-items background-color="" v-model="tab">
+          <v-tab-item v-for="item in typeProduct" :key="item.code">
+            <div class="text-center">
+              <h3 class="use-text-title use-text-primary pb-3 text-center"> </h3>
+              <p class="desc use-text-subtitle2 ">
+              </p>
+              <ul>
+                <li :class="{ disabled: selectmessage == 1 && checkselect(itemproduct.shortCom) }"
+                  @change="onselectItem()" v-for="(itemproduct, index) in brands" :key="itemproduct.shortCom">
+                  <input v-model="form.item" :value="itemproduct.shortCom" type="checkbox" :id="`item${index + 1}`" />
+                  <label :for="`item${index + 1}`">
+                    <v-card>
+                      <img :src="itemproduct.img" :alt="itemproduct.nameTh" />
+                    </v-card>
+                  </label>
+                </li>
+              </ul>
+              <div>
+                <ul>
+                  <li v-for="(_item, _index) in form.item" :key="_index">
 
-                <v-chip class="ma-2" :color="getNameinsur(item).color=='#FFFFFF'?'success':getNameinsur(item).color" outlined>
-                  {{getNameinsur(item).brands}}
-                </v-chip>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <v-chip class="ma-2" color="success" outlined>{{ massageOnselect[selectmessage].text }}</v-chip>
-          </div>
-        </div>
+                    <v-chip class="ma-2"
+                      :color="getNameinsur(_item).color == '#FFFFFF' ? 'success' : getNameinsur(_item).color" outlined>
+                      {{ getNameinsur(_item).brands }}
+                    </v-chip>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <v-chip class="ma-2" color="success" outlined>{{ massageOnselect[selectmessage].text }}</v-chip>
+              </div>
+            </div>
+          </v-tab-item>
+        </v-tabs-items>
+
         <!-- {{form}} -->
         <v-divider></v-divider>
         <br>
@@ -158,8 +168,8 @@ label:before {
 }
 
 label img {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
 }
@@ -186,12 +196,18 @@ label img {
 import logo from '~/static/images/medical-logo.svg'
 import brand from '~/static/text/brand'
 import link from '~/static/text/link'
-import brands from '~/api/brands.js'
 
 export default {
+
+  props: {
+    data: {
+      type: Array
+    }
+  },
   data() {
+
     return {
-      brands: brands,
+      brands: {},
       gender: [
         {
           value: 'M',
@@ -200,6 +216,17 @@ export default {
         {
           value: 'F',
           text: 'หญิง'
+        }
+      ],
+      tab: null,
+      typeProduct: [
+        {
+          text: 'ประกันชีวิติ',
+          code: 'assur'
+        },
+        {
+          text: 'ประกันวินาศภัย',
+          code: 'insur'
         }
       ],
       selectmessage: 0,
@@ -237,33 +264,41 @@ export default {
     form: {
       type: Object,
       require: true
+    },
+    data:{
+      type: Array,
     }
   },
   watch: {
 
   },
   created() {
+    console.log('get brand',this.$props)
+    this.brands = this.$props.data
     this.genarateData()
   },
   mounted() {
   },
 
   methods: {
+    onchageTab(code) {
+      console.log(code)
+    },
     getNameinsur(word) {
-      console.log('word', word)
+      // console.log('word', word)
       const res = this._.filter(this.brands, (item) => item.shortCom == word)[0]
-      console.log('getNameinsur', res)
-      
-      return {color:`#${res.color}`,brands:res.nameTh}
+      // console.log('getNameinsur', res)
+
+      return { color: `#${res.color}`, brands: res.nameTh }
     },
     checkselect(el) {
-      const status = Boolean(this._.findIndex(this.form.item, (item) => item == el))
+      const status = Boolean(this._.filter(this.form.item, (item) => item == el))
       console.log('status', status)
       return status
 
     },
     onselectItem() {
-      console.log('item', this.form.item)
+      // console.log('item', this.form.item)
       this.selectmessage = this.form.item.length == 3 ? 1 : 0
     },
     validate() {
@@ -278,21 +313,12 @@ export default {
     },
     async genarateData() {
       await this.getDate()
-      await this.getExpireDate()
-      await this.getNO()
-    },
-    formchange(e) {
-      console.log('e', e)
+      // await this.getExpireDate()
+      // await this.getNO()
     },
     getDate() {
       this.form.startdate = this.$moment(new Date()).add(543, 'Y').format("DD/MM/YYYY")
     },
-    getExpireDate() {
-      this.form.enddate = this.$moment(this.form.startdate).add(this.form.year_card).format("DD/MM/YYYY")
-    },
-    getNO() {
-      this.form.no = Math.floor(Math.random() * 9000000000) + 1000000000
-    }
   },
   computed: {
     isMobile() {

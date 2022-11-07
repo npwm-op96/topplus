@@ -37,7 +37,7 @@
               </v-tabs-items>
               <!-- </v-card> -->
               <!-- </template> -->
-              <!-- <calendar></calendar> -->
+              <calendar></calendar>
             </v-col>
           </v-row>
           <!-- <v-row>
@@ -127,7 +127,13 @@
         </v-container>
         <section id="roadmap">
           <v-row>
-            <v-col cols="12">
+            <v-col cols="2">
+              <v-card width="200px" elevation-5>
+                <v-img width="200px"  :src="imgAPI.roadmap[1]"></v-img>
+
+              </v-card>
+            </v-col>
+            <v-col cols="10">
               <v-img contain :src="imgAPI.roadmap[0]"></v-img>
             </v-col>
           </v-row>

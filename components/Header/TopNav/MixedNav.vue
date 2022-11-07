@@ -17,12 +17,12 @@
         <div class="mega-menu rounded-menu">
           <v-container class="max-md">
             <v-row>
-              <v-col v-for="(insurance, index) in insurData" :key="index" cols="3">
-                <!-- {{insurData}} -->
+              <v-col v-for="(data, index) in brandsData" :key="index" cols="3">
+                <!-- {{ data }} -->
                 <v-list>
-                  <v-subheader class="title-mega">{{ insurance.name }}</v-subheader>
-                  <v-card to='#' :color="`#${insurance.color}`">
-                    <v-img contain :src="insurance.img" alt="thumbnail" class="thumb-menu-insur" />
+                  <v-subheader class="title-mega">{{ data.nameTh }}</v-subheader>
+                  <v-card @click="onPage(data.shortCom)" :color="`#${data.color}`">
+                    <v-img contain :src="data.img" alt="thumbnail" class="thumb-menu-insur" />
                   </v-card>
                   <!-- <v-list-item-group>
                     <v-list-item v-for="(item, index) in subitem.child" :key="index" :href="item.link"
@@ -39,11 +39,11 @@
         </div>
       </v-menu>
       <v-btn v-if="singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="item.link"
-        class="anchor-link scrollactive-item "  text @click="setOffset(item.offset)">
-        {{ $t('nav.header_'+item.name) }}
+        class="anchor-link scrollactive-item " text @click="setOffset(item.offset)">
+        {{ $t('nav.header_' + item.name) }}
       </v-btn>
-      <v-btn  v-if="!singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="'/' + item.link" text>
-        {{ $t('nav.header_'+item.name) }}
+      <v-btn v-if="!singleNav" v-for="(item, index) in menuPrimary" :key="index" :href="'/' + item.link" text>
+        {{ $t('nav.header_' + item.name) }}
       </v-btn>
       <v-menu :open-on-hover="hover" :position-x="0" max-height="480" offset-y content-class="mega-menu-root"
         min-width="100%" nudge-left nudge-width>
@@ -66,9 +66,9 @@
                   <img :src="subitem.thumb" alt="thumbnail" class="thumb-menu" />
                   <v-list-item-group>
                     <v-list-item v-for="(item, index) in subitem.child" :key="index" :href="item.link"
-                      :class="{ current: curURL === (curOrigin+langPath+item.link)}">
+                      :class="{ current: curURL === (curOrigin + langPath + item.link) }">
                       <v-list-item-content>
-                        <v-list-item-title class="menu-list" v-text="$t('common.header_'+item.name)" />
+                        <v-list-item-title class="menu-list" v-text="$t('common.header_' + item.name)" />
                       </v-list-item-content>
                     </v-list-item>
                   </v-list-item-group>
@@ -87,7 +87,7 @@
 </style>
 
 <script>
-import brands from '~/static/api/brands.js'
+import brands from '~/api/brands.js'
 export default {
   data() {
     return {
@@ -96,14 +96,17 @@ export default {
       curURL: '',
       curOrigin: '',
       langPath: '',
-      insurData: brands
+      brandsData: brands
 
     }
   },
   methods: {
     setOffset: function (offset) {
       this.navOffset = offset
-    }
+    },
+    onPage(code) {
+      this.$router.push({ name: "sales", params:{code:code }});
+    },
   },
   mounted() {
     this.curURL = window.location.href

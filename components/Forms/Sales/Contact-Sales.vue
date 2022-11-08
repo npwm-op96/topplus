@@ -10,19 +10,23 @@
     </v-snackbar>
     <v-container class="inner-wrap max-md">
       <div class="full-form-wrap">
-        <v-tabs class="localfix" v-model="tab" background-color="transparent" color="primary">
+        <v-tabs class="localfix" v-model="tab" background-color="tranfernce" color="primary">
           <v-tab @change="onchageTab(item.code)" v-for="(item, indexT) in typeProduct" :key="indexT">
-            {{ item.text }}
+            <v-chip class="" color="">
+              <h3 color="primary">
+                {{ item.text }}
+              </h3>
+            </v-chip>
           </v-tab>
         </v-tabs>
-        <v-tabs-items background-color="" v-model="tab">
+        <v-tabs-items background-color="success" color="light-blue" v-model="tab">
           <v-tab-item v-for="item in typeProduct" :key="item.code">
             <div class="text-center">
               <h3 class="use-text-title use-text-primary pb-3 text-center"> </h3>
               <p class="desc use-text-subtitle2 ">
               </p>
               <ul>
-                <li :class="{ disabled: selectmessage == 1 && checkselect(itemproduct.shortCom) }"
+                <li :class="{ disabled: selectmessage == 1 && !checkselect(itemproduct.shortCom) }"
                   @change="onselectItem()" v-for="(itemproduct, index) in brands" :key="itemproduct.shortCom">
                   <input v-model="form.item" :value="itemproduct.shortCom" type="checkbox" :id="`item${index + 1}`" />
                   <label :for="`item${index + 1}`">
@@ -35,7 +39,7 @@
               <div>
                 <ul>
                   <li v-for="(_item, _index) in form.item" :key="_index">
-
+                    <!-- {{_item}} -->
                     <v-chip class="ma-2"
                       :color="getNameinsur(_item).color == '#FFFFFF' ? 'success' : getNameinsur(_item).color" outlined>
                       {{ getNameinsur(_item).brands }}
@@ -196,6 +200,8 @@ label img {
 import logo from '~/static/images/medical-logo.svg'
 import brand from '~/static/text/brand'
 import link from '~/static/text/link'
+import { GET_BRANDS_ALL } from '~/services/api/brands.js'
+import { SINGIN } from '~/services/api/auth.js'
 
 export default {
 
@@ -208,6 +214,7 @@ export default {
 
     return {
       brands: {},
+      _brands: {},
       gender: [
         {
           value: 'M',
@@ -221,13 +228,14 @@ export default {
       tab: null,
       typeProduct: [
         {
-          text: 'ประกันชีวิติ',
-          code: 'assur'
+          text: 'ประกันวินาศภัย',
+          code: 'insure'
         },
         {
-          text: 'ประกันวินาศภัย',
-          code: 'insur'
-        }
+          text: 'ประกันชีวิติ',
+          code: 'assure'
+        },
+
       ],
       selectmessage: 0,
       massageOnselect: [
@@ -265,16 +273,23 @@ export default {
       type: Object,
       require: true
     },
-    data:{
+    data: {
       type: Array,
     }
   },
   watch: {
 
   },
-  created() {
-    console.log('get brand',this.$props)
-    this.brands = this.$props.data
+  async created() {
+    console.log('get brand', this.$props)
+    if (this.$props.data) {
+      this.brands = this.$props.data
+      this._brands = this.brands
+    }
+    this.onchageTab('insure')
+    this.$auth.loginWith('local', { data: { /* data to post to server */ } })
+      .then(() => this.$toast.success('Logged In!'))
+
     this.genarateData()
   },
   mounted() {
@@ -283,16 +298,21 @@ export default {
   methods: {
     onchageTab(code) {
       console.log(code)
+      this.brands = this._.filter(this._brands, (item) =>
+        this._.find(item.type, itemcode => itemcode == code)
+      )
     },
     getNameinsur(word) {
-      // console.log('word', word)
+      console.log('word', word)
       const res = this._.filter(this.brands, (item) => item.shortCom == word)[0]
-      // console.log('getNameinsur', res)
+      console.log('getNameinsur', res)
 
       return { color: `#${res.color}`, brands: res.nameTh }
     },
     checkselect(el) {
-      const status = Boolean(this._.filter(this.form.item, (item) => item == el))
+      console.log('status', status)
+
+      const status = Boolean(this._.find(this.form.item, (item) => item == el))
       console.log('status', status)
       return status
 

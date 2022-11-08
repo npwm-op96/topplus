@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      brands:brands,
+      brands: brands,
       form:
       {
         type: 'ประกันชีวิต',
@@ -57,8 +57,8 @@ export default {
     // console.log('id', this.brands)
     if (code) {
       this.brands = this._.filter(this.brands, (item) => item.shortCom == code)
-      console.log('filter', this.brands)
-
+      console.log('filter', this.brands[0])
+      this.form.item.push(code)
     }
   },
   methods: {

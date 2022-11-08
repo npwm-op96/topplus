@@ -135,8 +135,8 @@ module.exports = {
     '@nuxtjs/i18n',
   ],
   axios: {
-    baseURL: 'http://127.0.0.1:8888/api',
-    credentials: true
+    baseURL: 'http://localhost:3000/auth',
+    // credentials: true
   },
 
   auth: {

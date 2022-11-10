@@ -113,7 +113,7 @@
                   </a>
                 </span> -->
               </div>
-              <v-btn :block="isMobile" color="primary" @click="validate" large>
+              <v-btn @click="OnregisterInsur()" :block="isMobile" color="primary"  large>
                 {{ $t('common.form_send') }}
               </v-btn>
             </div>
@@ -202,6 +202,7 @@ import brand from '~/static/text/brand'
 import link from '~/static/text/link'
 import { GET_BRANDS_ALL } from '~/services/api/brands.js'
 import { SINGIN } from '~/services/api/auth.js'
+import { registerInsur } from '~/services/api/insurance.js'
 
 export default {
 
@@ -287,15 +288,20 @@ export default {
       this._brands = this.brands
     }
     this.onchageTab('insure')
-    this.$auth.loginWith('local', { data: { /* data to post to server */ } })
-      .then(() => this.$toast.success('Logged In!'))
-
     this.genarateData()
   },
   mounted() {
   },
 
   methods: {
+    OnregisterInsur() {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+        console.log('form', this.form)
+        registerInsur(this.form)
+
+      }
+    },
     onchageTab(code) {
       console.log(code)
       this.brands = this._.filter(this._brands, (item) =>
@@ -321,12 +327,7 @@ export default {
       // console.log('item', this.form.item)
       this.selectmessage = this.form.item.length == 3 ? 1 : 0
     },
-    validate() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true
-        console.log('form', this.form)
-      }
-    },
+
     chengeGender(e) {
       console.log(e)
 

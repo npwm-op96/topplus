@@ -7,7 +7,8 @@
 	"main": "index.js",
 	"private": true,
 	"scripts": {
-		"dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=8007 nuxt",
+		"dev": "nuxt",
+		"dev:sit": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=8007 nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"heroku-postbuild": "npm run build",

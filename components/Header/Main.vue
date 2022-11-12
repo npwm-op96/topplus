@@ -8,6 +8,8 @@
     <hamburger v-if="type === 'hamburger'" />
     <nav-scroll v-if="type === 'navscroll'" :home="home" />
     <search-bar v-if="type === 'search'" />
+    <System v-if="type === 'system'"/>
+
   </div>
 </template>
 
@@ -19,6 +21,8 @@ import Mega from './Mega'
 import Hamburger from './Hamburger'
 import NavScroll from './NavScroll'
 import SearchBar from './Search'
+import System from './System'
+
 
 export default {
   components: {
@@ -28,7 +32,8 @@ export default {
     Mega,
     Hamburger,
     NavScroll,
-    SearchBar
+    SearchBar,
+    System
   },
   props: {
     home: {

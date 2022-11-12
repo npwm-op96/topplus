@@ -137,7 +137,7 @@ module.exports = {
     '@nuxtjs/i18n',
   ],
   axios: {
-    baseURL: 'http://localhost:3000/auth',
+    baseURL: 'http://localhost:3000/',
     // credentials: true
   },
 
@@ -145,8 +145,8 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'login', method: 'post', propertyName: 'data.token' },
-          user: { url: 'me', method: 'get', propertyName: 'data' },
+          login: { url: 'auth/login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'profile', method: 'get', propertyName: 'data' },
           logout: false
         }
       }

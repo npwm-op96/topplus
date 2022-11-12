@@ -4,3 +4,9 @@ export const state = () => ({
   footer: 'sitemap' /* basic, blog, contact, sitemap */,
   corner: 'chat' /* chat, nav */
 })
+
+export const mutations = {
+  setheader(state, val) {
+    state.header = val;
+  },
+}

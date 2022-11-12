@@ -26,6 +26,7 @@
           </v-icon>
         </v-btn>
       </div>
+
     </template>
     <div class="popover fresh-var">
       <v-list class="mode-menu">
@@ -109,7 +110,11 @@ export default {
   }),
   computed: {
     ...mapState(['counter', 'darkMode']),
-    ...mapGetters(['getDir'])
+    ...mapGetters(['getDir']),
+    userAccount() {
+      // const user = this.$store
+      // return user
+    }
   },
   methods: {
     switchLang: function(val) {

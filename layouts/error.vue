@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import "~/assets/pages";
 </style>
 
 <script>
@@ -46,6 +46,9 @@ export default {
       pageNotFound: 'Not Found',
       otherError: 'An error occurred'
     }
-  }
+  },
+  created() {
+    this.$router.push({ name: "maintenance" });
+  },
 }
 </script>

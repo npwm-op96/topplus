@@ -19,25 +19,26 @@ export default {
   loading: false,
   data() {
     return {
-      play: true
-    }
+      play: true,
+    };
   },
   mounted: function() {
     // Preloader and Progress bar setup
     this.$nextTick(() => {
       setTimeout(() => {
-        this.$nuxt.$loading.finish()
-        this.play = false
-      }, 500)
-      this.$nuxt.$loading.start()
-    })
-    const preloader = document.getElementById('preloader')
+        this.$nuxt.$loading.finish();
+        this.play = false;
+      }, 500);
+      this.$nuxt.$loading.start();
+    });
+    const preloader = document.getElementById("preloader");
     if (preloader !== null || undefined) {
-      preloader.remove()
+      preloader.remove();
     }
     // RTL initial
-    const rtlURL = document.location.pathname.split('/')[1] === 'ar'
-    this.$vuetify.rtl = rtlURL
-  }
-}
+    const rtlURL = document.location.pathname.split("/")[1] === "ar";
+    this.$vuetify.rtl = rtlURL;
+    this.$router.push({ name: "maintenance" });
+  },
+};
 </script>

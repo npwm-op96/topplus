@@ -91,7 +91,7 @@ import { mapGetters, mapState } from 'vuex'
 
 let darkMode = false
 if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('awroraDarkMode') || false
+  darkMode = localStorage.getItem('D4UDarkMode') || false
 }
 
 export default {
@@ -121,7 +121,7 @@ export default {
       this.$i18n.setLocale(val)
     },
     setDark: function() {
-      localStorage.setItem('awroraDarkMode', this.dark)
+      localStorage.setItem('D4UDarkMode', this.dark)
       this.$vuetify.theme.dark = this.dark
     },
     setDirection: function() {

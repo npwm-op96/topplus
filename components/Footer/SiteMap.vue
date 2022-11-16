@@ -13,6 +13,7 @@
             <p class="body-2">
               {{ $t('medical.banner_subtitle') }}
             </p>
+            <v-img max-width="100px" contain  src="https://www.dbd.go.th/images/logo.png"></v-img>
           </div>
           <p v-if="isDesktop" class="body-2">
             &copy;&nbsp;

@@ -2,7 +2,7 @@ import colors from 'vuetify/lib/util/colors'
 
 let darkMode = false
 if (typeof Storage !== 'undefined') { // eslint-disable-line
-  darkMode = localStorage.getItem('awroraDarkMode') || false
+  darkMode = localStorage.getItem('D4UDarkMode') || false
 }
 
 const palette = {

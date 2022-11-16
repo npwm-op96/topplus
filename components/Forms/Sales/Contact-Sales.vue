@@ -125,7 +125,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../form-style.scss';
+@import "../form-style.scss";
 
 ul {
   list-style-type: none;
@@ -178,17 +178,17 @@ label img {
   transform-origin: 50% 50%;
 }
 
-:checked+label {
+:checked + label {
   border-color: #ddd;
 }
 
-:checked+label:before {
+:checked + label:before {
   content: "✓";
   background-color: grey;
   transform: scale(1);
 }
 
-:checked+label img {
+:checked + label img {
   transform: scale(0.9);
   box-shadow: 0 0 5px #333;
   z-index: -1;
@@ -197,155 +197,156 @@ label img {
 
 
 <script>
-import logo from '~/static/images/medical-logo.svg'
-import brand from '~/static/text/brand'
-import link from '~/static/text/link'
-import { GET_BRANDS_ALL } from '~/services/api/brands.js'
-import { SINGIN } from '~/services/api/auth.js'
-import { registerInsur } from '~/services/api/insurance.js'
+import logo from "~/static/images/medical-logo.svg";
+import brand from "~/static/text/brand";
+import link from "~/static/text/link";
+import { GET_BRANDS_ALL } from "~/services/api/brands.js";
+import { SINGIN } from "~/services/api/auth.js";
+import { registerInsur } from "~/services/api/insurance.js";
 
 export default {
-
   props: {
     data: {
-      type: Array
-    }
+      type: Array,
+    },
   },
   data() {
-
     return {
       brands: {},
       _brands: {},
       gender: [
         {
-          value: 'M',
-          text: 'ชาย'
+          value: "M",
+          text: "ชาย",
         },
         {
-          value: 'F',
-          text: 'หญิง'
-        }
+          value: "F",
+          text: "หญิง",
+        },
       ],
       tab: null,
       typeProduct: [
         {
-          text: 'ประกันวินาศภัย',
-          code: 'insure'
+          text: "ประกันวินาศภัย",
+          code: "insure",
         },
         {
-          text: 'ประกันชีวิติ',
-          code: 'assure'
+          text: "ประกันชีวิติ",
+          code: "assure",
         },
-
       ],
       selectmessage: 0,
       massageOnselect: [
         {
-          text: 'เลือกบริษัทที่ต้องการเปรียบเทียบอย่างน้อย 1-3 บริษัท',
+          text: "เลือกบริษัทที่ต้องการเปรียบเทียบอย่างน้อย 1-3 บริษัท",
           // mode: 0
         },
         {
-          text: 'คุณได้เลือกบริษัทประกันครบแล้ว',
+          text: "คุณได้เลือกบริษัทประกันครบแล้ว",
           // mode: 1
-        }
+        },
       ],
       valid: true,
       snackbar: false,
       formcourse: {},
-      name: '',
-      nameRules: [v => !!v || 'กรอกข้อมูลให้ถูกต้อง'],
-      email: '',
+      name: "",
+      nameRules: [(v) => !!v || "กรอกข้อมูลให้ถูกต้อง"],
+      email: "",
       emailRules: [
-        v => !!v || 'กรุณากรอกอีเมล',
-        v => /.+@.+\..+/.test(v) || 'อีเมล์ไม่ถูกต้อง'
+        (v) => !!v || "กรุณากรอกอีเมล",
+        (v) => /.+@.+\..+/.test(v) || "อีเมล์ไม่ถูกต้อง",
       ],
-      phone: '',
-      company: '',
-      message: '',
+      phone: "",
+      company: "",
+      message: "",
       checkbox: false,
       logo: logo,
       brand: brand,
-      routeLink: link
-
-    }
+      routeLink: link,
+    };
   },
   props: {
     form: {
       type: Object,
-      require: true
+      require: true,
     },
     data: {
       type: Array,
-    }
+    },
   },
-  watch: {
-
-  },
+  watch: {},
   async created() {
-    console.log('get brand', this.$props)
+    console.log("get brand", this.$props);
     if (this.$props.data) {
-      this.brands = this.$props.data
-      this._brands = this.brands
+      this.brands = this.$props.data;
+      this._brands = this.brands;
     }
-    this.onchageTab('insure')
-    this.genarateData()
+    this.onchageTab("insure");
+    this.genarateData();
   },
-  mounted() {
-  },
+  mounted() {},
 
   methods: {
     OnregisterInsur() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
-        console.log('form', this.form)
-        registerInsur(this.form)
-
+        this.snackbar = true;
+        const data = {
+          cusData: this.form,
+          date: this.getDate(),
+          detailItem: this.form.item,
+          level: 0,
+        };
+        this.$emit('onSubmit',data)
+        // console.log("onSubmit", data);
       }
     },
     onchageTab(code) {
-      console.log(code)
+      console.log(code);
       this.brands = this._.filter(this._brands, (item) =>
-        this._.find(item.type, itemcode => itemcode == code)
-      )
+        this._.find(item.type, (itemcode) => itemcode == code)
+      );
     },
     getNameinsur(word) {
-      console.log('word', word)
-      const res = this._.filter(this.brands, (item) => item.shortCom == word)[0]
-      console.log('getNameinsur', res)
+      console.log("word", word);
+      const res = this._.filter(
+        this.brands,
+        (item) => item.shortCom == word
+      )[0];
+      console.log("getNameinsur", res);
 
-      return { color: `#${res.color}`, brands: res.nameTh }
+      return { color: `#${res.color}`, brands: res.nameTh };
     },
     checkselect(el) {
-      console.log('status', status)
+      console.log("status", status);
 
-      const status = Boolean(this._.find(this.form.item, (item) => item == el))
-      console.log('status', status)
-      return status
-
+      const status = Boolean(this._.find(this.form.item, (item) => item == el));
+      console.log("status", status);
+      return status;
     },
     onselectItem() {
       // console.log('item', this.form.item)
-      this.selectmessage = this.form.item.length == 3 ? 1 : 0
+      this.selectmessage = this.form.item.length == 3 ? 1 : 0;
     },
 
     chengeGender(e) {
-      console.log(e)
-
+      console.log(e);
     },
     async genarateData() {
-      await this.getDate()
+      await this.getDate();
       // await this.getExpireDate()
       // await this.getNO()
     },
     getDate() {
-      this.form.startdate = this.$moment(new Date()).add(543, 'Y').format("DD/MM/YYYY")
+      return this.$moment(new Date())
+        .add(543, "Y")
+        .format("DD/MM/YYYY");
     },
   },
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$store.state.breakpoints.xsDown;
+      return xsDown.indexOf(this.$mq) > -1;
+    },
+  },
+};
 </script>

@@ -1,3 +1,4 @@
+
 export const state = () => ({
   smUp: ['smDown', 'mdDown', 'lgDown', 'xl'],
   mdUp: ['mdDown', 'lgDown', 'xl'],
@@ -8,3 +9,12 @@ export const state = () => ({
   mdDown: ['mdDown', 'smDown', 'xsDown'],
   lgDown: ['lgDown', 'mdDown', 'smDown', 'xsDown']
 })
+export const getters = {
+
+}
+export const mutations ={
+
+}
+export const actions = {
+
+}

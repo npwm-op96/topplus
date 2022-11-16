@@ -77,6 +77,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    "ag-grid-community/styles/ag-grid.css",
+    "ag-grid-community/styles/ag-theme-alpine.css",
+    // "ag-grid-community/styles/ag-theme-alpine.css",
+
+    // "ag-grid-community/styles/ag-theme-material.css",
+
+    // '@/node_modules/ag-grid/dist/styles/ag-grid.css',
+    // '@/node_modules/ag-grid/dist/styles/ag-theme-material.css',
     '~/assets/transition.scss',
     '~/assets/vuetify-overide.scss',
     '~/assets/vendors/animate.css',
@@ -92,6 +100,8 @@ module.exports = {
     '~/plugins/vue-fragment-config',
     '~/plugins/vue-wow-config',
     '~/plugins/lodash-config.js',
+    "~/plugins/ag-grid.client.js",
+
     // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
     { src: '~plugins/i18n-config.js' },
     { src: '~/plugins/vue-youtube-config', ssr: false },
@@ -196,6 +206,9 @@ module.exports = {
       }
     }
   },
+  // router: {
+  //   middleware:[ 'maintenance']
+  // },
   /*
   ** Build configuration
   */
@@ -225,6 +238,9 @@ module.exports = {
       //      }
     }
   },
+  extend(config, context) {
+    config.resolve.alias['vue'] = 'vue/dist/vue.common'
+  },
   /*
   ** Page Layout transition
   */
@@ -243,5 +259,7 @@ module.exports = {
   */
   server: {
     port: 8007, // default: 3000
-  }
+  },
+
 }
+

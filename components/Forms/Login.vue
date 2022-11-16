@@ -79,7 +79,7 @@ export default {
       const loggedIn = this.$auth.loggedIn
       if (loggedIn) {
         const user = this.$auth.user
-        this.$router.push({ name: 'systems', params: { data: user } })
+        this.$router.push({ name: 'systems/dashboard', params: { data: user } })
       }
       return
     },

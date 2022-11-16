@@ -38,6 +38,7 @@ export default {
     // RTL initial
     const rtlURL = document.location.pathname.split('/')[1] === 'ar'
     this.$vuetify.rtl = rtlURL
-  }
+    // this.$router.push({name:'maintenance'})
+  },
 }
 </script>

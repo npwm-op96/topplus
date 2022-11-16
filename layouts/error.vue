@@ -10,42 +10,45 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import "~/assets/pages";
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Error from '../components/Error'
+import brand from "~/static/text/brand";
+import Header from "~/components/Header";
+import Footer from "~/components/Footer";
+import Error from "../components/Error";
 
 export default {
   components: {
-    'main-header': Header,
-    'main-footer': Footer,
-    Error
+    "main-header": Header,
+    "main-footer": Footer,
+    Error,
   },
-  layout: 'empty',
+  layout: "empty",
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   head() {
     const title =
       this.error.statusCode === 404
-        ? brand.medical.name + ' - ' + this.pageNotFound
-        : brand.medical.name + ' - ' + this.otherError
+        ? brand.medical.name + " - " + this.pageNotFound
+        : brand.medical.name + " - " + this.otherError;
     return {
-      title
-    }
+      title,
+    };
   },
   data() {
     return {
-      pageNotFound: 'Not Found',
-      otherError: 'An error occurred'
-    }
-  }
-}
+      pageNotFound: "Not Found",
+      otherError: "An error occurred",
+    };
+  },
+  created() {
+    // this.$router.push({ name: "maintenance" });
+  },
+};
 </script>

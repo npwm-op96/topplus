@@ -9,31 +9,38 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import "~/assets/pages";
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header/Basic'
-import Footer from '~/components/Footer'
-import LoginForm from '~/components/Forms/Login'
-import link from '~/static/text/link'
+import brand from "~/static/text/brand";
+import Header from "~/components/Header/Basic";
+import Footer from "~/components/Footer";
+import LoginForm from "~/components/Forms/Login";
+import link from "~/static/text/link";
 
 export default {
   components: {
-    'main-header': Header,
-    'main-footer': Footer,
-    LoginForm
+    "main-header": Header,
+    "main-footer": Footer,
+    LoginForm,
   },
   data() {
     return {
-      link: link
+      link: link,
+    };
+  },
+  created() {
+    const loggedIn = this.$auth.loggedIn;
+    if (loggedIn) {
+      const user = this.$auth.user;
+      this.$router.push({ name: "systems/dashboard", params: { data: user } });
     }
   },
   head() {
     return {
-      title: 'Login | ' + brand.medical.desc
-    }
-  }
-}
+      title: "Login | " + brand.medical.desc,
+    };
+  },
+};
 </script>

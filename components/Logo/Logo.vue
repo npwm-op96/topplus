@@ -1,6 +1,6 @@
 <template>
   <span :class="type" class="logo">
-    <img :src="logo" alt="logo" />
+    <img :src="'https://iili.io/y4S87V.png'" alt="logo" />
     {{ title!='default' ? title : brand.medical.name}}
     <!-- {{ type !== 'only' ? brand.medical.name : '' }} -->
   </span>
@@ -29,7 +29,6 @@ export default {
     title:{
       type:String,
       default: 'default'
-
     }
   }
 }

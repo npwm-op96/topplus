@@ -6,8 +6,12 @@
     <v-btn v-if="isDesktop && !userAccount" :href="link.medical.register" color="primary">
       {{ $t('common.register') }}
     </v-btn>
+
     <v-spacer v-if="isDesktop"  />
-   <p v-if="userAccount">{{ userAccount.username }}</p> 
+   <p v-if="userAccount && isDesktop">{{ userAccount.username }}</p> 
+   <v-btn v-if="isDesktop && userAccount" :href="link.medical.register" color="primary">
+      ออกจากระบบ
+    </v-btn>
     <setting-menu />
   </nav>
 </template>

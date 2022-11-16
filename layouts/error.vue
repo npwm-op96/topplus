@@ -48,7 +48,7 @@ export default {
     };
   },
   created() {
-    // this.$router.push({ name: "maintenance" });
+    this.$router.push({ name: "maintenance" });
   },
 };
 </script>

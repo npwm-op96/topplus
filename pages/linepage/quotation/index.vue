@@ -1,6 +1,5 @@
 <template>
     <div class="main-wrap">
-
         <v-stepper v-model="e6" vertical>
             <v-stepper-step @click="onchenage(1)" :complete="e6 > 2" step="1">
                 ข้อมูล
@@ -134,6 +133,3 @@ export default {
     },
 }
 </script>
-
-
-

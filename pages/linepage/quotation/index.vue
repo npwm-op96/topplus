@@ -1,19 +1,19 @@
 <template>
     <div class="main-wrap">
-        <v-stepper v-model="e6" vertical>
-            <v-stepper-step @click="onchenage(1)" :complete="e6 > 2" step="1">
+        <v-stepper v-model="step" vertical>
+            <v-stepper-step @click="onchenage(1)" :complete="step > 2" step="1">
                 ข้อมูล
             </v-stepper-step>
             <v-stepper-content step="1">
                 <v-card class="mb-12" height="200px">
                     <form-data @formData="formData($event)"></form-data>
                 </v-card>
-                <v-btn color="primary" @click="e6 = 2">
+                <v-btn color="primary" @click="step = 2">
                     ถัดไป
                 </v-btn>
             </v-stepper-content>
 
-            <v-stepper-step @click="onchenage(2)" :complete="e6 > 2" step="2">
+            <v-stepper-step @click="onchenage(2)" :complete="step > 2" step="2">
                 เอกสารเกี่ยวกับรถ
             </v-stepper-step>
 
@@ -21,42 +21,58 @@
                 <v-card class="mb-12">
                     <form-doc @formCarDoc="formCarDoc($event)" @formInsureDoc="formInsurDoc($event)"></form-doc>
                 </v-card>
-                <v-btn color="primary" @click="e6 = 3">
+                <v-btn color="primary" @click="step = 3">
                     ถัดไป
                 </v-btn>
             </v-stepper-content>
 
-            <v-stepper-step @click="onchenage(3)" :complete="e6 > 3" step="3">
+            <v-stepper-step @click="onchenage(3)" :complete="step > 3" step="3">
                 รูปรถ </v-stepper-step>
 
             <v-stepper-content step="3">
                 <v-card class="mb-12" height="200px">
                     <form-picture @formPicture="formPicture($event)"></form-picture>
                 </v-card>
-                <v-btn color="primary" @click="e6 = 4">
+                <v-btn color="primary" @click="step = 4">
                     ถัดไป
                 </v-btn>
             </v-stepper-content>
-            <v-stepper-step @click="onchenage(4)" :complete="e6 > 4" step="4">
+            <v-stepper-step @click="onchenage(4)" :complete="step > 4" step="4">
                 เลือกบริษัท
             </v-stepper-step>
             <v-stepper-content step="4">
                 <v-card class="mb-12" height="300px">
                     <form-brand @itemInsur="formInsur($event)"></form-brand>
                 </v-card>
-                <v-btn color="primary" @click="e6 = 5">
+                <v-btn color="primary" @click="step = 5">
                     ถัดไป
                 </v-btn>
 
             </v-stepper-content>
-            <v-stepper-step @click="onchenage(5)" :complete="e6 > 5" step="5">
+            <v-stepper-step @click="onchenage(5)" :complete="step > 5" step="5">
                 เสร็จสิน
             </v-stepper-step>
             <v-stepper-content step="5">
-                <v-card class="mb-12 text-center" height="200px">
-                    <v-btn color="primary" @click="sentQuatation()">
-                        ส่งเอกสาร
-                    </v-btn>
+                <v-card class="mb-12 text-center" height="500px">
+                    <div class="text-center">
+                        <v-btn :disabled="dialogProgress" :loading="dialogProgress" class="white--text" color="primary"
+                            @click="sentQuatation()">
+                            ส่งเอกสาร </v-btn>
+                        <v-dialog height="300px" v-model="dialogProgress" hide-overlay persistent width="300">
+                            <v-card class="m-5 text-center" :color="value > 95 ? 'success' : 'primary'" dark>
+                                <v-card-text>
+
+                                    <h2 class="pb-3 pt-2">{{ textprogress }}</h2>
+
+
+                                    <v-progress-circular :rotate="180" :size="100" :width="15" :value="value"
+                                        color="white">
+                                        {{ value }}
+                                    </v-progress-circular>
+                                </v-card-text>
+                            </v-card>
+                        </v-dialog>
+                    </div>
                 </v-card>
             </v-stepper-content>
         </v-stepper>
@@ -72,6 +88,8 @@ import formData from '~/components/Forms/quotation/formData.vue'
 import formDoc from '~/components/Forms/quotation/formDoc.vue'
 import formPicture from '~/components/Forms/quotation/formPicture.vue'
 import formBrand from '~/components/Forms/formBrand'
+
+// import liff from '@line/liff';
 
 
 
@@ -89,21 +107,48 @@ export default {
     },
     data() {
         return {
-            e6: 1,
-            QuatationData: {
-            }
+            step: 1,
+            dialogProgress: false,
+            QuatationData: {},
+            interval: {},
+            value: 0,
+            textprogress: 'กำลังนำส่งเอกสาร'
+
         }
+    },
+    watch: {
+        dialogProgress(val) {
+            if (!val) return
+            this.interval = setInterval(() => {
+                if (this.value == 100) {
+                    clearInterval(this.interval)
+                    this.textprogress = 'นำส่งเอกสารสำเร็จ'
+                    this.dialogProgress = false
+                    liff.closeWindow();
+                    return false
+                }
+                this.value += 25
+            }, 600)
+        },
     },
     computed: {
 
     },
-    created() {
-
+    mounted() {
+        liff.init({
+            liffId: '1657665333-lergPwN6', // Use own liffId
+        })
+            .then(() => {
+                console.log(liff.getOS());
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     },
     methods: {
         onchenage(step) {
             console.log('onchenage')
-            this.e6 = step
+            this.step = step
         },
         formData(data) {
             this.QuatationData.CusData = data
@@ -122,6 +167,7 @@ export default {
             // console.log('getItmeInsur', this.QuatationData)
         },
         sentQuatation() {
+            this.dialogProgress = true
             console.log('sentQuatation', this.QuatationData)
             let count = 1
 

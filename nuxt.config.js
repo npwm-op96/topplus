@@ -67,8 +67,12 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       { rel: 'stylesheet', href: 'https://unpkg.com/ionicons@3.0.0/dist/css/ionicons.min.css' }
-    ]
+    ],
+    script: [{
+      src: "https://static.line-scdn.net/liff/edge/2/sdk.js",
+    }],
   },
+
   /*
   ** Customize the progress-bar color
   */

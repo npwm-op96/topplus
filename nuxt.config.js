@@ -258,7 +258,7 @@ module.exports = {
   ** Application Port
   */
   server: {
-    port: 8007, // default: 3000
+    port: 80, // default: 3000
   },
 
 }

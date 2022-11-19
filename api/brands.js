@@ -1,7 +1,7 @@
 const brands = [
     {
       "nameTh": "วิริยะประกันภัย",
-      "shortCom": "VIB",
+      "code": "VIB",
       "priority": 1,
       "color": "1E4494",
       "type":['insure','assure'],
@@ -10,41 +10,41 @@ const brands = [
     },
     {
       "nameTh": "อลิอันซ์ประกันภัย",
-      "shortCom": "ANC",
+      "code": "ANC",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "data:image\/jpeg;base64,\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wCEAAkGBwgHBhUIBxMVFRUXGR8ZGBYYGR8dIRUaIBggHR4eHB4fHyomIBonICcdITUiJSkrLjowHiE2OjMtNy4tMjEBCgoKDg0OGxAQGzUjICUyMy03KzYvKy8vNzcvKy0tLTMuLi8xNS0rLS8yLS0tKy0vOCstLS0vKy01Li0tLS0tLf\/AABEIAOEA4QMBIgACEQEDEQH\/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcFCAEDBAL\/xABBEAACAQIFAgQCBgcECwAAAAAAAQIDEQQFBhIhBzETQVFhInEUFjJCgaEjN1JykbPBFbTC0SQzNWJkc4KTorGy\/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF\/8QAKhEBAAICAQIEBQUBAAAAAAAAAAECAxESITEEE0FRFHGBkaEiMmGx8EL\/2gAMAwEAAhEDEQA\/ALxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwyhdf06uL1vicPkUqiVKlKrVSqTs5Rj4lRpX47xjZcXNcOLzLa3pS9uML6uLkA6OZrPNdKSwmKlKUqM3BuTbbhL4o897cuP\/AEkX0CpUuqOIy2M6jpRVeCg6kpLappJcvyXn3LeRO7Rv9qPM7fyue4uilOntarg+o2MwsJVZ06ccTGNNTlJtQrpRS3S5lZWTb\/EyvSR5VRzbFfQa+KqSULyjWgo2Sly3aUt1S\/F7Lz9Sb+H476+0\/cjJta4K8xHWDTlOf+jQxFWN7b4wSX\/lJP8AikSCesstemPrFh41alHz2RW6Fm1Lcm1ZJ9+fyM5w3jW4Wi9Z9UjBAavVvTVPBxrrxnKTa8JRW5W838W1J+XN\/buZX6+5M9L\/AFhh4jpKSg4qK3qbaVmr280+\/YThyR3g5190pBXlXrBp6jFurSxSsr804r\/GWDCW+CkvMi2O1P3RpMWiezirUhSpupUaSSu23ZJerfoQnH9Ucho4h4fLo1sVJd\/AhuX8W1de6ujHaunidYayjpDDTcMPSiqmKlHvLs1D848esm\/ujNM+yrL9K14aCrQpSwri6kY0m9ycnBpuceW3zu5fw+5rTFHTcbmf91Z2vPoyGC6pZHUxCoZlDEYVvt41Oy\/im7fNqxNqFeliKKrYeSlGSupRd016pruivcp1VlGYaGoV9dzpydd1I\/FTbUtlRxv8MXtaW3nj1OjTqraH1stNucpYTFJzw+538Ofdxv8Ak\/W8H3bvNsUddRqY+0676TFvdZoAOZoAAAAAAAAAAAAAAAA8uZ42ll2XVMdiPs04Sm\/lFXKK0Njs+WOxOc4HAvFuteFSW6yg5PfOPve8ePRIuzUmTU8\/yeeWV5zhGdtzhZOyknblNWdrPjtc6tL6ewumcpWW4FylFScnKVrybfnZJdrLt2SOjHkrSk9NzP8ATO1ZtaFTdG8XVyjWFXKMWnB1IOLi+6qU3dL57d569D\/rkxX72I\/mInFbQGXVNWfWSFStCrvU9sXHa2oqL7xvaS78+bOzKdD4DK9UVNQUalV1Kjm3GTjtW+W52tG\/y5Nr56W5T7xr6qRS0aj2lAenf63sb+9iv7yjzdM8wp5TneZZjWTapUqk2l3e2q3ZfMsfJNDZfk2paufYepVlUquo3GTjtXiVN7taKfD7cnVk3T3Kspr4ipGVSosRCUKkZuNtsnd22xT\/ADFs9J3\/ADER9iKT0+qAYnNtRal0Visfuw2HwkLx8GFPmbW2W1N9nyuVZ38jIaZ\/Uji\/lW\/oZzD9ItP0oShVniJpp7VKatBtWUklFXkvLdf5GVyvQmEy7T9fI4V68qVdNNScL07rlwtBcvjvft8xfNj46r7xPYilt7n2QTSODw0ukOPxMoRc\/wBKt7Sv8NOLjz7PlGR6XYzLsu6fV8dm6i6dLEOfxJP4lGm47U\/v7rW872JfluicDl2lq2nqNSq6dbduk3Hct0VF2+G3l5o8dPpzlkNMSyBVa3hyqqq5Xju3JJW+za3HoVtmpblEz3nf0TFJjXyQ3R+WYrqBquepc7j+gpyShB9m1zGmvWMftS9W\/douVFcro\/lEYbIYrFpe04L\/AAFh4ekqFCNKN2opLn2VjPxF62mOM9PZbHExHWFfaFaj1HzanW+25Qa\/d+L+jj+RXWQf7Azf9yn\/AD2WNrbL8fp\/UkNZ5LB1Eo7MVSXeVP8AaX4JXflti+1zGaUyDSWZZViaWWY2b+lRipxm4RnTtPfxG3rxfleh0UvEV5ek8fwzms7180Izz9W+W\/8AMxX80sfqRaepMop0v9Z9ITX7qlTv+H+R4NT6Z0nl+mKOW5njpwjQdSUdrg51HUlua2qLvZ8cL5nt0fhMdqvVH1wzODp0acdmEpy7tcre\/wAG+fNvjiKbm2SJjn6Ry\/PYis718lkoAHnOgAAAAAAAAAAAAADhs4qTjTg51GkkrtvyXqzXvWWqcz1PnlXEZTOsqFGDcVTlKNqcXaVWW1ru2nz2Vvc2w4Zyz7KXvxhsLcXINoTPqOtdKywWYyfjQj4dXbJxk1b4akWuU33uu0kyvJ4\/PenWslDG1Ktan6SnJqtRb7xu7Ka\/Jr0fNq+HmbTXfWPRE5IiIn0X4xcqTqdr+FfBwyrTdRy8VRlOpTbuovmMI253vzXddvPiUdN9M4zJct+lZxUqTr1FdxnOUlSj5QV21u9WvPjyK2wzWnK3TfomL7nUJmGa\/dN8bjKnUXD06tWpKLnVunOTT\/Q1PJuxbXU2pOlobE1KTcWoxs07NfpI9micmCaXim+6K5N12k9wVH0JxWIxGLxixE5ztGlbdJytd1b2u\/kQjTNPOdRZ7HKqOMr03Pd8TqVGlti32Ul6Gnwv6rRM9keb0idd2yZyUrm+ktc6ZoPMsvxtStGCvLbUndJd26c21JL05fsSbplr+rqOo8rzZLx1HdGcVZVYrvddlNcduH7WM7YNV51ncJjJ11MaWHc5NfcTmeMpdUdk69RU1jkmnUkoqPjq6avbbb8C6M3zjLf7JreHiKV\/Dna1SN77Xa3PcZME0167K3idsyyL5x0+0tm9Z1sVhoqT5cqbcLv1ai0m\/dorToxjsbidYeHiatWa8CbtOcpK+6HNm+\/c7upGUZxpXN45vlVeuqE57o\/pJNUal77Wm7bH5J8d16X1jBamThFtSrN4mvLSwsq6c6Uyuqq1DDRlJcp1G52fspNq\/wCBKlZLgrbH9UcL9Slj8JZYqd6fhd\/DqJfFNr9hL4l63S9bY\/pPp\/M8wqrUOdVq7he9KEqkmqkvOpJXs4ryXm+eyV6Wx3ms3yT26Ji0b1WFtMJ3Kh6taqxWKzOGmsjlPcpLxHTbTlUf2Kaa9L3fu16M7ekGrK\/0qWm85lJzvJ0pTbb3L7dNt83XLXykvJEfDW8vn+E+ZHLS2gAc7QAAAAAAAAAAFXdZ9V\/RMH9X8FL46ivWa+7T8o\/OXn\/ur3REdP5Dr3KsNKeUYZxjWit25UXvhZ2TU3dKz7ce5aOI6daexWbPNMXCpOo5+I3KpJqTTurrtt4St2twS2x1x4itKRSsb99sZxzadzLXDKa2c9PdS08Rj6Uqbt8dNtPxKTdmk02m1a657pXLY6j4TLc\/0FPM42nsp+NRqLv2\/wDTXDX9UjO6m0rlOpqcIZtBy2NuLjJxav3V15duPZHxhNJ5XhNOzyClv8CaknFzbaUuWovulfn8WL+Irea37WjumMcxEx6Kp6KZVhMfqGpisVHdKhCMqafZSk2t1vVJcfP5F52I\/pnR2T6YrzrZTGadRJS3TcuE213+bJCZ+IyxkvyjstjrxrprhpvEU9MdRoVM1vCNGtUjNtP4U4TgpW9PiUvlyWT1L1dkOJ0fVweCxFKrOrtUY05qT+2m27dkkn3+RK8+0nkWoJb81oRnJKymrxlb03RadvZmGw\/S7SVGpvdGUvaVWbX8NxtbPivat7b3DOKWiJiEZ6C4OrGlisdJPZJ04J+rjvcrfLciF9N8dhMt1rSxWYVI04LfecnZK8JJXb9zYjCYXD4LDxw+DhGEIq0YxSSivZIhb6UaUfeFX\/uy\/wAxXxNJm83\/AOkzjnUa9DUvUvT2By6awFWOIquLUYQ5V7d5S7KP439iC9FcixWIz9Zy01SoxlFS8pzlHbtXrZNt+jsWFg+mGk8LV8TwHP2nUlJfwvZ\/iS6hQpYeiqOHioxSsoxVkl6JLsik5qUpNce+vrKeEzbdmuWb4SlmHUqpga99tTG+HK3e0q21297MsbMekum8Ll9TEUnXvGEpK8491FtfcJBLp9p+Wef2y4T8XxfGv4krb1Lde3a1\/Ik2JoQxOHlQqdpJxfyasy2TxUzx4TMaRXF32ojoi761v\/w8\/wD6pl5ZngMNmmBngcdFShNbZJ+n9Gu6fqYLTmhMi05mP07K4zU9rheU5S+FtN8P5Ik5n4jLGS\/Kq2OnGupazaZyjC4\/W1LKMVd03WlCXPMox3Ozfvazt6svHXOo6OktOurQUVUa8OhC3G63Dt+zFcv5JeZ8Zf090\/l2cxzbDQmqsZOabqSa3Svfjt5s79SaKyfUuMjis2VSTjHbFKpKKir3dkvN+b9l6GmXPTJeszvUK1pNazrupPTGT6txOIWfZFRlUkpStVfhu8\/vO1R8vl8273PnUWV6qyzG\/wBvZzSlSnKomqq8NfpO6doNpPi\/Ks38zYfKsuw2VZdDAYGO2nTjtiu\/Hu\/Nvu36nznGV4TOctnl+YR3U5qzV7ed00\/Jp8plvjf174xr86R5PTuxmh9SUtT5DHHRspr4asF92aXP4PiS9mSAj2mtHZTpmvKrlKqR3pKSdSUk7O6dn5rnn3ZITjvx5Tx7Nq711AAVSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD\/9k="
     },
     {
       "nameTh": "ประกันภัยไทยวิวัฒน์",
-      "shortCom": "TVI",
+      "code": "TVI",
       "color": "00A652",
       "img": "data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABYlBMVEUAplL+8QL\/ygj\/\/\/9wzewAplACpVL98wD79AD+0wR7z9Rwzer9\/\/7\/\/f\/\/\/f76\/\/8ApEsAn0MAnUj\/\/\/wApEYAokwAqVC94dN2wp3\/+v\/2\/\/cAoFXf8+3R6uCR0bPV7Oaq1sTT7NwAmEjK6NV6yJ0Alz6ZzbcAoUEAoU8Aq00aqGAAmUVJx+nq+\/MAmEyi1bnA69UxrG3472P173b8+8r91QXw\/\/xrvo0AqELw\/\/9HrnXH5t6OzalPuH1Ss37A69\/9\/vD8\/uT795T39Vb38Tf19l2L06T++9X2+qL8+Lhhs3\/79Ij370Imn2H58iNYto3y2hXxyDb96RXzvE74uBf78G32pCr8nT399p3xsyj5wjz0qij\/7DX25UD8wwz97Wj82zz67Xv4oEP23kz93AD45KX55pT38av5yyj21VB\/zdWa2Nh1y\/Nbydac3blPw\/U7yeW86vKc0eFFt3C789qmz8VXBQSxAAAUx0lEQVR4nO2di3\/TRrbHHYYZh0bSjF4T21KMZTtEsiNLSsCOjeMkQHkVJ10KoVy63W6795bLtgG6vf\/\/PSM5iQN2CFA3Sj\/6lSZEsc18dWbOY0Ya5XKZMmXKlClTpkyZMmXKlClTpkyZMmXKlClTpkyZMmXKlCnTJ4gQAl8xFn9J\/v4XE8YcH+HB9\/Nuzx8sQYZN09S0FSHD4J44+NcQoGFsalav0w8qtdri4mIlKG8OraYGFv0LmJLkMDOqg\/JWGyXSk2\/UDu\/2qgbHxBVn4Lyb+ckSfG6v4iMdwGR9e3snli4rCMEfO+i5jLMLTai5BYcCDN25fuvp7Tu7c\/l8fu7Ooy\/X71\/flnRFobVOk+EL6liFa7HutnW5qN+7dXt+7l09vn3\/3jaYdqngeuRCQmKjWXdkSrfv33kfT5hybm5+7cG2XERLD1dy7sUjxGpUQ6i989V8\/j2+Q0L49ujWTldG4XDjvNv7cRIhvdkv6XT71u4h0QTMWPN3vi1Rxd9TPXZxzEhyHA9DREsPvnu\/f04w56MHsq5XWt55t\/vsIjkzslFpZ\/0MfIkdb+3INLTYBYn\/hLhsE3rovUf5UzrnuA3hy6MdKjtDdlEYvYd+Ef28m5\/oY6bozj296EQGvgCEBGsPS5L+VRwNzk44l79PZXt43q3\/oMACrtHzqf7VVJKvJ\/PFiIoz5Dn3vCFOFYQJc+grpwA+\/tvjaX13\/gFFYYunO0eFOGhBmPh2Wk+E8fbNlamjM\/+giAKNnzfEqSJcu6ag69PGH7B9+c2T6f5ndwdJnZT30o09id6bkIceIu4+\/WZ\/ajeNg4Yf8TRn4djy5e21U6Lgo6ffPLsyNz2F+0ovhs1cehGxFqDSt\/NTjZR\/vLb+zbPn0wnB28ioo6XU2UCJtxF16c7u1OaDn1l\/+l\/7+zdOyQQe6bptsZRObGDOKkhZOyXMP769vvb9i\/3np6QC87d0uW\/gdBJyFrXlB3NT+2B+7rv19b9fev5s\/\/EpZ2F3W\/e1dE7dELJS0ena1KZDHr62vvbyyvf7z55P90X5+XUZ9TWSygSVQzZz7xTr5O8IE1669OLHF\/865Tzs7hSvurlUEhp9uTTdhKB\/rK\/9cOlSYsTphHPfluQBTh0hOFKvastTHWlcAyYmBCM+279xiq0f6VKo8jQS9ii6P60khIG3u\/bPf9yICb\/f\/\/HFKc4mf132W6mbtAFCo4\/021NdyHz+0frTHy4ler6\/\/3J6TMyvI2Vgps6XEqJuoZ3H0\/ve7tNRH42NuH+KEed3t+UD87yB3hMhja788yn52O3YzYz0ZP\/Zk+l14ty9ouOmrYgi2NyU5fXpMzNjfRTcKUSM\/ZfTMpv5uftyKTLSNhBzRl2Xbk9PudeP+2jcT188g346+eX5ufUSGrCUDUQsEprtqbFi98v1ta8vnUDc338+dSiubUNaw9MVEnFOddC9aV0UBuFYHz0ait9POR+Qm6KKmTrCpo+uT3I0kI6eHISHgpBxZWJwgXfsoEXG0zU7THiVop\/nJoysfFwV\/vQeICA+e\/GviSMxP3dPcdSUXa5BuAUZzSRCqArXnv59AiBkb\/tTEOeuK\/5y+ggRujXRhrtPJ1owcajPJ+YI+QeK30wbIWtIkwlFqJ8MKBAnOtT83AOpXU3ZdBQQTrLhfP7x7X9OseAlUUi9+HECoiD0q+kyIRBaE204f3v9pytTCUVys\/9kkg2Rnzobgi8t3n+nofPgZNYnO5nxjvrkXSvm564jp5q2i\/t4s6s8eNcYj28\/\/eEUCyZ68uO7iPn8PXRTSxkh8Zo2un6ij+bnd9fW3g\/073fUJ+Bu3nnnNlpUUzbz7XK1pu8ct1MY5c7aaUPwZE\/9esyKkANty4GaLkBBGKDtO+M+5syAgPjkxcv8UQaXn1vTUT1t0xgEszoanyzdffSPDw\/BYwHicVKbvyVLvdStQGEWUfnWUSt3b\/\/08ux8wozPnzw+fHcekjYrbTU+xliz5esiHkJ3m7\/z08uPMODIjE9ujBDnd4phM2UFsLg+HUpgfVc4wvzu3z+mgx6b8cnLJEv9UpdTNwyFWEHXvxIx4rsfPq6DjjF+H5vxvqz3UjcjDMItKj2ANObrT+UTeglmnL8uO600EuZYiLZv\/+tz+IQZL329pkt9I42EhHUU6b8\/j++SyHF+lv1eOq+qwZatb3+mCUF\/20ahlrZgmAibEPT\/53MBv\/+ZogFLJ2GOt2xl53ON+L87cricUkBMWAFJP38m4QNZGqRzFMZ5jeWg7Z9uXLlx48onCd75T7odNtOWsR2KY8z2kHx9d\/6TlIf\/5+7sKO1hyma7T8haCST9flymf7TmBOMDivrpW3UaE\/YsW9ErX3yaXn1xU9drbkoH4UjEHFCdLly+vPDxunz53yXkR2m8VuiE3LKkdxd+uQwNPrsE3i+XX3WL3U0z7YTEa1VQ0f4VGD+CDwh\/WX3VlaW6lsrrvU4IEEOKugurH0V4+fLqK4pQucnd9BNi7NYUvfvratz3zoYIFvyiXUQHrZQtGk4UIYRZISp2v1h9\/Wbhg5DiBQuXX6\/+m8pSuZqyOdLJElPV0FHbSvHtm9XVDzqcuIO+efNWKnbvVnnK5rmnCjNW7UswGH9dBS2MhtoJey6Mviws\/PJ6FXyMLvsdSNYuCKBIULn60NdL9O3q6mv4b2FkrMvjwQ8G32VxBt78+lYuISdK69XdU+QaxnBLRnr3tzdvVhO90z1HR1eBD1F6YJopW\/M9VWI0YRe7BR\/pSve3BTDk69UJAvaFt21dQs6mxi7KEDyU2EbBdK2yTnWdvn0FhnwtOuyRXgvmhd+AT0F2vWWkP86\/KzEUPc6MRkAVWUfdt7\/9+uak\/V4BHkUy8gsN8yJuOgAtFrc7Y6ZahRApSNeltv327b9Br3777e1bu6vrsoza4Z5lEuKm9O6Ds8ljrV7fKSE53ilCF5LgD1IkPywMNXZhIsQ0ESvHPUNtdMqLDkWHKi0tXhtYKmP8Qm6mcFI43k+IG4aqWY1oIBQ1LFM1GOfpuyL\/85RsVGPiZKeh827NLARU5Fjn3ZrZiPzlCTNlSpMINlzMrROHCCccNHbITd0lJWcXcetByzux\/oDdpiki49imCbzqcpbmOfxTRNSa1Dq5wMKj2qZrWdbxRnR409lrWQ3rohky3jMQqzXawpzEQRDoLDDesA2lLjrQxN2TItNxecNHkkTLGsYWBuNekOQbeJiZy2lAyE1Tg8oIxh4mHqQzjU5hby8yAcUVxz1THe51Op3\/MM3ErErSuqb2rgh2+32XAGGT7QVhOTKYxrHFrUIQ1HMbbgC\/xP+pdJhnFRbDfqQaVj+sG5vhwLsovRW7tt00oZdWH1Jqd\/1G4W5V4w2H+m3k9xp0aYOwDgrUYQ35ttQeNBeRH6gFVEj1qtqYYBDajsbUWrcaoOFK1IFvttMLUaFV7UiBpV81iAGEK3DE1fbo71X\/ZtVgdVRg5930M4qYxLY1DoTLB+hmZ7jCraBSifqosGFoti0IuVpH5ZU66qu46djLW7T8UE0T4QeyZsLdhJA2h4GP2hVrQ91osh4qMwK\/aUlXVa8ZomBjiAIDa76tlmUUrnSA8Hx76ZmrAcItx65CL21XDbUaHaB+vd7U3B7qM8He0pcMrY9QeaMBPZWovg2G7bWM2IbnGi6OCT8waURw1fGtjarvtzY3l4WlKsi2oyPCkjNcREvQS4eobADhVdevNTfUCuoxcq6E5tGGsZiffnsnNwvIrlxFfddBNys2HTSCMDwitNoyKtX3UBDZ4D1zy77dvIb8RQeFmneehMTcHBrM48z0uGv1otOHjFuo+U7dZVFg+1sd19M0jfX8uplzf\/+9VdvqRyubTj3aKlsebv2+aFn1LX\/rYHi+6SlRg\/a1QcMCuj1wH+Hpe3EyT21qZg7Dt2V1Y3QdZVPjLqlqrFllmBtVxjRjA7KbapVz1hQH\/xSQqSLsGkKSD+oihJTK6YTx5Fou3p4EQ5UhsjEuSic4IgooOK4yAxJRkZpyDz4Lc3zu+5eKvXUQKspyUZZQcdE424ZcJ6eeMADG72Ok3O8PjqZtcmedeYPzRhgktGKa9Q+\/9A1HB067S2m3rSi63zlj6CI5TT0SM00Xi80gCIkoUhaXD39hkjNO6cOJcK2G0ND64zs1M5tWFDWGNlKc3pm3dLCCxXFB9BcW48SWaOnoaNDCZ0tnoAuAE4j3yh7MZJ0D6h+rhoql6MxbqWLLRuMqWW4ccyCN6SrK4VHnrHePELOsUJkq8NbBTFI8OIVlXUL9sy9H4+q7hHFIIB7UFcdyWmckxK5DaVGqLUJ8nQ0hs9pFShtnr3IwLpTHdTfZ\/gn8aatzfLTOzk6IJOQsM1PzZrIkDkWPJCO7BSa0sJg1O7Rl7Apjt2jF0xO55Gex9GIaoBWDwVfwNKNr1uKVGnFo7Gj8YIh3HyaQPEQBAmbibHGufu1avyM2kZrRor\/aR1AGuOKikHieJTdqb4zLPbHkgsXCCxepHefxEql45AOQw6uTgCHeAu2zyOGPZHR+cjxZrzmOHGJtCl7gui7h8bQdcU04IeDHZ5YdqIEsQ3GOwVKt5eXlVtznoIVQQ7SqVRGkTK3abDZdcbpbzeVllkBvrKja8oaRi5nEB+GqutyE+MGPVqE8s6VBuNSa5nHyhl1I96oACl+rcUZAhC\/QWq1ZbY+J1RCGQZ\/FzpBSutUS7TO1RicInfYB455WCEt6fHck10J4RQFGmOcOFn3a9RcLliF2CwSLuw8Dv10SR1hyjrjZ6Dt1jWv98G6k8cRImNUhhwqrrACflNytB2dDC6Q2rc0IkazUdIoggRb3qQHrUhUyr+YghBAlbMu8ZqAUJXDlUBVBfagUoeRjeBjKSJEVGXxm5IklUTYMKbxBeH0nEuko4c26j2S9sNyn4G\/r1XjhFOMVyBSRrbECkqWSxWL7YyizZGlJm02OR9QacB0TOlXMehAgZYqoBIRqWWlTEeUSQhizBcPt+QJFJLO06PegD5qRr8iUIklBVPZ7LA5CqChRKsWfJaOyacZ+xygLwiYQKicJ6ZI2E0AgdHRFEJKRDVW14EP4kGU4jAKj5QOKXalUIKkbEW4MnSJ0W6dScSQ4EWEVczgCHjkMAgcVqRxCCuANurIONpR0RUKyQulmEuyMEzZMvMuIcEb7ZAEhtG2McPkASV1ZsSs2okDYkxDyW5qY38UYCOFsqAdgKKneMlmrQIuy\/pC5B6io+AWorqr1tkz1AcPa7\/BhdiCBmaXAAVuPbrgAQmmMMHa6glD50wivlpViUXYKVlP03mClA18XV0R1BEoI+bBfogUNIhrXArBdwMiw76OCysFFLgcwOAONt\/yijDrLAfTRSnOTykq7lQ5CGDlILvU1htkS0sGGEaKKPWQsvogyJgRfalh18CYEu3wAhnY0jI1hx8UioLIIBpjT9HpdWWqbwhHXXb4s+kN0GqEye0ISexqkFGmxvSc2d9CuwpgLjKZf7CpO\/2FkQa2b2BACImOxTTFv6FS3RUTkSfs8YoHr9F2jR8Vwg7gjnh60chMG32bsat4nhE9ZWZRnPw4PCcGCA8ODtowIWUcvxn6zD1XgEWF8RU1OEErQXjO5Hkx8HD4mVBB4RxxP46mCMJpOKLr0n0QoUArg149syPhyBSCoiIecjBGKJwbFhOBp46tpEkLium0ETQcPJQhFDOQjws04EZ1EyDrguv4sGyJ5SU1cOBAqwoaDti4L8LohsgOwcsE8jMyCsIR0e6xp3LXA4r7rCR+8FJdkIx8sFeADuIj4Y4Qiw8PcWkJ\/QrQgo4gvFbwThNWwqBdLv9d7DS4IIZE5vqt+GiGKCZUThJIMNTFY3XiXEJKfAHrLn0fYbowmChPClUiE6z1ItwkcXwkha+t8wIbtiTZElNZV7vL3bVitS1Dkz5RQpNUGOYyHh3XAiHCAdLmmmmIajJhVXxf384pMW+Tn3PUiShXHjQuE+H0WG0JX95veAM5bkmmObAiDubNijo9DCoScuYFeLErSbAkl4T1yo5xGO0m4Cd6ntizONRS4kVSkOiTW2LBEhUuwWVCoEorbmoilxQv8rA7Gq6lej4pcmh8TInhvuWWcsKFpNAdL4GW6V2fbS4X3UBkb2VBLCm2SEG5YXR3Rgghq2GyFsiz5TY7VoRNUoeOuDH0qBiaU\/ZFzYAn0oQNNv+ZBtJCpeOm4DWXk961xwl4hlEQAHgQzJIQKWFGkcDCIRO50SAgeLiFkJtRJkFN3okZU2IJWozJzzQ6k42Gh0SjYUDD5DTPnDnyKrnaiqOAopWJ7yLBFaVHvR1EE\/Ztoi5Af\/V9covg0zrwN0Ush0VGgf7YHakI4m4umideBuq6IUKiyMUIsCCHBZGzoixpJRtCXi7IkXx1yzxQNKiJJR6hbhIoY51zIP+OLhaGGUmhBhRMUQj0hPqF6SNgb+OL3clw9GaJ6ghiBkBQ2NlhlhoSWZznQfbpScEiYVKrYTGzI8cAW9QH4Qkp1yRaj0LOugTW70PEUWSq3OLe4GXSRLl4ChjpowbDlvTb4GqhOIMVNCDcNq+wnpyGxIdTVirRV0AyTxRXwrGxIcM8R\/2xFVUXEdw5t6C4lhBy3oHCIH20o2X3LAIuZXO2FcVtpbaB6ImqbcKQEJilKW524kuXmAD5WUoIVDga9Ce\/uEW5a\/Zof25AX4gdCBntV4Znjf3lpRvdhxtOFg3q\/3zG9vT58S9JLUAcODsRcm2uKh3HCr3qWGc+UgRdlZtTplztRK77nQIhXh53+XXhNMs\/Guen2Cv36wOSEG51+vd\/AIkFzG4NOp2OwXr8ziCwtia0MPj6om7MjZIzBp7vchJrBjRNM8W+ZJvwU5y\/xBCmDHxkZARHiJjOjom4cHcKcMdU4fEIXJKjwM48zBezBm02ePG+WeYbHxFITfCTjyXWMxNRMsfY0q24qmkSSZS7RhFGUjhcAk4WyeAo3mQvN4ZER4YB1ND8aN+1wjvQo47Fw\/ABEnDy5A+PRo4OTfwNzgo9eTHJujl\/oG1AyZcqUKVOmTJkyZcqUKVOmTJkyZcqUKVOmTJkyZcqUKVOmTJkyZcqUKVOmTJkyZcqUKVOmi63\/ByLXzfbx91d3AAAAAElFTkSuQmCC"
     },
     {
       "nameTh": "เอ็มเอสไอจี ประกันภัย",
-      "shortCom": "MSIG",
+      "code": "MSIG",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAANcAAADqCAMAAAAGRyD0AAABa1BMVEX\/\/\/8lI2LjISkAAAAFBgj\/\/\/78\/Pz\/\/\/3k5OSQkJAuLi7d3d3\/\/f8zMzMlI2MmJiYAAAX19fURERFnZ2fV1dXs7OwlJGDgAAD5\/\/\/JycnhIirx8fElImXPz8+lpKSbm5uGhIUAAE0AAEWvr6+4uLjDw8PXAAAAAEgAAEJxcXFeXl4dHR07OztFQ0TcAA3iAABOTk6Bf4DzpKb\/8O\/fIC\/4Hx4IImoAAFfqIiYAJWgbGWAAAD0WFhhYWFj1zsnodXnpXV3jSlDqYGLvkpr52t\/uuLXnhYDoQUneJSXuqKbiNzf2uLf76OP3zcT419vjYmnIM03h5fC+IzcmMl6kp7vdGxnLHDNeZIXtfoQUEVO2tsKIiaQ7OWnVICkuLF7Nzt9CI10dGGd7eJtVI1ltIVBDQ2MXFEqXI0KuIkViIlKHIEpBIVOwIDr7IBiOIUpQUH9WVXlXHl1qaZIAJ1yDhJ7zQjxkAEX1d29GADKk3WeaAAAXXElEQVR4nO1dCWMax5JuaE0PiBGIY4YBBtABkjiEhCTwSLEcH7GNbT1n7Wf5jK3YceIk6xxv83bf\/vyt6h6OgeEamUNv+RLbopmjv6nq6qrqmhYh04FMFEIYY5Ik88+KAp91RZamdP9JQSGyLOuKohPl8MbB1zdv3bp5+843hFx1XkTXZQaiOrx7+2hvL35+bp6f78XvMXnW\/bokGKgdkvLGK+feZDLp9XqT3mT8pT7rjl0SEtG\/uXO\/UjGRELLi\/5qVs1l3zBUkWVEYiEom4bs3t+Km1wagt3d31l10BVA+SVd0PXwAovJ20eKK+HjWXXQFsBUSSOvgftxMes2jpJ1XI2k2DmfdRXfQdf3sYCsOHOD\/hrcbWw9m3cHxgTOTTA4fPNwz+VBKdkkL2iq3rpaZl2BgSUxnhDy6320sBExQweTe\/atmDRkQg3H1t5tbpuntlhOX1ZHXW7l\/SGRl1l0dB4oi6zo5fHle6R1Slry8jQpIS0GZXhmgGygrDxp7ZjJ5lHTUwwZI6wyspX6V5AUWQ3\/87ZalgT32ApuPQAl1VNYrYjhknK5kndw5r\/TRQE40Gb91Rq6SawhWECTw+P5WX1ZebglvykS\/IqISAIuhPEhWTMdRZfFKVm4dEuUqjSwcWmdfxxtHvYOqA5Xbh0RnV8oUEv2RtyKCKydRcZMRvy3rEnj6V0UPIR6W9Tvg4fbVwUay4T367WZY0TGEuSK8ZMb0s1tg3XvikRaOQF61\/3gichpXhRfY7RsPK3000OLVSNae1v\/+LMyZXZWUjX6AqYtBxEBFnx9rJ+svnsy6r6MCdIq9xEnLhCjL0dHl8jKf1g2PFny181qEMfMuMknWD78dMBcjMeBbA2kZHkBw400KPZN596MYObsfH0gLHPsjoOXRNA\/H+negizJSm2foNx6eD6SFAjOfg7AMQStonLx6jSZxvifnG5WhtICYFtSCRpDzMjRNW38D0prbEYaB8V2YtY76e4TcaphvjWOQFtfDoIdLbuPPJ5yZNI\/KCG75g\/NBnDgv8EGAk8cObf3dBegim8tBJpG7e4NpmeBmmOb39WAXrWAw+H6DD7J5dO31gzi4EcOklfy+DmPL0y0wzdj5wOS5XFR5FB\/kOQl5mbUf6t1KiLQMMCTbH9R5k5cEseGjLe8AaYnAxFv7WH9noLnoVkS0jOs\/PuET9PwIDfTnUVx0vz8xGHu1j8do1zUHkaFpPPnpYr5cKonccM7mtlWQS+tTHTmhdLolJsbY+5\/AeszRDK3fqICtG4Qk6Gjt5+OgcVyvHx\/XneWleYyvns2TrT97WDkaYjSSRxBwHQd\/+fT56edffzjumcJwkIEwjY03c2I7dJiQH1YGpme8Ynnh+D8\/m7WaiX8+a8fBHmagnzCTbX8g8zDIwHrJ3\/ZPfXYMsO8\/m2YSZjiwICZ8qvdMYtYg23iRmocxppB7gwMTjiPz0\/Nao7WkYoJL70QLeAWN9Rfq7MMxXX8UH6aEOLwaICxh7NHteHv026+OxsOAecC49k6VZj7KHleEhR\/MDdx8+JNMNpeLIGJ24qV5TnBye\/\/dxQwZyRDl6oe3zpP91rY65dWknWzqpVdznMN4o\/HqHboeM\/I8ZAXipduYqx7OqxtH4Nc78LKUEWzlxoWozJkBFF2WH2HdwvjA8LIvL3RGtBPtYlYhtKSTs\/MhfkZfmKbRl5eHh2RfXczI9dCVw1sVXo\/hQmCm93ggLTAh26+nz4lnIiCSdKOECPSqBtDi\/xuYqJryRCZjyHXmmpb36LffB8nLooeqOF3joUDIxW7H3ZhCjmStv9low1h\/PWVjrzBduht3MbAsmM8Hmo0mL23j9VStImiHdPjQrS3E4fVxwPBqAQKyjel6HiCvOyN48U6S8qIBTR4bzo5vF4KG5wLXP6ckNF3RD93RwjU9ENfvdYfI0lkXt58QNrWwRSYv99zajEbSfDvcGHJp4V8nr2JTW9JU5G9G8XadgNFK7eOx5nGMK53w6scn0pR4yeRrt3OXmcRVPTB1I9hDoYgaevdTABZLnrkdXRiFmb8EnRJt\/ZTRMLb\/eDL5lSQ+hu9V+hdnDMGR+XS00dUiFvTs\/MkkebLKiNLSD80hKwz98TZZ+8coc1cLPJO6\/mEqjsdBvDFCUsMRDfPzeOICZjCLbT+b9KIE04ly83zY2klfJH8LjuJCtcFTOZoBxCYLWdJvDF2XdBbVUdJM1j7VxzAaLXKa8dWFpMgTfE8M1PzOlqvoX6xYasZoLpQNQc04+fuTiY4xWScPTbej66j2a11zxctjXHshyRN1qM4GF9T0R9JrvsXlhfH1EFdbtHWwHRNTQ50vTXqHJUIdYTYgPqlro7q8HUC3yzh5NcGsgKzL99z6UODw9hQDjCO0jTeTq\/CQyeHtc3e8wDMcKZzsy8v4LjUpWuBvHD50O3mZzy8jLjAe65OLniVy5tLIexu1H45d2Iw2tGsfJsaL6N+4Tq89r2sjR12OAvP8MTFain7DRaTcwFIcLEq5HC9tgpGYK164UGR2VFO6AurwBCNMV7xE9O\/CM7TJK\/hqgmm3x25iZQhDcXRpwcsZRG2C8jpzQYvPXccaVnhdhpfnnToxWtLhLbH6PQ4tcOTNS81dQlwnk7OHTNIP9salheU2vx5fltdE5y+ZyN\/EHd4pHMLLNIOXmpIFr+2LyeVuFEZuV8b1pCBMPr6MiecIGj+mJhenMIlgHmBMPax9fylLKGhtPJtgEhGv\/HJooVcXzM\/HRm+l1xjAwvSTa2yCFWEKYYQ9HCNxk+Qer8dF9G+nhbm2CZYIYBoPCynHIWZ668FLTckGrwdj0uQqtiWiKJJCDrbGUUTzU\/1yrkZQM96\/eyKzCaay+ftaivxy5GgFCw6\/R0fjErw0j7ETkyaYthFQZKxJGXV5GReGgpd0DDHfO\/lFMEXW2eF9MIojUDsCXr\/UjUuaw51p0CK6pOjk7P5Ijj24Gl4jaFxOXttviDSFxXNdwVeUb2w1RrKK5s918VKUa2z\/OcmZqw2m4FZx5NF5Q7yhMRi1f2ge630AN7IKetb\/CE+xtk3G2l7nl17tepi8VFoD15fDUyNFeBGHfrA1dOEyWfv5Ui6vFtSeTLVGiklgFg+GSwys4SVoeYI\/TblyVGcwjel3hr32ZR4Zo9dq9MJYv5jyu1MKbjEhE06sr3ufTNY+1926UOCiGK+wHHb6BbFA7d6gvBum18DKu+Q1m2JYBC75DniRIwmzMrjibu2GsTPd+sMOXjDKyL14v7pskeV1yyu4PukigL6QmT7YeJif+c4Nrmh99UxWplXy1c2Lb\/AKxqOf5wHDyw2poMF9XZnMiBcHhNAHGECfdysjEK39YHjcVDZowfUZmYw2IDqXD3AxvbcmEUJKw03yOqjtPJv5G78KulSPtpyce\/OtBxOiY8vrBOatmb8DpitEUfS7590LtPh6zXNeoTwuLwOcJzbLoWWB4Qukd+OVo0ZnXSJYEvMpviE6lh4GPcbJBvqEs397FCEr5G9vK6Y9NcB5jSkrOH46ha+jQQZtfNy9b1TS\/Dw+rxP+tt68AEyHQs689l2H3fBa\/2OeaBEJkwPk8KYtr5isja2HO\/8VlpQ52omDD3KQ2M291muiaDcwdTiSG6UZmIsz1l\/gnkvzYTLaAGWUeWm92FHU2zCP\/kL3cCSZ8Y0P3syagiNwZ1d2Z6\/RMZO9e6857PzizCq4\/WzuRMWh8xcHD9ob+CTNX0ZcStG0k\/cYbs3jDsWSBH4Hk8jdxrkgBeHy738ZvTsr9QKovwf7rsgz9wqdwHVIJ+TG0bmXRy4NMIhYKD5EVGBbPLi\/jTTJlbtLA9xgMItiqxHTxAL4wXqIq5HaztxvhsgHCLsX5xLz1n6tD1tKCZ54cJO2+dzHrAMMd\/zW74iqAfOtw94odlqGdvKKZzLm0RS2wKvc8bc5PG7gTrdgEY+HmHltHWv+lXkXFz51Hjud3azwusM6DLHge6faQ4w4g571F0\/mctbqB\/3wX\/gbHWofj995+gRhYCmDG\/9U5toMOuHgHKLopHFieJzXv4zgyU+vr9AevgK6TG483ONOveH8RmXwGsxaWOlypYhJhOnhr+MN89NfjrSCxs4\/w+ARyvJk36iZCJSD80rtY90QG3rhFMz\/xl1RXnmmvbHBF4Ss37gfx\/ej0P0F1x7jLHQZIdb6AzfQm4NNsFxBlnX24O1vT+vHRqvOHDierH\/3DH\/H2dx7GX2BLw8eHvz3+f8c1w2hh56Ta8AqJUvw1QRruSYKNAoYLB4++tfT\/93Y2d7e3tj5Svtwga8G8VWLqzQjO0M+e\/z62bNnry8mVy0+G1yl3ygyOmT8vT4yjKirr3k2yDiU\/t1IEWJJS+Yik\/8NzMUCCyywwAILLLCAS7D+H3sj+36xPhs5CzCFbAFz+Knjw1g9GOPgmeVBmOOPo57yxY8eD32vPeymzBdLpwNqT43\/EDGHA4lEPg8njtpBt\/BFmyjYty8JFFtfdHRCxCO+zWgoQildioRO\/Qn7BTf5eVV7Iz8tHMuelpYo5SeWqznfJAUWoC3kbV9kW+2hQLuVZ3I3Q7x91freLrM13laytTEJTksUkdMqQpALdZH\/ogjQ1SUBWuhsD5\/SZvuyr90MHQwXafMr\/vWK\/bH7KW+034URX5HaTsODyhNjZeO10qn0gSVnXoRErS+EQi3R4gi8SOJ6Fyk8qDgxVi1eq9jPTkXMtPrRxStHLVa7hcLpClAr2C\/oyCu\/RNvPwsISjU6MVZNXpEcRd1EUkUg3L5La5z2kUTHowvlCxn7BXl6MJIQKUhopZNJqSg3kM1GwO2sT4oTgvGi5iDSutzUqEMGGaJl284rxJ093W8aCdZl6B3mFly1ahUDrDixQpf4vTaYDFq9N3pu2yeZqSPO7PbyEGtJcs3s9F+zmxdBE8nMiOfuRua4Z4otC8FpOhZBBtdkVdsrlpy738BLdvh7re8FeeQVKvAmfmivnzBUsXgSHDd1tWkSVW7qCL+TMa5Wm+16wl1dWiGutkxYjEyYneIW44q22FBE\/gX104LUpOrnfHlVd3evlFeIt5am+Vtni5YtYioh1Q4ybkXLK16uH3KCgaBOCT89D7+ElLC7NNj9PZ3\/sJi9BZUXwEnIqkECvvJp+CKXFnON+eD28ckJzxbwwtejE4sW4glFLEZvW0YEXiTXdIZyS08PtoWVad62HEIu2\/Olo1Ndz9pfnpfLbiynFUkMS6NVD7GfLw6L0tMdW9\/ASDUVreCU6XY7+VvXL8RIWsYwCSHFruEYc5QWKVepkVgjbtauHF5+9aNQ6JtHyO2FCmwovoXx4qxxXyXQ\/XiRcXaZNd3mV7tuHWT95zYyXIIGKWOWTMnHmxfvny6y0wg7u5rUlNmR8NfVwerx4AIKOn1qy1NBZXhaFWDXStIy2SbqfPbQu4stms5lMll94Krwsiwj3yrWm6D56aMFXpU2BdQywHl4xMeHZ3P7U7tR4QT+5uciSAjcg6FIN5mVxABn3tLV5QSAq3MN91vGrONTp8YL\/OKEVHlUIGfQdX9YP4V0u2lBnLW83L9Zk3ykwtTxFeVlTcx5DdjFmHHgxm1Ne5CRCnQWivfKKRYQ\/H2g\/k2nyYsKLX+WO4jLrw8sGtitc2kHygj8FIbDlNo3pyotw36\/D73DiFejIumWFS1sdwku10gCRTHOqm8b4Wmrz2qTNyVa4R068\/HTNcuVVPxUmPDeAF0emmd\/YzQbQn2KBlany4nEJys\/KCTrx4nnP\/YK\/um\/NzJ2xWB9e0Lja9LtoKVSayrzcwauZG2zGtk68uNFsugzWtMwGzV8I5m+5lKutU6fBy\/pkRcPYVeLMq50HbtLatF\/QOS+Kqri6ZMeEeXHdsB64KiTB8xxi\/gLYeKnoGLZ8XghUYl3LeX5+hWXbTfBlELXQEhTP0U86TimFlpdD5WbHoiX4dL2Z2POV8ctd2\/yVK5QjzfipVMz1ZC2ykWU4Z9\/hVmkMA9rp3lAhP8noORVGWJ0mDD+kmuOFfwp3d535EjmOtEMigLGU0znWl+lcbjOTyWzCyYGp5HEGP7lB39pXokc9cvg9L43O9daeW4157\/lZiLVu4Lz+70KKQ\/p6Rd8aWGCBBRZYYIEF\/t+DAS7zy6lG37TLhb\/k2sVKR\/cBp64ugB6kwpy2MuAr4GOurbquDnRCjJ5C6JPJuzk5sQKhbS6k9jm3EOoqJiJh1Vkv1HzAsd2Xd712maOJdCJ26ir2zlBaTYQcqhsgvvf51GJPCVcmsutYOpmhxZRPVX021gxz3dWUCu0ugs00DV2\/XqLuilzSu7RrSUT0iMSWI9dDlJ52fZGhy4688pSGAN3JHnxw2L40eu8k\/j\/qT85PiB8vKEZ\/S6Ukq2KhmXpvJgHsWxZmQSYSjjF+aMuApP2o3NmcdS\/FumHGXvXXQSybwRWwcGcneOegPZPdbEaCI48VZvW8GRN3nthhDVrkhHYUWiVN4WKzAgPaGWuTt6HV1yYv63r97Ernc7Q3jgA1m8VB6csWoms4uthmNi\/+aY2XQDaD3YjBIX4fF2DeX4hmdptcJBK4TnMows21aLVTiViuamtIZDNKi5eaLRSynYbClylEC7w3eBwWx6KIrHbM3jOSymDlX160D0QayzJYltLSdYodZUVahp6mdtsFgJuYo0xVQclFojNRonSlREvWOACdiUWw7DK2AodQut\/SsUSErpZpq4qBD5RUk1cMBw2lKimIakV1jdJIOUKX0vw4pLeGx6lw41JZFBJjynI\/RaqtBen+iGH+do2Wcz7fGq888fN0bHi\/WQCogK0MBViU7ud9gSgtBUhgNRtQfYWOZC7nBX+txXy55XYFZp7CgTnarNtT0DAE4B\/Oq0Cjqg9GtY\/STMKfSZ3SlU2fGijj2mUCs6ISdGU3FRbtsRBa1TUaSasM\/tkfahpjFMxMThy3gl3q5oXygmfl53WpYYrN\/GC1m5dazImjSy3l4pLrMJWcl5AX3EAU\/oks8j7wDKHm51CECVFSgbzggS5je5ZGkBcv5R6NFwgJZw0Vj1\/uy0sVh5xSTNaqOX+heL2LF8Mjwvj826XALBVORRx5wX0iRV5pFPP7c7Ew5vZPQUb8kARt8cLa2iI\/h8K191d3C4HR5VVYKa+Uw1hM0Y8XK5bLy1GGqg0NyzAUVkpdvNIr5XIoh\/U4zXZGAuX9\/VKTl2TjBSOYgiq2e8Iv3cuLVfmjzNDVMB+xoNUjyitNonSlCKM7i2L288r1Hl77dPe0ykBb9uEzXVNRJTt55aAzkeJ+HvWqXQcbWN7d7cMLrnsKFiFMNjc5OaUAvKxD8h28oP2Un7MUxs6uhUfVw9UEHFjFCuMoXsFPQ2EHPYxSvxLGIViFH3Gs9YyvWIn6wgwMbKTtUbFUqq2HEsqhgxcJZ67TPDyffDidxrWzFi9rfFVtvEBefHyNYjckIa80t6I+3lM\/Nw2BUuupC14ZblsTOBqLnJevm5f1KKB79leqOsaXL8R\/5h5jwMfXlfI+urQcAR3h8rL0MMBlnFiK4D0LbT2s0qUUf+bDi+u53VCqtORfK\/G6MlBnWswud7yBwXmhvc1WIzirwa2L\/phNXrwGG0hHs\/vdC1cgj7brCPNkAQ9Jk1R5qZrdRd3YLEbXMgEhr6ZpKdDI2ho9pWU1nCnziUPYjWUaWsuWR1kbi9EITFphvq5WBe1gBZoF55yutE\/dpMtwK5W\/Q+IPY00R2A2\/jZeQbh5X+lYSdmcnHGlXuRLmx+WxUB4dGjx4F1VWrBsxIRfBS43Cl9k0LfvAldkVuot2I4adoCtdNelOYKrK\/Tk1kRZBTgqCo3A61uHkgQEXdWqJtGp5cz4fxCDt97vwIty9jCUCpNuH6zwOPqXzMcsJjSVinQeHVbWjPwG4F\/wMf8TrAvxb+MmXdrhFf3atf7uDXqn3ozTson3cZufLSo6H2W7R8bvAmg97sfXFAgsssMACCyywwAILLLDAAl8a\/wchAZF0ZdhKNQAAAABJRU5ErkJggg=="
     },
     {
       "nameTh": "สินมั่นคงประกันภัย",
-      "shortCom": "SMK",
+      "code": "SMK",
       "color": "0A4797",
       "type":['insure','assure'],
       "img": "https:\/\/play-lh.googleusercontent.com\/N9Ia-gR07gPRGvL4momE0mYQ3d3Ey2uhYWGaXcJaFLQ_NAGap55LtRWQkVIHzXnmKw"
     },
     {
       "nameTh": "แอลเอ็มจีประกันภัย",
-      "shortCom": "LMG",
+      "code": "LMG",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/www.siamturakij.com\/assets\/uploads\/img_news\/3\/main\/1502390184_3.jpg"
     },
     {
       "nameTh": "โตเกียวมารีนประกันภัย",
-      "shortCom": "SMD",
+      "code": "SMD",
       "priority": 5,
       "type":['insure','assure'],
       "color": "FFFFFF",
@@ -52,7 +52,7 @@ const brands = [
     },
     {
       "nameTh": "เมืองไทยประกันภัย",
-      "shortCom": "MTI",
+      "code": "MTI",
       "priority": 2,
       "type":['insure','assure'],
       "color": "1795D4",
@@ -60,69 +60,69 @@ const brands = [
     },
     {
       "nameTh": "เทเวศประกันภัย",
-      "shortCom": "DVS",
+      "code": "DVS",
       "type":['insure','assure'],
       "color": "FEDA00",
       "img": "https:\/\/member.apinsurance.co.th\/PJApplicationImagesAPI\/Images\/tmpUpload\/8870fb65-33d8-46f5-86fd-74fd0dae34a4.png"
     },
     {
       "nameTh": "ไทยศรีประกันภัย",
-      "shortCom": "TMW",
+      "code": "TMW",
       "type":['insure','assure'],
       "color": "0D553F",
       "img": "https:\/\/www.jobbkk.com\/upload\/employer\/0A\/F6A\/008F6A\/images\/367141.jpg"
     },
     {
       "nameTh": "ไทยเศรษฐกิจประกันภัย",
-      "shortCom": "TSI",
+      "code": "TSI",
       "type":['insure','assure'],
       "color": "FFFFFF",
       "img": "data:image\/jpeg;base64,\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wCEAAkGBwgHBhUIBxMVFRUXGR8ZGBYYGR8dIRUaIBggHR4eHB4fHyomIBonICcdITUiJSkrLjowHiE2OjMtNy4tMjEBCgoKDg0OGxAQGzUjICUyMy03KzYvKy8vNzcvKy0tLTMuLi8xNS0rLS8yLS0tKy0vOCstLS0vKy01Li0tLS0tLf\/AABEIAOEA4QMBIgACEQEDEQH\/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcFCAEDBAL\/xABBEAACAQIFAgQCBgcECwAAAAAAAQIDEQQFBhIhBzETQVFhInEUFjJCgaEjN1JykbPBFbTC0SQzNWJkc4KTorGy\/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF\/8QAKhEBAAICAQIEBQUBAAAAAAAAAAECAxESITEEE0FRFHGBkaEiMmGx8EL\/2gAMAwEAAhEDEQA\/ALxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwyhdf06uL1vicPkUqiVKlKrVSqTs5Rj4lRpX47xjZcXNcOLzLa3pS9uML6uLkA6OZrPNdKSwmKlKUqM3BuTbbhL4o897cuP\/AEkX0CpUuqOIy2M6jpRVeCg6kpLappJcvyXn3LeRO7Rv9qPM7fyue4uilOntarg+o2MwsJVZ06ccTGNNTlJtQrpRS3S5lZWTb\/EyvSR5VRzbFfQa+KqSULyjWgo2Sly3aUt1S\/F7Lz9Sb+H476+0\/cjJta4K8xHWDTlOf+jQxFWN7b4wSX\/lJP8AikSCesstemPrFh41alHz2RW6Fm1Lcm1ZJ9+fyM5w3jW4Wi9Z9UjBAavVvTVPBxrrxnKTa8JRW5W838W1J+XN\/buZX6+5M9L\/AFhh4jpKSg4qK3qbaVmr280+\/YThyR3g5190pBXlXrBp6jFurSxSsr804r\/GWDCW+CkvMi2O1P3RpMWiezirUhSpupUaSSu23ZJerfoQnH9Ucho4h4fLo1sVJd\/AhuX8W1de6ujHaunidYayjpDDTcMPSiqmKlHvLs1D848esm\/ujNM+yrL9K14aCrQpSwri6kY0m9ycnBpuceW3zu5fw+5rTFHTcbmf91Z2vPoyGC6pZHUxCoZlDEYVvt41Oy\/im7fNqxNqFeliKKrYeSlGSupRd016pruivcp1VlGYaGoV9dzpydd1I\/FTbUtlRxv8MXtaW3nj1OjTqraH1stNucpYTFJzw+538Ofdxv8Ak\/W8H3bvNsUddRqY+0676TFvdZoAOZoAAAAAAAAAAAAAAAA8uZ42ll2XVMdiPs04Sm\/lFXKK0Njs+WOxOc4HAvFuteFSW6yg5PfOPve8ePRIuzUmTU8\/yeeWV5zhGdtzhZOyknblNWdrPjtc6tL6ewumcpWW4FylFScnKVrybfnZJdrLt2SOjHkrSk9NzP8ATO1ZtaFTdG8XVyjWFXKMWnB1IOLi+6qU3dL57d569D\/rkxX72I\/mInFbQGXVNWfWSFStCrvU9sXHa2oqL7xvaS78+bOzKdD4DK9UVNQUalV1Kjm3GTjtW+W52tG\/y5Nr56W5T7xr6qRS0aj2lAenf63sb+9iv7yjzdM8wp5TneZZjWTapUqk2l3e2q3ZfMsfJNDZfk2paufYepVlUquo3GTjtXiVN7taKfD7cnVk3T3Kspr4ipGVSosRCUKkZuNtsnd22xT\/ADFs9J3\/ADER9iKT0+qAYnNtRal0Visfuw2HwkLx8GFPmbW2W1N9nyuVZ38jIaZ\/Uji\/lW\/oZzD9ItP0oShVniJpp7VKatBtWUklFXkvLdf5GVyvQmEy7T9fI4V68qVdNNScL07rlwtBcvjvft8xfNj46r7xPYilt7n2QTSODw0ukOPxMoRc\/wBKt7Sv8NOLjz7PlGR6XYzLsu6fV8dm6i6dLEOfxJP4lGm47U\/v7rW872JfluicDl2lq2nqNSq6dbduk3Hct0VF2+G3l5o8dPpzlkNMSyBVa3hyqqq5Xju3JJW+za3HoVtmpblEz3nf0TFJjXyQ3R+WYrqBquepc7j+gpyShB9m1zGmvWMftS9W\/douVFcro\/lEYbIYrFpe04L\/AAFh4ekqFCNKN2opLn2VjPxF62mOM9PZbHExHWFfaFaj1HzanW+25Qa\/d+L+jj+RXWQf7Azf9yn\/AD2WNrbL8fp\/UkNZ5LB1Eo7MVSXeVP8AaX4JXflti+1zGaUyDSWZZViaWWY2b+lRipxm4RnTtPfxG3rxfleh0UvEV5ek8fwzms7180Izz9W+W\/8AMxX80sfqRaepMop0v9Z9ITX7qlTv+H+R4NT6Z0nl+mKOW5njpwjQdSUdrg51HUlua2qLvZ8cL5nt0fhMdqvVH1wzODp0acdmEpy7tcre\/wAG+fNvjiKbm2SJjn6Ry\/PYis718lkoAHnOgAAAAAAAAAAAAADhs4qTjTg51GkkrtvyXqzXvWWqcz1PnlXEZTOsqFGDcVTlKNqcXaVWW1ru2nz2Vvc2w4Zyz7KXvxhsLcXINoTPqOtdKywWYyfjQj4dXbJxk1b4akWuU33uu0kyvJ4\/PenWslDG1Ktan6SnJqtRb7xu7Ka\/Jr0fNq+HmbTXfWPRE5IiIn0X4xcqTqdr+FfBwyrTdRy8VRlOpTbuovmMI253vzXddvPiUdN9M4zJct+lZxUqTr1FdxnOUlSj5QV21u9WvPjyK2wzWnK3TfomL7nUJmGa\/dN8bjKnUXD06tWpKLnVunOTT\/Q1PJuxbXU2pOlobE1KTcWoxs07NfpI9micmCaXim+6K5N12k9wVH0JxWIxGLxixE5ztGlbdJytd1b2u\/kQjTNPOdRZ7HKqOMr03Pd8TqVGlti32Ul6Gnwv6rRM9keb0idd2yZyUrm+ktc6ZoPMsvxtStGCvLbUndJd26c21JL05fsSbplr+rqOo8rzZLx1HdGcVZVYrvddlNcduH7WM7YNV51ncJjJ11MaWHc5NfcTmeMpdUdk69RU1jkmnUkoqPjq6avbbb8C6M3zjLf7JreHiKV\/Dna1SN77Xa3PcZME0167K3idsyyL5x0+0tm9Z1sVhoqT5cqbcLv1ai0m\/dorToxjsbidYeHiatWa8CbtOcpK+6HNm+\/c7upGUZxpXN45vlVeuqE57o\/pJNUal77Wm7bH5J8d16X1jBamThFtSrN4mvLSwsq6c6Uyuqq1DDRlJcp1G52fspNq\/wCBKlZLgrbH9UcL9Slj8JZYqd6fhd\/DqJfFNr9hL4l63S9bY\/pPp\/M8wqrUOdVq7he9KEqkmqkvOpJXs4ryXm+eyV6Wx3ms3yT26Ji0b1WFtMJ3Kh6taqxWKzOGmsjlPcpLxHTbTlUf2Kaa9L3fu16M7ekGrK\/0qWm85lJzvJ0pTbb3L7dNt83XLXykvJEfDW8vn+E+ZHLS2gAc7QAAAAAAAAAAFXdZ9V\/RMH9X8FL46ivWa+7T8o\/OXn\/ur3REdP5Dr3KsNKeUYZxjWit25UXvhZ2TU3dKz7ce5aOI6daexWbPNMXCpOo5+I3KpJqTTurrtt4St2twS2x1x4itKRSsb99sZxzadzLXDKa2c9PdS08Rj6Uqbt8dNtPxKTdmk02m1a657pXLY6j4TLc\/0FPM42nsp+NRqLv2\/wDTXDX9UjO6m0rlOpqcIZtBy2NuLjJxav3V15duPZHxhNJ5XhNOzyClv8CaknFzbaUuWovulfn8WL+Irea37WjumMcxEx6Kp6KZVhMfqGpisVHdKhCMqafZSk2t1vVJcfP5F52I\/pnR2T6YrzrZTGadRJS3TcuE213+bJCZ+IyxkvyjstjrxrprhpvEU9MdRoVM1vCNGtUjNtP4U4TgpW9PiUvlyWT1L1dkOJ0fVweCxFKrOrtUY05qT+2m27dkkn3+RK8+0nkWoJb81oRnJKymrxlb03RadvZmGw\/S7SVGpvdGUvaVWbX8NxtbPivat7b3DOKWiJiEZ6C4OrGlisdJPZJ04J+rjvcrfLciF9N8dhMt1rSxWYVI04LfecnZK8JJXb9zYjCYXD4LDxw+DhGEIq0YxSSivZIhb6UaUfeFX\/uy\/wAxXxNJm83\/AOkzjnUa9DUvUvT2By6awFWOIquLUYQ5V7d5S7KP439iC9FcixWIz9Zy01SoxlFS8pzlHbtXrZNt+jsWFg+mGk8LV8TwHP2nUlJfwvZ\/iS6hQpYeiqOHioxSsoxVkl6JLsik5qUpNce+vrKeEzbdmuWb4SlmHUqpga99tTG+HK3e0q21297MsbMekum8Ll9TEUnXvGEpK8491FtfcJBLp9p+Wef2y4T8XxfGv4krb1Lde3a1\/Ik2JoQxOHlQqdpJxfyasy2TxUzx4TMaRXF32ojoi761v\/w8\/wD6pl5ZngMNmmBngcdFShNbZJ+n9Gu6fqYLTmhMi05mP07K4zU9rheU5S+FtN8P5Ik5n4jLGS\/Kq2OnGupazaZyjC4\/W1LKMVd03WlCXPMox3Ozfvazt6svHXOo6OktOurQUVUa8OhC3G63Dt+zFcv5JeZ8Zf090\/l2cxzbDQmqsZOabqSa3Svfjt5s79SaKyfUuMjis2VSTjHbFKpKKir3dkvN+b9l6GmXPTJeszvUK1pNazrupPTGT6txOIWfZFRlUkpStVfhu8\/vO1R8vl8273PnUWV6qyzG\/wBvZzSlSnKomqq8NfpO6doNpPi\/Ks38zYfKsuw2VZdDAYGO2nTjtiu\/Hu\/Nvu36nznGV4TOctnl+YR3U5qzV7ed00\/Jp8plvjf174xr86R5PTuxmh9SUtT5DHHRspr4asF92aXP4PiS9mSAj2mtHZTpmvKrlKqR3pKSdSUk7O6dn5rnn3ZITjvx5Tx7Nq711AAVSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD\/9k="
     },
     {
       "nameTh": "อินทรประกันภัย",
-      "shortCom": "IIC",
+      "code": "IIC",
       "color": "FFFFFF",
       "img": "https:\/\/member.apinsurance.co.th\/PJApplicationImagesAPI\/Images\/tmpUpload\/8dff2156-ff60-4829-8fdb-878072f5d590.png"
     },
     {
       "nameTh": "นําสินประกันภัย",
-      "shortCom": "NSI",
+      "code": "NSI",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/thunhoon.com\/cache\/image\/article\/236530\/6376240e-4606-46ef-852d-aeec31c81d82.jpeg"
     },
     {
       "nameTh": "ศรีอยุธยา",
-      "shortCom": "BTI",
+      "code": "BTI",
       "color": "FFC527",
       "type":['insure','assure'],
       "img": "http:\/\/www.sudkum.com\/images\/promotion\/promotion20150518135608.jpg"
     },
     {
       "nameTh": "ไทยประกันภัย",
-      "shortCom": "TIC",
+      "code": "TIC",
       "color": "1795D4",
       "type":['insure','assure'],
       "img": "http:\/\/www.sudkum.com\/images\/promotion\/promotion20150518135608.jpg"
     },
     {
       "nameTh": "เจนเนอราลี่ ประกันภัย",
-      "shortCom": "GEN",
+      "code": "GEN",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/generali.co.th\/wp-content\/uploads\/2022\/03\/Logo_red-1.png"
     },
     {
       "nameTh": "สยามซิตี้ ประกันภัย",
-      "shortCom": "SIAM",
+      "code": "SIAM",
       "color": "E77822",
       "type":['insure','assure'],
       "img": "https:\/\/www.prachachat.net\/wp-content\/uploads\/2019\/12\/unnamed.jpg"
     },
     {
       "nameTh": "กรุงเทพประกันภัย",
-      "shortCom": "BKI",
+      "code": "BKI",
       "priority": 4,
       "color": "FFFFFF",
       "type":['insure','assure'],
@@ -130,14 +130,14 @@ const brands = [
     },
     {
       "nameTh": "ไพบูลย์ประกันภัย",
-      "shortCom": "PAI",
+      "code": "PAI",
       "color": "0C6FB7",
       "type":['insure','assure'],
       "img": "https:\/\/image.makewebeasy.net\/makeweb\/0\/x62u5qfIk\/insur\/%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B9%84%E0%B8%9E%E0%B8%9A%E0%B8%B9%E0%B8%A5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99.png?v=202012190947"
     },
     {
       "nameTh": "ทิพยประกันภัย",
-      "shortCom": "TIP",
+      "code": "TIP",
       "priority": 3,
       "type":['insure','assure'],
       "color": "20468F",
@@ -146,20 +146,20 @@ const brands = [
     },
     {
       "nameTh": "สามัคคีประกันภัย",
-      "shortCom": "SMG",
+      "code": "SMG",
       "color": "F1352A",
       "img": "https:\/\/scontent.furt1-1.fna.fbcdn.net\/v\/t39.30808-6\/276994514_280921050883310_261544808838166621_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEMsj-PRHfC7p5-wL4zg9D2p40EqyOsmzCnjQSrI6ybMAtTrZoY4L49of5XuCHZ-bdyjLWTAQwPZpRR9HJ06LGD&_nc_ohc=3vglYAO9WYUAX-vu_ZG&_nc_ht=scontent.furt1-1.fna&oh=00_AfDAiry1zNMT0M1TBYNLDi_NMeTkx4mvT6clwiP91Jb7jg&oe=636BF9D2"
     },
     {
       "nameTh": "แอกซ่าประกันภัย",
-      "shortCom": "AXA",
+      "code": "AXA",
       "color": "002191",
       "type":['insure','assure'],
       "img": "https:\/\/images.axa-contento-118412.eu\/thailandgi\/3a2463797bef6e467fee58596901dd37ef56e192_logo-coperate.png?auto=compress,format"
     },
     {
       "nameTh": "นิวแฮมพ์เชอร์ อินชัวรันส์ (AIG)",
-      "shortCom": "NHI",
+      "code": "NHI",
       "color": "02A3E4",
       "email": "thailand.cc@aig.com",
       "phone": "0-2649-1999",
@@ -168,35 +168,35 @@ const brands = [
     },
     {
       "nameTh": "ไอโออิ กรุงเทพประกันภัย",
-      "shortCom": "ABI",
+      "code": "ABI",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/scontent.furt1-1.fna.fbcdn.net\/v\/t39.30808-6\/314598080_5616455548435009_3171303584178431339_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE-LFZvrcabyU42SYieey0Q3VSWrpWbcijdVJaulZtyKNqMLwr_03CpQ6JUo0WI0cICRD41HAYSBPpG41JwCSKe&_nc_ohc=Dhsdjm-P4J8AX_7u4D7&_nc_ht=scontent.furt1-1.fna&oh=00_AfA0bUEL_jdmeOnDfc6rs2inYbE0EW4Njcr3RgSHjvEN1A&oe=636D808C"
     },
     {
       "nameTh": "เจพีประกันภัย",
-      "shortCom": "JP",
+      "code": "JP",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/jjjinsur.com\/assets\/images\/logo\/jp.png"
     },
     {
       "nameTh": "King Wei",
-      "shortCom": "KWG",
+      "code": "KWG",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/www.kwii.com\/img\/logo.png"
     },
     {
       "nameTh": "Aetna",
-      "shortCom": "AETNA",
+      "code": "AETNA",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/www.aetna.co.th\/_next\/image?url=%2Fimages%2Faetna-logo.svg&w=1920&q=75"
     },
     {
       "nameTh": "ธนชาติประกันภัย",
-      "shortCom": "TNC",
+      "code": "TNC",
       "color": "FE5101",
       "email": "mail.insure@thanachart.co.th",
       "type":['insure','assure'],
@@ -204,21 +204,21 @@ const brands = [
     },
     {
       "nameTh": "ซมโปะ เจแปน",
-      "shortCom": "SJNK",
+      "code": "SJNK",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/www.sompo.co.th\/files\/live\/sites\/sompo-th\/files\/sompo_logo_small.png"
     },
     {
       "nameTh": "แปซิฟิค คอรส",
-      "shortCom": "PCHI",
+      "code": "PCHI",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/scontent.furt1-1.fna.fbcdn.net\/v\/t39.30808-6\/309655219_444019454527305_6504340200780684965_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHE6-AycexPhmYBzOrXmX-m1PklZIawHbPU-SVkhrAds25eLbgiL8fBxHVuSr4DRAwo-4zC2cnLNSzQfZc9IPgU&_nc_ohc=QpHHa7jZtNMAX9sLmie&_nc_ht=scontent.furt1-1.fna&oh=00_AfD_HBPK1wpA0j5gzmvi7Kgre0iBIy-wDEvAggC1t3bo9A&oe=636C534A"
     },
     {
       "nameTh": "กรุงไทยพานิชประกันภัย",
-      "shortCom": "KPI",
+      "code": "KPI",
       "color": "FFFFFF",
       "type":['insure','assure'],
       "img": "https:\/\/www.tqm.co.th\/assets\/images\/page_brand\/logo\/KPI.webp"
@@ -226,7 +226,7 @@ const brands = [
     {
       "nameEng": "AIA",
       "nameTh": "เอไอเอ",
-      "shortCom": "AIA",
+      "code": "AIA",
       "color": "D51D47",
       "phone": 1373,
       "type":['assure'],

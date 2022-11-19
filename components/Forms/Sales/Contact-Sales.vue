@@ -197,12 +197,12 @@ label img {
 
 
 <script>
+
 import logo from "~/static/images/medical-logo.svg";
 import brand from "~/static/text/brand";
 import link from "~/static/text/link";
 import { GET_BRANDS_ALL } from "~/services/api/brands.js";
 import { SINGIN } from "~/services/api/auth.js";
-import { registerInsur } from "~/services/api/insurance.js";
 
 export default {
   props: {
@@ -296,7 +296,7 @@ export default {
           detailItem: this.form.item,
           level: 0,
         };
-        this.$emit('onSubmit',data)
+        this.$emit("onSubmit", data);
         // console.log("onSubmit", data);
       }
     },
@@ -306,11 +306,11 @@ export default {
         this._.find(item.type, (itemcode) => itemcode == code)
       );
     },
-    getNameinsur(word) {
+    async getNameinsur(word) {
       console.log("word", word);
-      const res = this._.filter(
+      const res = await this._.filter(
         this.brands,
-        (item) => item.shortCom == word
+        async (item) => (await item.shortCom) == word
       )[0];
       console.log("getNameinsur", res);
 

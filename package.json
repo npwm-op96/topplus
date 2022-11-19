@@ -8,7 +8,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "nuxt",
-		"dev:sit": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=8007 nuxt",
+		"dev:sit": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=80 nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"heroku-postbuild": "npm run build",
@@ -30,6 +30,8 @@
 		"@nuxtjs/moment": "^1.6.1",
 		"@nuxtjs/pwa": "^3.3.5",
 		"@nuxtjs/style-resources": "^1.0.0",
+		"@vuelidate/core": "^2.0.0",
+		"@vuelidate/validators": "^2.0.0",
 		"ag-grid-community": "^28.2.1",
 		"ag-grid-vue": "^28.2.1",
 		"animate.css": "^3.7.2",
@@ -51,6 +53,7 @@
 		"vue": "^2.6.14",
 		"vue-countup-directive": "^1.2.5",
 		"vue-easy-lightbox": "^0.15.2",
+		"vue-file-agent": "^1.7.3",
 		"vue-fragment": "1.5.1",
 		"vue-lodash": "^2.1.2",
 		"vue-property-decorator": "^8.5.1",
@@ -59,6 +62,7 @@
 		"vue-slick": "^1.1.15",
 		"vue-wow": "^1.2.0",
 		"vue-youtube": "^1.4.0",
+		"vuelidate": "^0.7.7",
 		"vuetify": "^2.6.2",
 		"webpack-filter-warnings-plugin": "^1.2.1",
 		"webpack-node-externals": "^1.7.2"

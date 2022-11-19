@@ -6,6 +6,7 @@
         <div id="home">
           <banner-slider />
         </div>
+        
         <section class="space-top">
           <counter />
         </section>

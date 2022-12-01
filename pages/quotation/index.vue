@@ -1,5 +1,6 @@
 <template>
     <div class="main-wrap">
+        <p v-if="lineAccoount.displayName">ยินดีได้ดูแลครับคุณ {{lineAccoount.displayName}}</p>
         <v-stepper v-model="step" vertical>
             <v-stepper-step @click="onchenage(1)" :complete="step > 2" step="1">
                 ข้อมูล
@@ -19,7 +20,9 @@
 
             <v-stepper-content step="2">
                 <v-card class="mb-12">
-                    <form-doc @formCarDoc="formCarDoc($event)" @formInsureDoc="formInsurDoc($event)"></form-doc>
+                    <form-doc @formCarDoc="formCarDoc($event)"></form-doc>
+                    <form-insure @formInsureDoc="formInsureDoc($event)"></form-insure>
+
                 </v-card>
                 <v-btn color="primary" @click="step = 3">
                     ถัดไป
@@ -88,6 +91,7 @@ import formData from '~/components/Forms/quotation/formData.vue'
 import formDoc from '~/components/Forms/quotation/formDoc.vue'
 import formPicture from '~/components/Forms/quotation/formPicture.vue'
 import formBrand from '~/components/Forms/formBrand'
+import formInsur from '~/components/Forms/quotation/formInsure.vue'
 
 // import liff from '@line/liff';
 
@@ -101,19 +105,18 @@ export default {
         'form-data': formData,
         'form-doc': formDoc,
         'form-picture': formPicture,
-        'form-brand': formBrand
-
-
+        'form-brand': formBrand,
+        'form-insure': formInsur
     },
     data() {
         return {
             step: 1,
             dialogProgress: false,
-            QuatationData: {},
+            QuotationData: {},
             interval: {},
             value: 0,
-            textprogress: 'กำลังนำส่งเอกสาร'
-
+            textprogress: 'กำลังนำส่งเอกสาร',
+            lineAccoount:{}
         }
     },
     watch: {
@@ -135,15 +138,21 @@ export default {
 
     },
     mounted() {
-        liff.init({
-            liffId: '1657665333-lergPwN6', // Use own liffId
-        })
-            .then(() => {
-                console.log(liff.getOS());
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        liff.init({ liffId: process.env.LIFFID }, () => {
+            if (liff.isLoggedIn()) {
+                liff.getProfile().then(profile => {
+                     lineAccoount.userProfile = profile.userId;
+                     lineAccoount.displayName = profile.displayName;
+                     lineAccoount.statusMessage = profile.statusMessage;
+                     lineAccoount.pictureUrl = profile.pictureUrl;
+                     lineAccoount.email = liff.getDecodedIDToken().email;
+                }).catch(
+                    err => console.error(err)
+                );
+            } else {
+                liff.login();
+            }
+        }, err => console.error(err.code, error.message));
     },
     methods: {
         onchenage(step) {
@@ -151,30 +160,88 @@ export default {
             this.step = step
         },
         formData(data) {
-            this.QuatationData.CusData = data
+            this.QuotationData.CusData = data
         },
         formCarDoc(document) {
-            this.QuatationData.FormCarDoc = document
+            this.QuotationData.FormCarDoc = document
         },
-        formInsurDoc(document) {
-            this.QuatationData.FormInsurDoc = document
+        formInsureDoc(insurance) {
+            this.QuotationData.FormInsurDoc = insurance
+            console.log('Q formInsureDoc', this.QuotationData)
         },
         formPicture(picture) {
-            this.QuatationData.FormCarPicture = picture
+            this.QuotationData.FormCarPicture = picture
         },
         formInsur(provider) {
-            this.QuatationData.TempInsur = provider
-            // console.log('getItmeInsur', this.QuatationData)
+            this.QuotationData.TempInsur = provider
+            // console.log('getItmeInsur', this.QuotationData)
         },
-        sentQuatation() {
+        async saveCustomer(quotation, customer) {
+            console.log('saveCustomer --> quo ->', quotation)
+            console.log('saveCustomer --> customer ->', customer)
+
+            const req = { ...customer, refQuo: quotation.id ,};
+            if(this.lineAccoount.userProfile){
+                const req = { ...req, lineAccoount: this.lineAccoount};
+            }
+            return this.$store.dispatch("customer/saveCustomer", req)
+        },
+        async saveQuotation() {
+            const req = {
+                "status": "prepare",
+                "tempInsurs": this.QuotationData.TempInsur
+            }
+            return await this.$store.dispatch('quotation/saveQuotation', req)
+
+        },
+        async saveFile(form) {
+            return await this.$store.dispatch('files/saveFile', form)
+
+        },
+        async sentQuatation() {
             this.dialogProgress = true
-            console.log('sentQuatation', this.QuatationData)
+            console.log('sentQuatation', this.QuotationData)
+            const datacus = this.QuotationData?.CusData;
             let count = 1
+            const quotation = await this.saveQuotation()
+            const customer = await this.saveCustomer(quotation, datacus);
 
-            // if (count == 100) {
-            // liff.closeWindow();
-
-
+            if (this.QuotationData.FormCarDoc) {
+                let files = new FormData();
+                files.append("module", 'quotation');
+                files.append("refId", quotation.id);
+                const fileList = this.QuotationData.FormCarDoc
+                for (const file of fileList) {
+                    files.append("FileData", file.file);
+                    files.append("type", 'doccar');
+                    files.append("fileName", file.file.name);
+                }
+                const file = await this.saveFile(files)
+            }
+            if (this.QuotationData.FormInsurDoc) {
+                const fileList = this.QuotationData.FormInsurDoc
+                let files = new FormData();
+                files.append("module", 'quotation');
+                files.append("refId", quotation.id);
+                for (const file of fileList) {
+                    files.append("FileData", file.file);
+                    files.append("type", 'docinsur');
+                    files.append("fileName", file.file.name);
+                }
+                const file = await this.saveFile(files)
+            }
+            if (this.QuotationData.FormCarPicture) {
+                const fileList = this.QuotationData.FormCarPicture
+                let files = new FormData();
+                files.append("module", 'quotation');
+                files.append("refId", quotation.id);
+                for (const file of fileList) {
+                    files.append("FileData", file.file);
+                    files.append("type", 'carpicture');
+                    files.append("fileName", file.file.name);
+                }
+                const file = await this.saveFile(files)
+            }
         }
     },
 }

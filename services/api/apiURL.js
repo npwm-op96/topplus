@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:3000";
+const apiURL = process.env.CORE_API;
 
 export {
     apiURL

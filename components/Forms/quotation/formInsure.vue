@@ -1,10 +1,15 @@
 
 <template>
     <form>
-        <p>
-            เล่มรถ
-        </p>
-        <file-upload @fileRecord="fileCarDoc($event)" :options="FileUploadOptions"></file-upload>
+        <v-checkbox @change="cehckInsur($event)" v-model="haveinsur" label="มีกรมธรรม์เดิม"></v-checkbox>
+        <div v-if="haveinsur">
+            <p>
+                กรรมธรรมเดิม
+            </p>
+            <file-upload @fileRecord="fileInsureDoc($event)" :options="FileUploadOptions"></file-upload>
+        </div>
+
+
     </form>
 </template>
 <script>
@@ -42,14 +47,10 @@ export default {
                 console.log(e.target)
             })
         },
-        fileCarDoc(filecar) {
-            console.log('formCarDoc', filecar)
-            this.$emit('formCarDoc', filecar)
-        },
-        // fileInsureDoc(fileinsur) {
-        //     console.log('formInsurDoc', fileinsur)
-        //     this.$emit('formInsurDoc', fileinsur)
-        // }
+        fileInsureDoc(fileinsur) {
+            console.log('formInsureDoc', fileinsur)
+            this.$emit('formInsureDoc', fileinsur)
+        }
     },
 }
 </script>

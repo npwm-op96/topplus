@@ -51,12 +51,12 @@ export default {
       level: 0,
       _quotation: null,
       columnDefs: [
-        { headerName: "เพศ", field: "cusData.gender" },
-        { headerName: "ชื่อลูกค้า ", field: "cusData.fname" },
-        { headerName: "นามสกุลลูกค้า ", field: "cusData.lname" },
-        { headerName: "เบอร์", field: "cusData.tel" },
-        { headerName: "อีเมล์", field: "cusData.email" },
-        { headerName: "ไลน์", field: "cusData.idline" },
+        { headerName: "เลขที่", field: "id" },
+        { headerName: "ชื่อลูกค้า ", field: "name" },
+        { headerName: "สถานะ ", field: "status" },
+        { headerName: "เบอร์", field: "tel" },
+        // { headerName: "อีเมล์", field: "cusData.email" },
+        // { headerName: "ไลน์", field: "cusData.idline" },
         { headerName: "วันที่ลงทะเบียน", field: "date", sort: "asc" },
       ],
       rowData: null,
@@ -67,7 +67,7 @@ export default {
     };
   },
   async created() {
-    await this.setQuotation();
+    // await this.setQuotation();
     await this.getQuotation();
 
     this.$store.commit("ui/setheader", "system");
@@ -78,14 +78,16 @@ export default {
     async setQuotation() {
       console.log("setQuotation", quotation);
       await this.$store.dispatch('quotation/getQuotation')
-      this._quotation = await this.$store.state.quotation.quotation
+      // this._quotation = await this.$store.state.quotation.quotation
     },
     async getQuotation() {
+      this._quotation =  await this.$store.dispatch('quotation/getQuotation')
+      var quotation =  await this._quotation;
       console.log("getQuotation", this._quotation);
-      const quotation = this._.filter(
-        this._quotation,
-        (item) => item.level == this.level
-      );
+      // const quotation = this._.filter(
+      //   this._quotation,
+      //   (item) => item.level == this.level
+      // );
 
       console.log(quotation);
       this.rowData = quotation;

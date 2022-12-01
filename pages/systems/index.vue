@@ -33,6 +33,7 @@ import Hidden from '~/components/Hidden'
 import Corner from '~/components/Home/Corner'
 import Notification from '~/components/Notification'
 import brand from '~/static/text/brand'
+import { GetQuotation } from '../../services/api/quotation';
 //   import levelmember from '~/components/Home/LevelMember'
 
 export default {
@@ -63,12 +64,14 @@ export default {
         this.$store.commit('ui/setheader','system')
 // 
         console.log(' this.$store.state.ui.header ', this.$store.state.ui.header)
+        this.GetQuotation()
     },
     head() {
         return {
             title: "System | หน้าแรก",
         };
     },
+
 
 }
 </script>

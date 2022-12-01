@@ -9,7 +9,7 @@
                             <!-- {{itemInsur.length}} -->
                         </div>
                     </div>
-                    <div v-if="index >0 && index <6 " :class="{ disabled: itemInsur.length == 3 && !checkintem(item.code) }" @change="onselectItem(item)" v-for="(item, index) in brands" :key="item.code" class="item">
+                    <div v-if="index > 0 && index <6 " :class="{ disabled: itemInsur.length == 3 && !checkintem(item.code) }" @change="onselectItem(item)" v-for="(item, index) in brands" :key="item.code" class="item">
                         <input type="checkbox" :id="`item${index + 1}`" />
                         <label :for="`item${index + 1}`">
                             <v-card @click="() => showImg(index - 1)" class="mr-5">
@@ -31,7 +31,7 @@
                             <!-- {{itemInsur.length}} -->
                         </div>
                     </div>
-                    <div v-if="index >6 && index <10 " :class="{ disabled: itemInsur.length == 3 && !checkintem(item.code) }" @change="onselectItem(item)" v-for="(item, index) in brands" :key="item.code" class="item">
+                    <div v-if="index > 6 && index <10 " :class="{ disabled: itemInsur.length == 3 && !checkintem(item.code) }" @change="onselectItem(item)" v-for="(item, index) in brands" :key="item.code" class="item">
                         <input type="checkbox" :id="`item${index + 1}`" />
                         <label :for="`item${index + 1}`">
                             <v-card @click="() => showImg(index - 1)" class="mr-5">
@@ -116,7 +116,7 @@ export default {
             console.log('onselectItem', provider)
             if (!provider) {
                 console.log('add', item)
-                this.itemInsur.push(await item)
+                this.itemInsur.push(await item.code)
             }
             else {
                 console.log('remove', item)

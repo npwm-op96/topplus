@@ -64,7 +64,18 @@ export default {
     getGender(data) {
       return this.imggender[data];
     },
-    onSubmit(data) {
+    async saveQuotation(){
+      const req = {
+        "status":"prepare"
+      }
+      return this.$store.dispatch("quotation/saveQuotation",req)
+    },
+    async saveCustomer(quotation,customer){
+      const req = {...customer,refQuo:quotation.id};
+
+      return this.$store.dispatch("customer/saveCustomer",req)
+    },
+   async onSubmit(data) {
       console.log("onSubmit", data);
       this.$store.commit("quotation/addQuotation", data);
       const text = `
@@ -75,6 +86,8 @@ export default {
       const message = {
         message: text,
       };
+        const quotation =  await  this.saveQuotation()
+        const customer = await this.saveCustomer(quotation,data.cusData)
 
       this.$store.dispatch("message/SEND_LINE_MESSAGE_NOTI", message);
     },

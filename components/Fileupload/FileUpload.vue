@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- {{ options }} -->
-    <VueFileAgent ref="vueFileAgent" :uploadHeaders="{}" :multiple="options.multiple" :deletable="true" :meta="true"
+    <VueFileAgent ref="vueFileAgent"   :multiple="options.multiple" :deletable="true" :meta="true"
       :accept="options.accept" :maxSize="options.maxSize" :maxFiles="options.maxFiles" :helpText="options.helpText"
       :errorText="options.errorText" :thumbnailSize="options.thumbnailSize" :theme="options.theme" v-model="fileRecords"
       @select="filesSelected($event)" @beforedelete="onBeforeDelete($event)" @delete="fileDeleted($event)">
@@ -35,7 +35,7 @@ export default {
     return {
       // finalStyles : Object.assign({}, defaultStyles, textStyles),
       fileRecords: [],
-      uploadUrl: "https://www.mocky.io/v2/5d4fb20b3000005c111099e3",
+      uploadUrl: "https://localhost:7017/api/Files/saveFile",
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [], // maintain an upload queue
     };

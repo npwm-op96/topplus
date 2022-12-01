@@ -86,6 +86,8 @@ export default {
       title: "Home | " + brand.medical.desc,
     };
   },
+  created(){
+  }
 }
 </script>
 <style type="css">

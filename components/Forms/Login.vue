@@ -70,7 +70,7 @@ export default {
       checkbox: false
     }
   },
-  created() {
+  mounted() {
     this.handleLogin()
   },
   methods: {
@@ -79,9 +79,10 @@ export default {
       const loggedIn = this.$auth.loggedIn
       if (loggedIn) {
         const user = this.$auth.user
-        this.$router.push({ name: 'systems/dashboard', params: { data: user } })
+        console.log('user',user)
+        this.$router.push({ name: `systems-dashboard`, params: { data: user } })
       }
-      return
+      // return
     },
     async handleSubmit() {
       if (this.$refs.form.validate()) {

@@ -8,7 +8,7 @@
     "private": true,
     "scripts": {
         "dev": "nuxt --dotenv env/.env.development",
-        "dev:sit": "NUXT_HOST=0.0.0.0 NUXT_PORT=8000 nuxt --dotenv env/.env.staging",
+        "sit": "NUXT_HOST=0.0.0.0 NUXT_PORT=8000 nuxt --dotenv env/.env.staging",
         "build": "nuxt build",
         "start": "nuxt start",
         "heroku-postbuild": "npm run build",

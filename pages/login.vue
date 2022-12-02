@@ -31,11 +31,11 @@ export default {
     };
   },
   created() {
-    const loggedIn = this.$auth.loggedIn;
-    if (loggedIn) {
-      const user = this.$auth.user;
-      this.$router.push({ name: "systems/dashboard", params: { data: user } });
-    }
+    // const loggedIn = this.$auth.loggedIn;
+    // if (loggedIn) {
+    //   const user = this.$auth.user;
+    //   this.$router.push({ name: "systems/dashboard", params: { data: user } });
+    // }
   },
   head() {
     return {

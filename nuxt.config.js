@@ -5,6 +5,8 @@ import { theme } from './config/vuetify.options'
 import languages from './static/lang/languages'
 import brand from './static/text/brand'
 import dotenv from 'dotenv'
+import path from 'path'
+import fs from 'fs'
 dotenv.config()
     // const CONFIG = process.env.NODE_ENV === 'development' ? require('dev-config') : require('prod-config');
 
@@ -265,6 +267,10 @@ module.exports = {
      ** Application Port
      */
     server: {
+        https: {
+            key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
+            cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
+        },
         port: 8000, // default: 3000
     },
 

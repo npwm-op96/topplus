@@ -6,7 +6,6 @@
         <div id="home">
           <banner-slider />
         </div>
-        
         <section class="space-top">
           <counter />
         </section>
@@ -87,6 +86,7 @@ export default {
     };
   },
   created(){
+    console.log('process',process.env)
   }
 }
 </script>

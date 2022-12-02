@@ -38,7 +38,7 @@
 </style>
   
 <script>
-import Header from '~/components/Header'
+// import Header from '~/components/Header'
 import Footer from '~/components/Footer'
 import MenuHeader from "~/components/Header";
 import menu from '~/components/Header/data/system.js'

@@ -138,9 +138,13 @@ export default {
 
     },
     mounted() {
-        liff.init({ liffId: process.env.LIFFID }, () => {
+        // console.log(process.env.LIFFID)
+        liff.init({ liffId: this.$config.LIFFID }, (res) => {
+            console.log(res)
+             console.log(liff.isLoggedIn())
             if (liff.isLoggedIn()) {
                 liff.getProfile().then(profile => {
+                    console.log(profile)
                      lineAccoount.userProfile = profile.userId;
                      lineAccoount.displayName = profile.displayName;
                      lineAccoount.statusMessage = profile.statusMessage;

@@ -268,6 +268,9 @@ module.exports = {
     /*
      ** Application Port
      */
+    publicRuntimeConfig: {
+        LIFFID: process.env.LIFFID
+    },
     server: {
         https: {
             key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),

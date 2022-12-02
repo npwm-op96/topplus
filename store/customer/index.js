@@ -1,17 +1,16 @@
-import { saveCustomer } from "~/services/api/customer.js"
 export const state = () => ({
     customer: []
 
 })
 export const mutations = {
     async saveCustomer(state, data) {
-        return await saveCustomer(data)
+        return await this.$customersRepository(data)
     }
 }
 export const actions = {
     async saveCustomer({ commit, state }, data) {
-        // commit("setQuotation", quotation)
-        const res = await saveCustomer(data)
+        commit("saveCustomer", data)
+        const res = await this.$customersRepository.saveCustomer(data)
         return res.data;
     }
 

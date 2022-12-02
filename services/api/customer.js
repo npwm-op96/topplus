@@ -1,20 +1,17 @@
-import axios from 'axios'
-import { apiURL } from './apiURL';
-const path = 'Customer'
-export async function saveCustomer(Payload) {
-    let config = {
-        method: "POST",
-        url: `${apiURL}/${path}/saveCustomer`,
-        headers: {
-            "Content-Type": "application/json",
-        },
-        data: JSON.stringify(Payload),
-    };
+export default $axios => resource => ({
 
-    const res = await axios.post(config.url, config.data, config)
-
-    return new Promise((resolve, reject) => {
-        resolve(res);
-        reject(res);
-    });
-}
+    async saveCustomer(Payload) {
+        const url = `${resource}/saveCustomer`
+        const data = JSON.stringify(Payload)
+        let config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const res = await $axios.post(url, data, config)
+        return new Promise((resolve, reject) => {
+            resolve(res);
+            reject(res);
+        });
+    }
+});

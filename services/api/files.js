@@ -1,20 +1,19 @@
-import axios from 'axios'
-import { apiURL } from './apiURL';
-const path = 'Files'
-export async function saveFile(form) {
-    let config = {
-        method: "POST",
-        url: `${apiURL}/${path}/saveFile`,
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        },
-        // data: Payload,
-    };
+export default $axios => resource => ({
 
-    const res = await axios.post(config.url, form, config)
+    async saveFile(form) {
+        const url = `${resource}/saveFile`
+        let config = {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            // data: Payload,
+        };
 
-    return new Promise((resolve, reject) => {
-        resolve(res);
-        reject(res);
-    });
-}
+        const res = await $axios.post(url, form, config)
+
+        return new Promise((resolve, reject) => {
+            resolve(res);
+            reject(res);
+        });
+    }
+})

@@ -180,11 +180,11 @@ export default {
             console.log('saveCustomer --> quo ->', quotation)
             console.log('saveCustomer --> customer ->', customer)
 
-            const req = { ...customer, refQuo: quotation.id ,};
+            const req = { ...customer, refQuo: quotation.id};
             if(this.lineAccoount.userProfile){
                 const req = { ...req, lineAccoount: this.lineAccoount};
             }
-            return this.$store.dispatch("customer/saveCustomer", req)
+            return await  this.$store.dispatch("customer/saveCustomer", req)
         },
         async saveQuotation() {
             const req = {

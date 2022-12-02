@@ -110,6 +110,7 @@ module.exports = {
         '~/plugins/vue-wow-config',
         '~/plugins/lodash-config.js',
         "~/plugins/ag-grid.client.js",
+        '~/plugins/repository',
 
         // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
         { src: '~plugins/i18n-config.js' },
@@ -155,6 +156,7 @@ module.exports = {
         ['nuxt-gmaps', { key: '' }],
         '@nuxtjs/i18n',
     ],
+
     axios: {
         baseURL: process.env.CORE_API,
         // credentials: true

@@ -187,8 +187,8 @@ export default {
             let req = { ...customer, refQuo: quotation.id};
             // if(this.lineAccoount.userId){
                 // console.log('lineAccoount',this.lineAccoount)
-                 request = { ...req, lineAccoount: this.lineAccoount};
-                console.log('req',request)
+            const request = { ...req, lineAccoount: this.lineAccoount};
+            console.log('req',request)
             // }
             return await  this.$store.dispatch("customer/saveCustomer", request)
         },

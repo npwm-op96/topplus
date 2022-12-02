@@ -22,7 +22,6 @@
                 <v-card class="mb-12">
                     <form-doc @formCarDoc="formCarDoc($event)"></form-doc>
                     <form-insure @formInsureDoc="formInsureDoc($event)"></form-insure>
-
                 </v-card>
                 <v-btn color="primary" @click="step = 3">
                     ถัดไป
@@ -145,11 +144,11 @@ export default {
             if (liff.isLoggedIn()) {
                 liff.getProfile().then(profile => {
                     console.log(profile)
-                     lineAccoount.userProfile = profile.userId;
-                     lineAccoount.displayName = profile.displayName;
-                     lineAccoount.statusMessage = profile.statusMessage;
-                     lineAccoount.pictureUrl = profile.pictureUrl;
-                     lineAccoount.email = liff.getDecodedIDToken().email;
+                     this.lineAccoount.userProfile = profile.userId;
+                     this.lineAccoount.displayName = profile.displayName;
+                     this.lineAccoount.statusMessage = profile.statusMessage;
+                     this.lineAccoount.pictureUrl = profile.pictureUrl;
+                     this.lineAccoount.email = liff.getDecodedIDToken().email;
                 }).catch(
                     err => console.error(err)
                 );

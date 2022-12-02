@@ -1,7 +1,8 @@
 <template>
     <div class="main-wrap">
-        <p v-if="lineAccoount.displayName">ยินดีได้ดูแลครับคุณ {{lineAccoount.displayName}}</p>
         <v-stepper v-model="step" vertical>
+            <p class="text-center pt-5" >ยินดีได้ดูแลครับคุณ {{lineAccoount.displayName}}</p>
+
             <v-stepper-step @click="onchenage(1)" :complete="step > 2" step="1">
                 ข้อมูล
             </v-stepper-step>
@@ -184,11 +185,11 @@ export default {
             console.log('saveCustomer --> customer ->', customer)
 
             const req = { ...customer, refQuo: quotation.id};
-            if(this.lineAccoount.userId){
-                console.log('lineAccoount',this.lineAccoount)
-                const req = { ...req, lineAccoount: this.lineAccoount};
+            // if(this.lineAccoount.userId){
+                // console.log('lineAccoount',this.lineAccoount)
+                 req = { ...req, lineAccoount: this.lineAccoount};
                 console.log('req',req)
-            }
+            // }
             return await  this.$store.dispatch("customer/saveCustomer", req)
         },
         async saveQuotation() {

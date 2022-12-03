@@ -1,7 +1,7 @@
 <template>
     <div class="main-wrap">
         <v-stepper v-model="step" vertical>
-            <p class="text-center pt-5" >ยินดีได้ดูแลครับคุณ {{lineAccoount.displayName}}</p>
+            <p class="text-center pt-5">ยินดีได้ดูแลครับคุณ {{ lineAccoount.displayName }}</p>
 
             <v-stepper-step @click="onchenage(1)" :complete="step > 2" step="1">
                 ข้อมูล
@@ -116,7 +116,7 @@ export default {
             interval: {},
             value: 0,
             textprogress: 'กำลังนำส่งเอกสาร',
-            lineAccoount:{}
+            lineAccoount: {}
         }
     },
     watch: {
@@ -141,15 +141,15 @@ export default {
         // console.log(process.env.LIFFID)
         liff.init({ liffId: this.$config.LIFFID }, (res) => {
             console.log(res)
-             console.log(liff.isLoggedIn())
+            console.log(liff.isLoggedIn())
             if (liff.isLoggedIn()) {
                 liff.getProfile().then(profile => {
                     console.log(profile)
-                     this.lineAccoount.userProfile = profile.userId;
-                     this.lineAccoount.displayName = profile.displayName;
-                     this.lineAccoount.statusMessage = profile.statusMessage;
-                     this.lineAccoount.pictureUrl = profile.pictureUrl;
-                     this.lineAccoount.email = liff.getDecodedIDToken().email;
+                    this.lineAccoount.userProfile = profile.userId;
+                    this.lineAccoount.displayName = profile.displayName;
+                    this.lineAccoount.statusMessage = profile.statusMessage;
+                    this.lineAccoount.pictureUrl = profile.pictureUrl;
+                    this.lineAccoount.email = liff.getDecodedIDToken().email;
                 }).catch(
                     err => console.error(err)
                 );
@@ -184,13 +184,13 @@ export default {
             console.log('saveCustomer --> quo ->', quotation)
             console.log('saveCustomer --> customer ->', customer)
 
-            let req = { ...customer, refQuo: quotation.id};
+            let req = { ...customer, refQuo: quotation.id };
             // if(this.lineAccoount.userId){
-                // console.log('lineAccoount',this.lineAccoount)
-            const request = { ...req, lineAccoount: this.lineAccoount};
-            console.log('req',request)
+            // console.log('lineAccoount',this.lineAccoount)
+            const request = { ...req, lineAccoount: this.lineAccoount };
+            console.log('req', request)
             // }
-            return await  this.$store.dispatch("customer/saveCustomer", request)
+            return await this.$store.dispatch("customer/saveCustomer", request)
         },
         async saveQuotation() {
             const req = {
@@ -211,7 +211,40 @@ export default {
             let count = 1
             const quotation = await this.saveQuotation()
             const customer = await this.saveCustomer(quotation, datacus);
-
+            if (customer) {
+                liff
+                    .sendMessages([
+                        {
+                            "type": "template",
+                            "altText": "this is a carousel template",
+                            "template": {
+                                "type": "carousel",
+                                "imageSize": "contain",
+                                "columns": [
+                                    {
+                                        "thumbnailImageUrl": "https://images.autofun.co.th/file1/c61d65a5e7794b5b967f868f0713404e_1200.png",
+                                        "title": "ขอบคุณที่ไว้วางใจ D4U",
+                                        "text": "เราจะติดต่อกลับคุณเร็วที่สุด",
+                                        "actions": [
+                                            {
+                                                "type": "message",
+                                                "label": "ติดต่อเรา",
+                                                "text": "ติดต่อเรา"
+                                            }
+                                        ],
+                                        "imageBackgroundColor": "#ACA382"
+                                    }
+                                ]
+                            }
+                        },
+                    ])
+                    .then(() => {
+                        console.log("message sent");
+                    })
+                    .catch((err) => {
+                        console.log("error", err);
+                    });
+            }
             if (this.QuotationData.FormCarDoc) {
                 let files = new FormData();
                 files.append("module", 'quotation');

@@ -9,9 +9,14 @@
   dependencies:
     "@ag-grid-community/core" "~28.2.1"
 
-"@ag-grid-community/core@~28.2.1":
+"@ag-grid-community/core@^28.2.1", "@ag-grid-community/core@~28.2.1":
   "integrity" "sha512-qGhqZhY8KbPlr3cJBVkNjGKu+cOyFc8IGvPcvlm0pjNC9cdxO/ct9Sa1Dg+k3ACCEroMEt1apBvnoOgurpvewQ=="
   "resolved" "https://registry.npmjs.org/@ag-grid-community/core/-/core-28.2.1.tgz"
+  "version" "28.2.1"
+
+"@ag-grid-community/vue@^28.2.1":
+  "integrity" "sha512-QYZTarRb0gZ2hs/bRd747tp93aP6jNpiXU0rWKRQcPWv/eT+uLbZ1nRtLS1kSwkfUjMwst5ngqSqMyyXCyT3Cg=="
+  "resolved" "https://registry.npmjs.org/@ag-grid-community/vue/-/vue-28.2.1.tgz"
   "version" "28.2.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7":

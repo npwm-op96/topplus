@@ -60,7 +60,8 @@ export default {
       sortingOrder: null,
       defaultColDef: {
         sortable: true,
-        flex: 1,
+        // flex: 1,
+        // editable: true,
         // minWidth: 200,
         resizable: true,
         // floatingFilter: true,
@@ -79,8 +80,8 @@ export default {
       if (process.client) {
         console.log(localStorage.getItem("D4UDarkMode"));
         return !localStorage.getItem("D4UDarkMode")
-          ? "ag-theme-alpine-dark"
-          : "ag-theme-alpine";
+          ? "ag-theme-material-dark"
+          : "ag-theme-material";
       }
     },
 

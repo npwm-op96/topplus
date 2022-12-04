@@ -22,7 +22,7 @@ export const mutations = {
     },
     async getQuotation(state, req) {
         // return await GetQuotation(req)
-        return await await this.$quotationRepository.GetQuotation(data)
+        return await this.$quotationRepository.GetQuotation()
     }
 }
 export const actions = {
@@ -33,7 +33,7 @@ export const actions = {
 
     },
     async getQuotation({ commit, state }, data) {
-        commit("getQuotation", data)
+        // commit("getQuotation", data)
         const res = await this.$quotationRepository.GetQuotation(data)
         return res.data
     }

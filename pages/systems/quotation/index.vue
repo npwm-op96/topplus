@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <div class="main-wrap curve">
-            <main-header :header="header" :dataMenu="dataMenu" />
-            <div class="container-general container-front">
-                <v-container class="pt-5">
-                  <div>
-                    <h3>ลูกค้า</h3>
-                  </div> 
-                    <datables-ag :columnDefs="columnDefs" :rowData="rowData" :options="options"></datables-ag>
-                </v-container>
+  <div>
+    <div class="main-wrap curve">
+      <main-header :header="header" :dataMenu="dataMenu" />
+      <div class="container-general container-front">
+        <v-container class="pt-5">
+          <div>
+            <h3>ลูกค้า</h3>
+          </div>
+          <datables-ag :columnDefs="columnDefs" :rowData="rowData" :options="options"></datables-ag>
+        </v-container>
+        <!-- <quotation-modal></quotation-modal> -->
 
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </template>
   
 <style scoped lang="scss">
@@ -30,12 +31,13 @@ import Notification from "~/components/Notification";
 import brand from "~/static/text/brand";
 import datablesAg from "~/components/DataTables";
 import quotation from "~/api/quotation.js";
+import DetailQutationVue from "~/components/Forms/quotation/DetailQutation.vue";
 
 export default {
   // middleware: 'auth',
   components: {
     "main-header": MenuHeader,
-
+    "quotation-modal": DetailQutationVue,
     Hidden,
     Corner,
     Notification,
@@ -43,7 +45,7 @@ export default {
     datablesAg,
     //   "level-member":ƒ levelmember
   },
-  setup(props) {},
+  setup(props) { },
   data() {
     return {
       dataMenu: menu,
@@ -52,12 +54,28 @@ export default {
       _quotation: null,
       columnDefs: [
         { headerName: "เลขที่", field: "id" },
-        { headerName: "ชื่อลูกค้า ", field: "name" },
+        {
+          headerName: "ชื่อลูกค้า ", field: "name", valueGetter: params => {
+            return params?.data.customers[0].name;
+          }
+        },
         { headerName: "สถานะ ", field: "status" },
-        { headerName: "เบอร์", field: "tel" },
-        // { headerName: "อีเมล์", field: "cusData.email" },
-        // { headerName: "ไลน์", field: "cusData.idline" },
+        {
+          headerName: "เบอร์", field: "tel", valueGetter: params => {
+            return params?.data.customers[0].tel;
+          }
+        },
         { headerName: "วันที่ลงทะเบียน", field: "date", sort: "asc" },
+        {
+          headerName: 'อัพเดท', field: 'fieldName',
+          cellRendererSelector: params => {
+            console.log(params.data)
+            return {
+              component: 'quotation-modal',
+              params: { data: params.data }
+            };
+          },
+        }
       ],
       rowData: null,
       options: {
@@ -81,15 +99,15 @@ export default {
       // this._quotation = await this.$store.state.quotation.quotation
     },
     async getQuotation() {
-      this._quotation =  await this.$store.dispatch('quotation/getQuotation')
-      var quotation =  await this._quotation;
-      console.log("getQuotation", this._quotation);
+      this._quotation = await this.$store.dispatch('quotation/getQuotation')
+      var quotation = await this._quotation;
+      // console.log("getQuotation", this._quotation);
       // const quotation = this._.filter(
       //   this._quotation,
       //   (item) => item.level == this.level
       // );
 
-      console.log(quotation);
+      // console.log(quotation);
       this.rowData = quotation;
     },
   },
@@ -101,4 +119,5 @@ export default {
 };
 </script>
 <style type="css">
+
 </style>

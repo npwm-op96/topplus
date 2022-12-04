@@ -140,9 +140,11 @@ export default {
     mounted() {
         // console.log(process.env.LIFFID)
         liff.init({ liffId: this.$config.LIFFID }, (res) => {
-            console.log(res)
+            const context = liff.getContext();
+            console.log(context);
             console.log(liff.isLoggedIn())
             if (liff.isLoggedIn()) {
+                liff.getDecodedIDToken()
                 liff.getProfile().then(profile => {
                     console.log(profile)
                     this.lineAccoount.userProfile = profile.userId;

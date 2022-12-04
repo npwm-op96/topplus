@@ -90,7 +90,7 @@ module.exports = {
         "ag-grid-community/styles/ag-theme-alpine.css",
         // "ag-grid-community/styles/ag-theme-alpine.css",
 
-        // "ag-grid-community/styles/ag-theme-material.css",
+        "ag-grid-community/styles/ag-theme-material.css",
 
         // '@/node_modules/ag-grid/dist/styles/ag-grid.css',
         // '@/node_modules/ag-grid/dist/styles/ag-theme-material.css',
@@ -128,6 +128,9 @@ module.exports = {
         '@nuxtjs/moment', ['@nuxtjs/dotenv', { path: './' }]
 
     ],
+    moment: {
+        locales: ['th']
+    },
     /*
      ** Nuxt.js modules
      */
@@ -269,7 +272,8 @@ module.exports = {
      ** Application Port
      */
     publicRuntimeConfig: {
-        LIFFID: process.env.LIFFID
+        LIFFID: process.env.LIFFID,
+        URL_B2: process.env.URL_B2
     },
     server: {
         https: {

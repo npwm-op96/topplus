@@ -14,7 +14,7 @@
   </v-app>
 </template>
 
-<script>
+<script >
 export default {
   loading: false,
   data() {

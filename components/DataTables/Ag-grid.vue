@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import 'ag-grid-community/styles/ag-theme-material.css'; 
 const replaceAccents = function replaceAccents(value) {
   return value
     .replace(new RegExp("[àáâãäå]", "g"), "a")

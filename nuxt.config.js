@@ -86,8 +86,8 @@ module.exports = {
      ** Global CSS
      */
     css: [
-        "ag-grid-community/styles/ag-grid.css",
-        "ag-grid-community/styles/ag-theme-alpine.css",
+        // "ag-grid-community/styles/ag-grid.css",
+        // "ag-grid-community/styles/ag-theme-alpine.css",
         // "ag-grid-community/styles/ag-theme-alpine.css",
 
         "ag-grid-community/styles/ag-theme-material.css",
@@ -109,8 +109,8 @@ module.exports = {
         '~/plugins/vue-fragment-config',
         '~/plugins/vue-wow-config',
         '~/plugins/lodash-config.js',
-        "~/plugins/ag-grid.client.js",
         '~/plugins/repository',
+        { src: '~/plugins/ag-grid.client.js', ssr: false },
 
         // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
         { src: '~plugins/i18n-config.js' },

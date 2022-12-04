@@ -86,14 +86,8 @@ module.exports = {
      ** Global CSS
      */
     css: [
-        "ag-grid-community/styles/ag-grid.css",
-        "ag-grid-community/styles/ag-theme-alpine.css",
-        // "ag-grid-community/styles/ag-theme-alpine.css",
-
-        "ag-grid-community/styles/ag-theme-material.css",
-
-        // '@/node_modules/ag-grid/dist/styles/ag-grid.css',
-        // '@/node_modules/ag-grid/dist/styles/ag-theme-material.css',
+        '~/node_modules/ag-grid-community/dist/styles/ag-grid.css',
+        '~/node_modules/ag-grid-community/dist/styles/ag-theme-material.css',
         '~/assets/transition.scss',
         '~/assets/vuetify-overide.scss',
         '~/assets/vendors/animate.css',

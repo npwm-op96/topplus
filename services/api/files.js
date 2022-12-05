@@ -1,7 +1,13 @@
 import { GET_LOCAL_TOKEN } from '~/utils/Utils.js'
-var axios = require('axios');
+import JSZip from 'jszip'
+import { saveAs } from 'file-saver';
 
-export default $axios => resource => ({
+
+var axios = require('axios');
+const zip = new JSZip();
+
+export default app => resource => ({
+
 
     async saveFile(form) {
         const url = `${resource}/saveFile`
@@ -12,7 +18,7 @@ export default $axios => resource => ({
             // data: Payload,
         };
 
-        const res = await $axios.post(url, form, config)
+        const res = await app.$axios.post(url, form, config)
 
         return new Promise((resolve, reject) => {
             resolve(res);
@@ -28,87 +34,84 @@ export default $axios => resource => ({
             },
             // data: Payload,
         };
-        const res = await $axios.post(url, form, config)
+        const res = await app.$axios.post(url, form, config)
 
         return new Promise((resolve, reject) => {
             resolve(res);
             reject(res);
         });
     },
-    async dowloadAll(IdQuo) {
-        const url = `${resource}/saveFile`
-        let config = {
-            headers: {
-                "Content-Type": "application/json",
-                // "Authorization": `Bearer ${GET_LOCAL_TOKEN}`
-            },
-            // data: Payload,
-        };
-        const res = await $axios.post(url, form, config)
+    async dowloadAll(req) {
+        console.log('dowloadAll url', req.url)
+        console.log('dowloadAll data', req.data)
 
         return new Promise((resolve, reject) => {
-            resolve(res);
-            reject(res);
+            let config = {
+                method: 'get',
+                headers: {
+                    "Content-Type": "text/plain",
+                },
+                responseType: 'blob',
+            }
+
+            let promises = [];
+
+            for (let i = 0; i < req.data.length; i++) {
+                let config = { params: { "fileId": req.data[i].idfile } }
+                promises.push(axios.get(req.url, config));
+            }
+            axios.all(promises)
+                .then(axios.spread((...args) => {
+                    let file = []
+                    for (let i = 0; i < args.length; i++) {
+                        // console.log('file ALL', file)
+                        file[i] = args[i].data;
+                    }
+                    console.log('file ALL', file.length)
+
+                    var files = zip.folder();
+                    for (let i = 0; i < file.length; i++) {
+                        // console.log(file[i].name);
+                        files.file(req.data[i].nameFile, file[i]);
+                    }
+                    zip.generateAsync({ type: "blob" }).then(function(content) {
+                        console.log(content)
+                        const name = `เอกสาร_${app.$moment(new Date()).format("DD-MM-YYYY")}.zip`
+                        saveAs(content, name);
+                    })
+                }))
+
         });
     },
     async downloadfile(req) {
         return new Promise((resolve, reject) => {
-            const params = {
-                fileId: req.title
-            }
-            console.log('download param ', req.title)
-
-            // const params = { fileId: label }
-
             var _url = req.url
-
-            axios(_url, { params })
+            const config = {
+                params: {
+                    fileId: req.id
+                },
+                method: 'get',
+                headers: {
+                    "Content-Type": "text/plain",
+                },
+                responseType: 'blob',
+            }
+            axios(_url, config)
                 .then(function(response) {
-                    // console.log(JSON.stringify(response.data));
-                    this.forceFileDownload(response, req.title)
-
-                    resolve(response);
-
+                    var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                    console.log('fileURL', new Blob([response.data]))
+                    var fileLink = document.createElement('a');
+                    fileLink.href = fileURL;
+                    fileLink.setAttribute('download', req.title);
+                    document.body.appendChild(fileLink);
+                    fileLink.click();
                 })
                 .catch(function(error) {
                     console.log();
                     reject(error);
 
                 });
-            // resolve(res);
         });
-        // $axios.get(url, { responseType: 'blob' })
-        //     .then(response => {
-        //         const blob = new Blob([response.data])
-        //         const link = document.createElement('a')
-        //         link.href = URL.createObjectURL(blob)
-        //         link.download = label
-        //         link.click()
-        //         URL.revokeObjectURL(link.href)
-        //     }).catch(console.error)
-    },
-    // downloadfile(url, title) {
-    //     $axios({
-    //             method: 'get',
-    //             url,
-    //             headers: {
-    //                 'Content-Type': 'multipart/form-data',
-    //                 "Authorization": `${GET_LOCAL_TOKEN()}`
-    //             },
-    //             responseType: 'arraybuffer',
-    //         })
-    //         .then((response) => {
-    //             this.forceFileDownload(response, title)
-    //         })
-    //         .catch(() => console.log('error occured'))
-    // },
-    forceFileDownload(response, title) {
-        console.log(title)
-        const url = window.URL.createObjectURL(new Blob([response.data]))
-        const link = document.createElement('a')
-        link.href = url
-        link.setAttribute('download', title)
-        document.body.appendChild(link)
-        link.click()
+
     },
 })

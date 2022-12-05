@@ -32,6 +32,7 @@ import brand from "~/static/text/brand";
 import datablesAg from "~/components/DataTables";
 import quotation from "~/api/quotation.js";
 import DetailQutationVue from "~/components/Forms/quotation/DetailQutation.vue";
+import StatusVue from "~/components/Status/Status.vue";
 
 export default {
   // middleware: 'auth',
@@ -43,6 +44,7 @@ export default {
     Notification,
     "main-footer": Footer,
     datablesAg,
+    StatusVue
     //   "level-member":ƒ levelmember
   },
   setup(props) { },
@@ -59,13 +61,25 @@ export default {
             return params?.data.customers[0].name;
           }
         },
-        { headerName: "สถานะ ", field: "status" },
+        {
+          headerName: "สถานะ ", field: "status",
+          cellRendererSelector: params => {
+            console.log(params.data)
+            return {
+              component: 'StatusVue',
+              params: { status: params.data.status }
+            };
+          },
+        },
         {
           headerName: "เบอร์", field: "tel", valueGetter: params => {
             return params?.data.customers[0].tel;
           }
         },
-        { headerName: "วันที่ลงทะเบียน", field: "date", sort: "asc" },
+        {
+          headerName: "วันที่ลงทะเบียน", field: "date", cellRenderer: params => this.dateThai(params.data.dateTime)
+          , sort: "desc"
+        },
         {
           headerName: 'อัพเดท', field: 'fieldName',
           cellRendererSelector: params => {
@@ -109,6 +123,10 @@ export default {
 
       // console.log(quotation);
       this.rowData = quotation;
+    },
+    dateThai(date) {
+      return this.$moment(date).add(543, 'year').format('LLLL')
+
     },
   },
   head() {

@@ -22,7 +22,6 @@
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-list three-line subheader>
-
                     <p class="text-h5 pl-3 pt-4">ข้อมูลลูกค้า</p>
 
                     <!-- {{ data }} -->
@@ -45,7 +44,7 @@
                         <v-list-item>
                             <v-list-item-content>
                                 <v-list-item-title>วันที่ส่งคำขอ</v-list-item-title>
-                                <v-list-item-subtitle>{{ dateThai(data.date) }}</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{ dateThai(data.dateTime) }}</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </div>
@@ -108,7 +107,8 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" @click="downloadImg(`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(item.idfile, item.nameFile)"
+                                                    class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -134,7 +134,8 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" @click="downloadImg(`${$config.URL_B2}${item.idfile}`,`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(item.idfile, item.nameFile)"
+                                                    class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -162,7 +163,8 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" @click="downloadImg(`${$config.URL_B2}${item.idfile}`,`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(item.idfile, item.nameFile)"
+                                                    class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -174,7 +176,7 @@
                         </v-row>
                     </v-list-item>
 
-                    <v-btn color="success" class="ml-2 mt-5" outlined rounded>
+                    <v-btn @click="dowloadAll(data.files)" color="success" class="ml-2 mt-5" outlined rounded>
                         <v-icon>mdi-content-save-plus </v-icon>ดาวเโหลดเอกสารทั้งหมด
                     </v-btn>
                 </v-list>
@@ -193,13 +195,13 @@
                                     <div class="d-flex ">
 
                                         <v-card-actions>
-                                            <v-btn :disabled="QuotationData.quotationDoc" @click="showQationDoc()"
+                                            <v-btn  @click="showQationDoc()"
                                                 color="success" class="ml-2 mt-5" outlined rounded>
                                                 <v-icon>mdi-note-search-outline</v-icon>ตรวจสอบ
                                             </v-btn>
                                         </v-card-actions>
                                         <v-card-actions>
-                                            <v-btn :disabled="QuotationData.quotationDoc" color="success"
+                                            <v-btn  color="success"
                                                 class="ml-2 mt-5" outlined rounded>
                                                 <v-icon>mdi-email-fast</v-icon>ส่งให้ลูกค้า
                                             </v-btn>
@@ -211,10 +213,6 @@
                             </v-col>
                         </v-row>
                     </v-list-item>
-
-                    <!-- <v-btn color="success" class="ml-2 mt-5" outlined rounded>
-                        <v-icon>mdi-content-save-plus </v-icon>ส่งใบเสนอราคาให้ลูกค้า
-                    </v-btn> -->
                 </v-list>
                 <v-divider></v-divider>
             </v-card>
@@ -304,7 +302,12 @@ export default {
         },
         showQationDoc() {
             if (this.QuotationData.quotationDoc[0].type.includes("image")) {
-                this.showImg(this.QuotationData.quotationDoc[0].urlResized)
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const base64 = event.target.result;
+                    this.showImg(base64)
+                }
+                reader.readAsDataURL(this.QuotationData.quotationDoc[0].file);
             }
         },
         showImg(img) {
@@ -316,12 +319,17 @@ export default {
         handleHide() {
             this.visible = false
         },
-       async  downloadImg(title) {
-        const  url = this.$config.URL_B2_GET ;
-        console.log('downloadfile', title)
+        async downloadImg(id, title) {
+            const url = this.$config.URL_B2_GET;
+            console.log('downloadfile', title)
 
-        await this.$store.dispatch('files/downloadfile',{url,title})
+            await this.$store.dispatch('files/downloadfile', { url, id, title })
         },
+        async dowloadAll(data) {
+            console.log(data)
+            const url = this.$config.URL_B2_GET;
+            await this.$store.dispatch('files/dowloadall', { url, data })
+        }
     }
 };
 </script>

@@ -106,7 +106,7 @@ module.exports = {
 
         '~/plugins/repository',
         { src: '~/plugins/ag-grid.client.js', ssr: false },
-
+        { src: '~/plugins/jszip', mode: 'client' },
         // {src: '~/plugins/vue-videojs7.js', mode: 'client'},
         { src: '~plugins/i18n-config.js' },
         { src: '~/plugins/vue-youtube-config', ssr: false },

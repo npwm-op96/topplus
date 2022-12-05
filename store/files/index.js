@@ -13,10 +13,14 @@ export const actions = {
         const res = await this.$filesRepository.saveFile(data)
         return res.data;
     },
-    async downloadfile({ commit, state }, url, title) {
-        console.log(title, 'downloadfile', url)
-        const res = await this.$filesRepository.downloadfile(url)
+    async downloadfile({ commit, state }, req) {
+        // console.log(title, 'downloadfile', url)
+        const res = await this.$filesRepository.downloadfile(req)
         return res
+    },
+    async dowloadall({ commit, state }, req) {
+        const res = await this.$filesRepository.dowloadAll(req)
+
     }
 
 }

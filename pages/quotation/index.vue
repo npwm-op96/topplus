@@ -116,7 +116,8 @@ export default {
             interval: {},
             value: 0,
             textprogress: 'กำลังนำส่งเอกสาร',
-            lineAccoount: {}
+            lineAccoount: {},
+            facebookAccount: {},
         }
     },
     watch: {
@@ -187,18 +188,31 @@ export default {
             console.log('saveCustomer --> customer ->', customer)
 
             let req = { ...customer, refQuo: quotation.id };
-            // if(this.lineAccoount.userId){
-            // console.log('lineAccoount',this.lineAccoount)
             const request = { ...req, lineAccoount: this.lineAccoount };
             console.log('req', request)
             // }
             return await this.$store.dispatch("customer/saveCustomer", request)
         },
+        getChannel() {
+            let channel = ''
+            if (this.lineAccoount.userProfile != null) {
+                channel = 'line'
+            }
+            else if (this.facebookAccount.userProfile != null) {
+                channel = 'facebook'
+            }
+            return channel
+
+        },
         async saveQuotation() {
             const req = {
+                "channel": getChannel(),
                 "status": "prepare",
                 "tempInsurs": this.QuotationData.TempInsur
             }
+
+            this.QuotationData.channel = 'Line'
+
             return await this.$store.dispatch('quotation/saveQuotation', req)
 
         },

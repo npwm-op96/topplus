@@ -1,17 +1,17 @@
 <template>
-    <div class="flex h-full">
-        <!-- {{columnDefs}} -->
-        <v-col sm="8" lg="4">
-            <v-text-field id="filter-text-box" v-model="seachText" outlined label="ค้นหาข้อมุล"
-                placeholder="ค้นหาข้อมุล" @input="onFilterTextBoxChanged()" prepend-inner-icon="mdi-magnify-expand">
-            </v-text-field>
-        </v-col>
-        <ag-grid-vue style="width: 100%; height: 600px" :class="themetable " :columnDefs="columnDefs"
-            :pagination="options.pagination" @grid-ready="onGridReady" :paginationPageSize="options.paginationPageSize"
-            :rowData="rowData"  :sortingOrder="sortingOrder" :defaultColDef="defaultColDef"
->
-        </ag-grid-vue>
-    </div>
+  <div class="flex h-full">
+    <!-- {{columnDefs}} -->
+    <v-col sm="8" lg="4">
+      <v-text-field id="filter-text-box" v-model="seachText" outlined label="ค้นหาข้อมุล" placeholder="ค้นหาข้อมุล"
+        @input="onFilterTextBoxChanged()" prepend-inner-icon="mdi-magnify-expand">
+      </v-text-field>
+    </v-col>
+    <ag-grid-vue style="width: 100%; height:1000px" class="ag-theme-material" :columnDefs="columnDefs"
+      domLayout="autoHeight"
+      :pagination="options.pagination" @grid-ready="onGridReady" :paginationPageSize="options.paginationPageSize"
+      :rowData="rowData" :sortingOrder="sortingOrder" :defaultColDef="defaultColDef">
+    </ag-grid-vue>
+  </div>
 </template>
 
 <script>
@@ -133,12 +133,12 @@ export default {
       this.gridApi.setQuickFilter(this.seachText);
     },
     onPrintQuickFilterTexts() {
-      this.gridApi.forEachNode(function(rowNode, index) {
+      this.gridApi.forEachNode(function (rowNode, index) {
         console.log(
           "Row " +
-            index +
-            " quick filter text is " +
-            rowNode.quickFilterAggregateText
+          index +
+          " quick filter text is " +
+          rowNode.quickFilterAggregateText
         );
       });
     },
@@ -149,6 +149,8 @@ export default {
   },
 };
 </script>
-<style >
+<style  lang="css">
+
 
 </style>
+

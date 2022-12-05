@@ -108,7 +108,7 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -134,7 +134,7 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(`${$config.URL_B2}${item.idfile}`,`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -162,7 +162,7 @@
                                                 </v-btn>
                                             </v-card-actions>
                                             <v-card-actions>
-                                                <v-btn color="success" class="ml-2 mt-5" outlined rounded>
+                                                <v-btn color="success" @click="downloadImg(`${$config.URL_B2}${item.idfile}`,`${item.idfile}`)" class="ml-2 mt-5" outlined rounded>
                                                     <v-icon>mdi-cloud-download</v-icon>ดาวโหลดเอกสาร
                                                 </v-btn>
                                             </v-card-actions>
@@ -186,18 +186,21 @@
                             <v-col cols="12" sm="8" xs="8" md="6" xl="3" lg="4">
                                 <v-card class="pt-1">
                                     <div class=" col-12">
-                                        <file-upload @fileRecord="GetQuotation($event)" :options="FileUploadOptions"></file-upload>
+                                        <file-upload @fileRecord="GetQuotation($event)"
+                                            :options="FileUploadOptions"></file-upload>
 
                                     </div>
                                     <div class="d-flex ">
 
                                         <v-card-actions>
-                                            <v-btn :disabled="QuotationData.quotationDoc" @click="showQationDoc()" color="success" class="ml-2 mt-5" outlined rounded>
+                                            <v-btn :disabled="QuotationData.quotationDoc" @click="showQationDoc()"
+                                                color="success" class="ml-2 mt-5" outlined rounded>
                                                 <v-icon>mdi-note-search-outline</v-icon>ตรวจสอบ
                                             </v-btn>
                                         </v-card-actions>
                                         <v-card-actions>
-                                            <v-btn :disabled="QuotationData.quotationDoc" color="success" class="ml-2 mt-5" outlined rounded>
+                                            <v-btn :disabled="QuotationData.quotationDoc" color="success"
+                                                class="ml-2 mt-5" outlined rounded>
                                                 <v-icon>mdi-email-fast</v-icon>ส่งให้ลูกค้า
                                             </v-btn>
                                         </v-card-actions>
@@ -268,7 +271,7 @@ export default {
                 },
                 thumbnailSize: 120
             },
-            QuotationData:{}
+            QuotationData: {}
 
         };
     },
@@ -290,17 +293,17 @@ export default {
             return this._.filter(brands, { "code": code })[0]
             // this._.flatten([array1, array2])
         },
-        GetQuotation(doc){
+        GetQuotation(doc) {
             // urlResized
             this.QuotationData.quotationDoc = doc
-            console.log('GetQuotation',this.QuotationData)
+            console.log('GetQuotation', this.QuotationData)
 
         },
         download(id) {
 
         },
-        showQationDoc(){
-            if(this.QuotationData.quotationDoc[0].type.includes("image")){
+        showQationDoc() {
+            if (this.QuotationData.quotationDoc[0].type.includes("image")) {
                 this.showImg(this.QuotationData.quotationDoc[0].urlResized)
             }
         },
@@ -312,6 +315,12 @@ export default {
         },
         handleHide() {
             this.visible = false
+        },
+       async  downloadImg(title) {
+        const  url = this.$config.URL_B2_GET ;
+        console.log('downloadfile', title)
+
+        await this.$store.dispatch('files/downloadfile',{url,title})
         },
     }
 };

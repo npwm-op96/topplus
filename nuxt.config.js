@@ -268,14 +268,16 @@ module.exports = {
      */
     publicRuntimeConfig: {
         LIFFID: process.env.LIFFID,
-        URL_B2: process.env.URL_B2
+        URL_B2: process.env.URL_B2,
+        URL_B2_GET: process.env.URL_B2_GET
+
     },
     server: {
         https: {
             key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
             cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
         },
-        port: 8000, // default: 3000
+        port: 4433, // default: 3000
     },
 
 }
